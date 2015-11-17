@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>160 Federal</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+    document.addEventListener("deviceready",onDeviceReady,false);
+
+    function onDeviceReady(){
+
+        var oReq = new XMLHttpRequest();
+        var output = $('#output');
+        var tokens =[];
+
+        $.support.cors=true;
+        $.mobile.allowCrossDomainPages=true;
+
+//Onload get directory data
+console.log("Ready to Get data");
+var urlReq ="http://esidesigndev.com/data_Demo/building.php"
+connectSql(urlReq);
+
+// Update time
+setInterval(function(){
+    var date = new Date;
+    dt = date.toLocaleString();
+    $("#dt").html(String(dt));
+},10000);
+
+// function to convert data into JSON -- Windows doesn't support jQueryAJAX, JSON.parse() or jQuery.parseJSON()
+
+function convdata(data){
+
+    var dt_one = data;
+    var key=[],toJson=[],obj=[],next= [];
+
+// Converting data into JSON object
+//* It is messy, please let me know it you have a specific Naming Convention rules
+
+if (dt_one.length > 11 ){ 
+
+// Parsing data -- Generate new array "obj" and new JSON "tokens"
+
+var filter_one= dt_one.replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":'});
+var filter_two = filter_one.replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"'});
+var tnt = filter_two.split(/[{()}]+/);
+
+for(i in tnt){
+    if( tnt[i].length > 2){
+        key.push(tnt[i]);
+    }
+}
+for(i in key){
+  var values = new Array();
+  var keyOne =key[i].split(/","+/); 
+  for (var j =0; j< keyOne.length; j++){
+    var mkey = keyOne[j].split(":");
+    var mkeytwo = mkey[1];
+    if(mkeytwo!=undefined){   
+        var res = mkeytwo.replace(/"/g, "");
+        if (res.length >= 1){
+
+            values.push(res);
+        }
+    }
+}
+toJson.push(values);
+}
+for(i in toJson){
+    if(toJson[i]!= undefined){
+        obj.push(toJson[i])
+    }
+}
+for (i in obj){
+  var _company = String(obj[i][2]);
+  var _location = String(obj[i][3]);
+  var _people = String(obj[i][4]);
+  tokens.push({'company': _company , 'location' : _location ,'people':_people});
+}
+
+for( var i =1;i< obj.length; i++){
+   if(obj[i][2] != obj[i-1][2]){
+    next.push(obj[i]);
+}
+}
+
+// Link the JSON object to the selector
+
+for(i in next){
+    
+    $("#Selector").append($("<li><a>"+ next[i][2] +  "</a></li>" )
+        .attr({ value: next[i][2]}));
+}
+}
+else{
+console.log("Login Data");
+}
+};
+
+// this is to get the data on filter 
+
+$("#Selector").delegate("li", "click", function(e){
+
+    $('#output').empty();
+
+    var rep = new Array();
+    var toSearch = String($(this).text());
+    console.log(toSearch);
+    for(i in tokens){
+        if(tokens[i].company == toSearch){
+            if(tokens[i].people!=="undefined"){
+                rep.push(tokens[i].people)
+                $('#output').append("<a>"+tokens[i].people+"</a>");
+                $('#output').append("<br>");
+            }
+        }
+    }
+    console.log(rep);
+});
+
+// Get the data  -- xhml 
+
+function handler()
+{
+    if (oReq.readyState == 4 /* complete */) {
+        if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
+            var bval=oReq.responseText;
+            console.log(oReq.status);
+            convdata(bval);
+        }
+        else{
+            navigator.notification.alert("No Internet Connection");
+            console.log("error");
+        }
+    }
+}
+
+// call get data
+
+function connectSql(data){
+
+    var url = data;
+
+    if (oReq != null) {
+        oReq.open("GET", url , true);
+        oReq.onreadystatechange = handler;
+        oReq.send();
+    }
+    else {
+
+        window.console.log("AJAX not supported.");
+    }
+}
+
+// Additional to get data. This is handy for reset the data load
+
+
+$("#_reqB").click(function () {
+    console.log("Ready to Get data");
+    var urlReq ="http://esidesigndev.com/data_Demo/building.php"
+    connectSql(urlReq);
+});
+
+//  To send form to the data base
+
+$("#_sndB").click(function(){
+
+    var name = $("#name").val();
+    var location = $("#location").val();
+    var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?lid="+name+"&location="+location;
+    connectSql(urlSnd); 
+    console.log(dt);
+});
+
+
+
+
+}
+
+</script>
+<style>
+#Selector-button span{
+    display: none;
+}
+</style>
+</head>
+<body>
+    <div class="container">
+         <h1>160 Federal</h1>
+         <br>
+         <div id="div_form">
+         <form>
+                <label for="name">
+                    <b>name</b>
+                    <input type="text" id="name" name="name">
+                </label>
+                <label for="location">
+                    <b>location</b>
+                    <input type="text" id="location" name="location">
+                </label>
+                <br>
+                <b>Date and Time</b>
+                <span id="dt"></span>
+            </form>
+            <br>
+         <button  class="btn btn-lg btn-default" id="_sndB">Send</button> 
+    </div>
+    <br> 
+    <div id = "div_dir">
+    <h2>Companies</h2>
+    <form class="ui-filterable">
+    <input id="myFilter" data-type="search">
+    </form>
+    <br> 
+    <ul   class = "comp" id ="Selector" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="false" data-inset="true">
+    </ul>
+   </div>
+   <br>
+   <div id="output"></div>
+</div>
+</body>
+</html>
