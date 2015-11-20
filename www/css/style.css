@@ -48,17 +48,17 @@ header, hgroup, footer, section, article, aside {
   display: block; }
 
 @font-face {
-  font-family: "customfont";
+  font-family: "futura";
   src: url("../font/FuturaStd-Light.otf") format("embedded-opentype");
   font-weight: 300;
   font-style: normal; }
 @font-face {
-  font-family: "customfont";
+  font-family: "futura";
   src: url("../font/FuturaStd-Medium.otf") format("embedded-opentype");
   font-weight: 500;
   font-style: normal; }
 @font-face {
-  font-family: "customfont";
+  font-family: "funtura";
   src: url("../font/FuturaStd-Heavy.otf") format("embedded-opentype");
   font-weight: 700;
   font-style: normal; }
