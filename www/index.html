@@ -6,17 +6,101 @@
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-    <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!--     <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
-    <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
-    <script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
-    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script src="js/bootstrap/js/bootstrap.min.js"></script>
-    <script type="text/javascript" charset="utf-8">
+<style>
+#Selector-button span{
+    display: none;
+}
+</style>
+</head>
+<body>
+    <div class="container overlay">
+		<header class="header">
+			<div class="container__line">
+				<span class="container__line--top"></span>
+				<span class="container__line--bottom"></span>
+			</div>
+			<div class="logo">
+				<h2>Welcome to</h2>
+				<h1>160 Federal</h1>
+			</div>
+			<div class="container__line">
+				<span class="container__line--top"></span>
+				<span class="container__line--bottom"></span>
+			</div>
+		</header>
+		<div class="content">
+		<div id="page1">
+			<h1>[ ATTRACT LOOP ]</h1>
+			<div class="touch">
+				<h2>TOUCH HERE TO BEGIN SEARCH</h2>
+			</div>
+		</div>
+
+		<div id="page2" class="content__form">
+			<h2>Where are you going?</h2>
+		    <div id = "div_dir">
+		    <form class="ui-filterable">
+		    <input id="myFilter" data-type="search" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
+		    </form>
+		    <br> 
+            <div style = "overflow:scroll ; height :200px">
+		    <ul class = "comp" id ="Selector" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="false" data-inset="true">
+		    </ul>
+        </div>
+		   </div>
+		   <br>
+		   <div id="output"></div>
+		   <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
+		</div>
+		
+		<div id="page3" class="content__form">
+         
+         <div id="div_form">
+	         <h2>Visitor Sign-In</h2>
+	         <form>
+	                <input type="text" id="name" name="name" placeholder="What's your name?">
+<!-- 	                <input type="text" id="location" name="location"> -->
+					<input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
+					<input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
+	            </form>
+	         <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
+	    </div>
+	    
+		</div>
+   
+		<div id="page4">
+			<div class="content__form">
+				<h2>Thank you!</h2>
+				<h2>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h2>
+				<h1>ALEXANDER, ARONSON, FINNING & CO</h1>
+				<h1>Floor 16</h1>
+			</div>
+			
+			<h1>[ ANIMATION ]</h1>
+			
+		</div>
+		
+	</div>
+	<footer>
+			<div class="container__line">
+				<span class="container__line--bottom"></span>
+				<span class="container__line--top"></span>
+			</div>
+	</footer>
+
+</div>
+
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
+<script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script src="js/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf-8">
 
     document.addEventListener("deviceready",onDeviceReady,false);
 
@@ -186,51 +270,28 @@ $("#_sndB").click(function(){
     console.log(dt);
 });
 
-
-
-
 }
 
+// console.log("NOT VISIBLE");
+
+if ($("#page1").is(':visible')) {
+// 	console.log("VISIBLE");
+	$('body').click(function(){
+		$('#page1').fadeOut(function(){
+			$('#page2').fadeIn();
+		});
+	});
+}
+/*
+if ($("#page2").css(('display') == 'none')) {
+	console.log("CLICK");
+	$('body').click(function(){
+		$('#page2').fadeOut(function(){
+			$('#page3').fadeIn();
+		});
+	});
+}
+*/
 </script>
-<style>
-#Selector-button span{
-    display: none;
-}
-</style>
-</head>
-<body>
-    <div class="container">
-         <h1>160 Federal</h1>
-         <br>
-         <div id="div_form">
-         <form>
-                <label for="name">
-                    <b>name</b>
-                    <input type="text" id="name" name="name">
-                </label>
-                <label for="location">
-                    <b>location</b>
-                    <input type="text" id="location" name="location">
-                </label>
-                <br>
-                <b>Date and Time</b>
-                <span id="dt"></span>
-            </form>
-            <br>
-         <button  class="btn btn-lg btn-default" id="_sndB">Send</button> 
-    </div>
-    <br> 
-    <div id = "div_dir">
-    <h2>Companies</h2>
-    <form class="ui-filterable">
-    <input id="myFilter" data-type="search">
-    </form>
-    <br> 
-    <ul   class = "comp" id ="Selector" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="false" data-inset="true">
-    </ul>
-   </div>
-   <br>
-   <div id="output"></div>
-</div>
 </body>
 </html>
