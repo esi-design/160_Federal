@@ -1,0 +1,295 @@
+/*-----------------------------------------------------------------------------------*
+/* = Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+/*-----------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+:focus {
+  outline: 0; }
+
+body {
+  background: #fff;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+a img {
+  border: 0; }
+
+figure img {
+  max-width: 100%; }
+
+header, hgroup, footer, section, article, aside {
+  display: block; }
+
+@font-face {
+  font-family: "customfont";
+  src: url("../font/FuturaStd-Light.otf") format("embedded-opentype");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "customfont";
+  src: url("../font/FuturaStd-Medium.otf") format("embedded-opentype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "customfont";
+  src: url("../font/FuturaStd-Heavy.otf") format("embedded-opentype");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_light-webfont.ttf") format("embedded-truetype");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_regular-webfont.ttf") format("embedded-truetype");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_medium-webfont.ttf") format("embedded-truetype");
+  font-weight: 700;
+  font-style: normal; }
+* {
+  -webkit-tap-highlight-color: transparent;
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */ }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-color: #E4E4E4;
+  background-image: linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image: -webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image: -ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #A7A7A7), color-stop(0.51, #E4E4E4));
+  background-attachment: fixed;
+  color: #FFF;
+  font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  width: 100%; }
+
+h1, h2 {
+  text-align: center; }
+
+h1 {
+  font-size: 75px; }
+
+h2 {
+  font-size: 40px; }
+
+.container {
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../img/bg.png");
+  background-repeat: no-repeat;
+  height: 0;
+  padding: 5% 3% 66.67%;
+  width: 100%; }
+  .container .container__line {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle; }
+    .container .container__line .container__line--top, .container .container__line .container__line--bottom {
+      background-color: #83691A;
+      display: block; }
+    .container .container__line .container__line--top {
+      height: 6px;
+      margin-bottom: 4px; }
+    .container .container__line .container__line--bottom {
+      height: 2px; }
+
+.header {
+  color: #FFF;
+  width: 100%; }
+  .header .container__line {
+    width: 31.5%; }
+    .header .container__line .container__line--top {
+      margin-bottom: 4px; }
+  .header .logo {
+    display: inline-block;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    width: 36%; }
+    .header .logo h2 {
+      font-size: 40px;
+      font-weight: 300;
+      margin-bottom: 5px; }
+    .header .logo h1 {
+      font-size: 75px;
+      font-weight: 500; }
+
+.content {
+  padding: 5% 0 56%;
+  position: relative;
+  height: 0;
+  width: 100%; }
+
+#page1 h1 {
+  margin-top: 15%;
+  text-align: center; }
+#page1 .touch {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3%;
+  margin: 0 auto;
+  text-align: center;
+  width: 66%; }
+  #page1 .touch h2 {
+    background: rgba(0, 0, 0, 0.9);
+    border-top: 1px solid #83691A;
+    border-bottom: 1px solid #83691A;
+    font-family: 'Futura', 'Helvetica', sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding: 1% 0;
+    text-align: center; }
+
+::-webkit-input-placeholder {
+  color: #000; }
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  color: #000; }
+
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #000; }
+
+:-ms-input-placeholder {
+  color: #000; }
+
+.ui-loader {
+  display: none; }
+
+.ui-btn {
+  background-color: #000;
+  border-top: 1px solid #83691A;
+  border-bottom: 1px solid #83691A;
+  border-left: none;
+  border-right: none;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Futura', 'Helvetica', sans-serif;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 3px;
+  margin: 0 auto;
+  text-transform: uppercase;
+  padding: 1% 5%;
+  text-align: center;
+  text-decoration: none;
+  outline: 0; }
+  .ui-btn:hover {
+    background-color: #111; }
+
+.ui-input-text input, .ui-input-search input, textarea.ui-input-text {
+  border: 0;
+  background: rgba(255, 255, 255, 0.6);
+  font-family: 'Futura', 'Helvetica', sans-serif;
+  font-size: 40px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 1.4% 3% 1%;
+  -webkit-appearance: none;
+  -webkit-border-radius: inherit;
+  border-radius: inherit;
+  outline: 0;
+  text-align: left;
+  width: 100%; }
+
+.content__form {
+  margin: 0 auto;
+  width: 66%; }
+  .content__form input {
+    margin-bottom: 4%; }
+  .content__form h2 {
+    font-family: 'Futura', 'Helvetica', sans-serif;
+    line-height: 135%;
+    margin-bottom: 2%;
+    text-align: center;
+    letter-spacing: 4px; }
+
+#page2 {
+  display: none; }
+
+#page3 {
+  display: none; }
+
+#page4 {
+  display: none; }
+  #page4 .content__form {
+    width: 80%; }
+  #page4 h2:nth-of-type(2) {
+    margin: 5% auto 0;
+    width: 70%; }
+  #page4 h1 {
+    font-size: 60px;
+    font-family: 'Futura', 'Helvetica', sans-serif;
+    letter-spacing: 6px;
+    margin-top: 6%; }
+  #page4 h1:nth-of-type(2) {
+    margin-top: 4%; }
+  #page4 h1:nth-of-type(3) {
+    margin-top: 15%; }
+
+footer .container__line {
+  width: 100%; }
+  footer .container__line .container__line--bottom {
+    margin-bottom: 4px; }
+
+@keyframes fade {
+  from {
+    opacity: 1.0; }
+  50% {
+    opacity: 0.4; }
+  to {
+    opacity: 1.0; } }
+@-webkit-keyframes fade {
+  from {
+    opacity: 1.0; }
+  50% {
+    opacity: 0.4; }
+  to {
+    opacity: 1.0; } }
+
+/*# sourceMappingURL=style.css.map */
