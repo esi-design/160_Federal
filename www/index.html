@@ -15,82 +15,91 @@
     display: none;
 }
 </style>
+
+
 </head>
 <body>
     <div class="container overlay">
-		<header class="header">
-			<div class="container__line">
-				<span class="container__line--top"></span>
-				<span class="container__line--bottom"></span>
-			</div>
-			<div class="logo">
-				<h2>Welcome to</h2>
-				<h1>160 Federal</h1>
-			</div>
-			<div class="container__line">
-				<span class="container__line--top"></span>
-				<span class="container__line--bottom"></span>
-			</div>
-		</header>
-		<div class="content">
-		<div id="page1">
-			<h1>[ ATTRACT LOOP ]</h1>
-			<div class="touch">
-				<h2>TOUCH HERE TO BEGIN SEARCH</h2>
-			</div>
-		</div>
+  <header class="header">
+   <div class="container__line">
+    <span class="container__line--top"></span>
+    <span class="container__line--bottom"></span>
+   </div>
+   <div class="logo">
+    <h2>Welcome to</h2>
+    <h1>160 Federal</h1>
+   </div>
+   <div class="container__line">
+    <span class="container__line--top"></span>
+    <span class="container__line--bottom"></span>
+   </div>
+  </header>
+  <div class="content">
+  <div id="page1">
+   <h1>[ ATTRACT LOOP ]</h1>
+   <div class="touch">
+    <h2>TOUCH HERE TO BEGIN SEARCH</h2>
+   </div>
+  </div>
 
-		<div id="page2" class="content__form">
-			<h2>Where are you going?</h2>
-		    <div id = "div_dir">
-		    <form class="ui-filterable">
-		    <input id="myFilter" data-type="search" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
-		    </form>
-		    <br> 
+  <div id="page2" class="content__form">
+   <h2>Where are you going?</h2>
+      <div id = "div_dir">
+      <form >
+      <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
+      </form>
+      <br> 
             <div style = "overflow:scroll ; height :200px">
-		    <ul class = "comp" id ="Selector" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="false" data-inset="true">
-		    </ul>
-        </div>
-		   </div>
-		   <br>
-		   <div id="output"></div>
-		   <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
-		</div>
-		
-		<div id="page3" class="content__form">
+        <div  id ="data_Select" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+            </div>
+            <div  id ="data_Select_cmpny" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+            </div>
+             <div  id ="data_Select__ppl" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+            </div>
+            </div>
+     </div>
+     <br>
+           <div style = "width:70; display:inline-block"><button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> </div><div style= "width:30%; float:right; display:inline-block">
+           <button  class="btn-default" id="_cmpny">COMPANIES</button>
+           <button  class="btn-default" id="_ppl">PEOPLE</button> 
+     <button  class="btn-default" id="_all">LIST ALL</button> 
+  </div>
+    </div>
+  
+  <div id="page3" class="content__form">
          
          <div id="div_form">
-	         <h2>Visitor Sign-In</h2>
-	         <form>
-	                <input type="text" id="name" name="name" placeholder="What's your name?">
-<!-- 	                <input type="text" id="location" name="location"> -->
-					<input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
-					<input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
-	            </form>
-	         <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
-	    </div>
-	    
-		</div>
+          <h2>Visitor Sign-In</h2>
+          <form>
+                 <input type="text" id="name" name="name" placeholder="What's your name?">
+<!--                  <input type="text" id="location" name="location"> -->
+     <input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
+     <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
+             </form>
+          <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
+     </div>
+     
+  </div>
    
-		<div id="page4">
-			<div class="content__form">
-				<h2>Thank you!</h2>
-				<h2>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h2>
-				<h1>ALEXANDER, ARONSON, FINNING & CO</h1>
-				<h1>Floor 16</h1>
-			</div>
-			
-			<h1>[ ANIMATION ]</h1>
-			
-		</div>
-		
-	</div>
-	<footer>
-			<div class="container__line">
-				<span class="container__line--bottom"></span>
-				<span class="container__line--top"></span>
-			</div>
-	</footer>
+  <div id="page4">
+   <div class="content__form">
+    <h2>Thank you!</h2>
+    <h2>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h2>
+    <h1>ALEXANDER, ARONSON, FINNING & CO</h1>
+    <h1>Floor 16</h1>
+   </div>
+   
+   <h1>[ ANIMATION ]</h1>
+   
+  </div>
+  
+ </div>
+ <footer>
+   <div class="container__line">
+    <span class="container__line--bottom"></span>
+    <span class="container__line--top"></span>
+   </div>
+ </footer>
 
 </div>
 
@@ -102,13 +111,23 @@
 <script src="js/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-    document.addEventListener("deviceready",onDeviceReady,false);
+
+
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
 
     function onDeviceReady(){
+
+        $('#data_Select').show();
+        $('#data_Select_cmpny').hide();
+        $('#ddata_Select__ppl').hide();
 
         var oReq = new XMLHttpRequest();
         var output = $('#output');
         var tokens =[];
+        var next =[];
+        var info_div;
 
         $.support.cors=true;
         $.mobile.allowCrossDomainPages=true;
@@ -130,12 +149,12 @@ setInterval(function(){
 function convdata(data){
 
     var dt_one = data;
-    var key=[],toJson=[],obj=[],next= [];
+    var key=[],toJson=[],obj=[];
 
 // Converting data into JSON object
 //* It is messy, please let me know it you have a specific Naming Convention rules
 
-if (dt_one.length > 11 ){ 
+if (dt_one.length > 11 ){
 
 // Parsing data -- Generate new array "obj" and new JSON "tokens"
 
@@ -176,6 +195,7 @@ for (i in obj){
   tokens.push({'company': _company , 'location' : _location ,'people':_people});
 }
 
+// To filter duplicates
 for( var i =1;i< obj.length; i++){
    if(obj[i][2] != obj[i-1][2]){
     next.push(obj[i]);
@@ -184,39 +204,75 @@ for( var i =1;i< obj.length; i++){
 
 // Link the JSON object to the selector
 
-for(i in next){
+// for(i in next){
     
-    $("#Selector").append($("<li><a>"+ next[i][2] +  "</a></li>" )
-        .attr({ value: next[i][2]}));
-}
+//     $("#Selector").append($("<li><a>"+ next[i][2] +  "</a></li>" )
+//         .attr({ value: next[i][2]}));
+
+// }
+getValues('#data_Select');
+
+$('#_cmpny').click(function(){
+    console.log("Show Company");
+    $('#data_Select').hide();
+    $('#data_Select_cmpny').show();
+    $('#ddata_Select__ppl').hide();
+    getValues('#data_Select_cmpny');
+  //run the function but with different value
+});
+
+$('#_ppl').click(function(){
+    console.log("Show people");
+    $('#data_Select').hide();
+    $('#data_Select_cmpny').hide();
+    $('#ddata_Select__ppl').show();
+    getValues('#data_Select__ppl');
+  //run the function but with different value
+});
+$('#_all').click(function(){
+    console.log("Show All");
+    $('#data_Select').show();
+    $('#data_Select_cmpny').hide();
+    $('#ddata_Select__ppl').hide();
+    getValues('#data_Select');
+  //run the function but with different value
+});
+
+// To load the 3rd page
+
+
+
 }
 else{
 console.log("Login Data");
 }
 };
 
-// this is to get the data on filter 
+// this is to get the data on filter
 
-$("#Selector").delegate("li", "click", function(e){
 
-    $('#output').empty();
+// this to add the funtionality to the text input
+
+$("#_list").delegate("a", "click", function(e){
+
+    //$('#output').empty();
 
     var rep = new Array();
     var toSearch = String($(this).text());
     console.log(toSearch);
-    for(i in tokens){
-        if(tokens[i].company == toSearch){
-            if(tokens[i].people!=="undefined"){
-                rep.push(tokens[i].people)
-                $('#output').append("<a>"+tokens[i].people+"</a>");
-                $('#output').append("<br>");
-            }
-        }
-    }
-    console.log(rep);
+    // for(i in tokens){
+    //     if(tokens[i].company == toSearch){
+    //         if(tokens[i].people!=="undefined"){
+    //             rep.push(tokens[i].people)
+    //             $('#output').append("<a>"+tokens[i].people+"</a>");
+    //             $('#output').append("<br>");
+    //         }
+    //     }
+    // }
+    //console.log(rep);
 });
 
-// Get the data  -- xhml 
+// Get the data  -- xhml
 
 function handler()
 {
@@ -270,28 +326,176 @@ $("#_sndB").click(function(){
     console.log(dt);
 });
 
+function getValues(data){
+    var c_Data= data;
+    var c_Name;
+
+for(i in next){
+     var clase ='';
+     if (i <= 1){
+        clase = 'ui-collapsible ui-first-child'
+     }
+     if (i == next.length-1){
+        clase = 'ui-collapsible ui-last-child'
+     }
+     else{
+        clase = 'ui-collapsible'
+     }
+
+    var comp_title =$(document.createElement('h3')).attr({
+       'class': "ui-collapsible-heading ui-collapsible-heading-collapsed",
+    });
+    var spam_a =$(document.createElement('a')).attr({
+        'class': 'ui-collapsible-heading-toggle',
+         'href': "#"
+    }).text(String(next[i][2]));
+    var spam_c =$(document.createElement('h4')).attr({
+        'id': 'floor',
+        'class': 'ui-collapsible-heading-toggle',
+         //href: "#"
+    }).text(String(next[i][3]));
+    var spam_b =$(document.createElement('spam')).attr({
+        'class':"ui-collapsible-heading-status",
+    }).text(String(next[i][3]));
+
+    var ul_data = $(document.createElement("ul")).attr({
+        'data-role':"listview", 'data-inset':"true",
+        'class':"ui-listview",
+        'name': next[i][2] + "_Floor_" + next[i][2],
+         'id': "_list",
+         'value': next[i][2] + "_Floor_" + next[i][2],
+    });
+    var comp_name = $(document.createElement("div")).attr({ 
+                'data-role':"collapsible",
+                'data-collapsed':'false',
+                value:next[i][2] ,
+                'data-inset': 'false',
+                'data-content-theme':"false",
+                'class':clase,
+            //     'class':'ui-collapsible ui-collapsible-inset ui-corner-all ui-collapsible-//themed-content ui-collapsible-collapsed ui-screen-hidden'
+             });
+    var cont_ul = $(document.createElement('div')).attr({
+        'class' :"ui-collapsible-content",
+         'aria-hidden' :"false"
+    });
+
+     $(comp_name).removeClass("ui-screen-hidden")
+     $(spam_a).append(spam_b);
+     $(comp_title).append(spam_a);
+     $(comp_title).append(spam_c);
+     $(cont_ul).append(ul_data);
+     $(comp_name).append(comp_title);
+     $(comp_name).append(cont_ul);
+
+    $(c_Data).append(comp_name);
+    //comp_name.after(ul_data);
+
+    // $("#data_Select").append(comp_name.add(ul_data));
+    
+    var rep = new Array();
+    var toSearch = String(next[i][2]);
+    rep.push(toSearch)
+
+    $(spam_a).click(function(){
+     c_Name = $(this).text();
+     console.log(c_Name);
+     $('#searchForCollapsibleSetChildren').val(c_Name);
+    });
+
+    if(c_Data!='#data_Select_cmpny'){
+    
+    for(i in tokens){
+        if(tokens[i].company == toSearch){
+            if(tokens[i].people!=="undefined"){
+                rep.push(String(tokens[i].people));
+                var clasz = ''
+                if (rep.length <= 2){
+                    clasz ='ui-li-static ui-body-inherit ui-first-child'
+                }
+                else{
+                    clasz ='ui-li-static ui-body-inherit'
+                }
+                var list = $(document.createElement('li')).attr({
+                    'data-filtertext':tokens[i].people,
+                    'class':clasz,
+                    // title : tokens[i].people
+                });
+                var list_link = $(document.createElement('a')).attr({
+                    'data-filtertext':tokens[i].people,
+                    'class':clasz,
+                    'href': '#',
+                }).text(String(tokens[i].people)).val(tokens[i].company);
+                $(list_link).click(function(){
+                    c_Name = $(this).val() + "," + $(this).text();
+                    console.log(c_Name);
+                    $('#searchForCollapsibleSetChildren').val(c_Name);
+
+                });
+                $(list).append(list_link);
+                $(ul_data).append(list);
+                // $('#output').append("<br>");
+            }
+        }
+    }
 }
+    rep.toString();
+    var fil_a = rep.toString();
+    
+    var fil_b= fil_a.replace(/,/g," ");
+    //console.log(fil_b);
+    $(comp_name).attr({'data-filtertext' : fil_b })
+   // console.log(rep);
+
+
+}
+}
+}
+
+
+
+
+$('#_trdB').click(function(){
+
+var Comp_val = $('#searchForCollapsibleSetChildren').val();
+$('#visitor-company').val(Comp_val);
+$('#page1').hide();
+$('#page2').hide();
+$('#page3').show();
+$('#page4').hide();
+});
+
 
 // console.log("NOT VISIBLE");
 
 if ($("#page1").is(':visible')) {
-// 	console.log("VISIBLE");
-	$('body').click(function(){
-		$('#page1').fadeOut(function(){
-			$('#page2').fadeIn();
-		});
-	});
+//  console.log("VISIBLE");
+    $('body').click(function(){
+        $('#page1').fadeOut(function(){
+            $('#page2').fadeIn();
+        });
+    });
 }
+
+
 /*
 if ($("#page2").css(('display') == 'none')) {
-	console.log("CLICK");
-	$('body').click(function(){
-		$('#page2').fadeOut(function(){
-			$('#page3').fadeIn();
-		});
-	});
+ console.log("CLICK");
+ $('body').click(function(){
+  $('#page2').fadeOut(function(){
+   $('#page3').fadeIn();
+  });
+ });
 }
 */
 </script>
+<style>
+#Selector-button span{
+    display: none;
+}
+
+#floor{
+ float:right;
+}
+</style>
 </body>
 </html>
