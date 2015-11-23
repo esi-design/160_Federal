@@ -54,7 +54,7 @@ function onDeviceReady(){
             console.log("Show Company");
             $('#data_Select').hide();
             $('#data_Select_cmpny').show();
-            $('#ddata_Select__ppl').hide();
+            $('#data_Select__ppl').hide();
             getValues('#data_Select_cmpny');
         });
         //Show ByPeople page 2
@@ -62,7 +62,7 @@ function onDeviceReady(){
             console.log("Show people");
             $('#data_Select').hide();
             $('#data_Select_cmpny').hide();
-            $('#ddata_Select__ppl').show();
+            $('#data_Select__ppl').show();
             getValues('#data_Select__ppl');
         });
         //Show default All page 2
@@ -70,7 +70,7 @@ function onDeviceReady(){
             console.log("Show All");
             $('#data_Select').show();
             $('#data_Select_cmpny').hide();
-            $('#ddata_Select__ppl').hide();
+            $('#data_Select__ppl').hide();
             getValues('#data_Select');
         });
 
