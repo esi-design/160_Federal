@@ -4,13 +4,14 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-		sass: {                              // Task
-			dist: {                            // Target
-				options: {                       // Target options
-				style: 'nested'
+		sass: {  // Task
+			dist: {  // Target
+				options: {                     
+					style: 'nested'
 				},
-				files: {                         // Dictionary of files
-				'www/css/style.css': 'www/css/style.scss',       // 'destination': 'source'
+				files: {                    
+					'www/css/style.css': 'www/css/style.scss', // 'destination': 'source'
+					'www/css/jquery.mobile-1.4.5-mod.min.css': 'www/css/jquery.mobile-1.4.5-mod.scss'
 				}
 		    }
 		},
@@ -31,11 +32,11 @@ module.exports = function(grunt) {
 			    files: ['www/css/*.scss'],
 			    tasks: ['sass'],
 			    options: {
-			        spawn: false,
+			        spawn: false
 			    },
 			} 
 		}
-
+		
     });
 
     // 3. Where we tell Grunt we plan to use this plug-in.

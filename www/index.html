@@ -8,89 +8,94 @@
 
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
-<!--     <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <!-- <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
 
-<style>
-#Selector-button span{
-    display: none;
-}
-</style>
 </head>
 <body>
     <div class="container overlay">
-		<header class="header">
-			<div class="container__line">
-				<span class="container__line--top"></span>
-				<span class="container__line--bottom"></span>
-			</div>
-			<div class="logo">
-				<h2>Welcome to</h2>
-				<h1>160 Federal</h1>
-			</div>
-			<div class="container__line">
-				<span class="container__line--top"></span>
-				<span class="container__line--bottom"></span>
-			</div>
-		</header>
-		<div class="content">
-		<div id="page1">
-			<h1>[ ATTRACT LOOP ]</h1>
-			<div class="touch">
-				<h2>TOUCH HERE TO BEGIN SEARCH</h2>
-			</div>
-		</div>
-
-		<div id="page2" class="content__form">
-			<h2>Where are you going?</h2>
-		    <div id = "div_dir">
-		    <form class="ui-filterable">
-		    <input id="myFilter" data-type="search" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
-		    </form>
-		    <br> 
-            <div style = "overflow:scroll ; height :200px">
-		    <ul class = "comp" id ="Selector" data-role="listview" data-filter="true" data-input="#myFilter" data-autodividers="false" data-inset="true">
-		    </ul>
+      <header class="header">
+         <div class="container__line">
+            <span class="container__line--top"></span>
+            <span class="container__line--bottom"></span>
         </div>
-		   </div>
-		   <br>
-		   <div id="output"></div>
-		   <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
-		</div>
-		
-		<div id="page3" class="content__form">
-         
-         <div id="div_form">
-	         <h2>Visitor Sign-In</h2>
-	         <form>
-	                <input type="text" id="name" name="name" placeholder="What's your name?">
-<!-- 	                <input type="text" id="location" name="location"> -->
-					<input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
-					<input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
-	            </form>
-	         <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
-	    </div>
-	    
-		</div>
-   
-		<div id="page4">
-			<div class="content__form">
-				<h2>Thank you!</h2>
-				<h2>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h2>
-				<h1>ALEXANDER, ARONSON, FINNING & CO</h1>
-				<h1>Floor 16</h1>
-			</div>
-			
-			<h1>[ ANIMATION ]</h1>
-			
-		</div>
-		
-	</div>
-	<footer>
-			<div class="container__line">
-				<span class="container__line--bottom"></span>
-				<span class="container__line--top"></span>
-			</div>
-	</footer>
+        <div class="logo">
+            <h2>Welcome to</h2>
+            <h1>160 Federal</h1>
+        </div>
+        <div class="container__line">
+            <span class="container__line--top"></span>
+            <span class="container__line--bottom"></span>
+        </div>
+    </header>
+    <!-- <div class="content"> -->
+    <div>
+      <div id="page1">
+         <h1>[ ATTRACT LOOP ]</h1>
+         <div class="touch">
+            <h2>TOUCH HERE TO BEGIN SEARCH</h2>
+        </div>
+    </div>
+
+ <!-- <div id="page2" class="content__form"> -->
+   <div id="page2">
+     <h2>Where are you going?</h2>
+     <div id = "div_dir">
+      <form >
+          <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
+      </form>
+      <br> 
+      <div style = "overflow:scroll ; height :200px">
+        <div  id ="data_Select" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+        </div>
+        <div  id ="data_Select_cmpny" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+        </div>
+        <div  id ="data_Select__ppl" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+        </div>
+    </div>
+</div>
+<br>
+<div style = "width:70; display:inline-block"><button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> </div><div style= "width:30%; float:right; display:inline-block">
+<button  class="btn-default" id="_cmpny">COMPANIES</button>
+<button  class="btn-default" id="_ppl">PEOPLE</button> 
+<button  class="btn-default" id="_all">LIST ALL</button> 
+</div>
+</div>
+
+<!-- <div id="page3" class="content__form"> -->
+<div id="page3">
+   <div id="div_form">
+      <h2>Visitor Sign-In</h2>
+      <form>
+       <input type="text" id="name" name="name" placeholder="What's your name?">
+       <!-- 	                <input type="text" id="location" name="location"> -->
+       <input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
+       <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
+   </form>
+   <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
+</div>
+
+</div>
+
+<div id="page4">
+  <!-- <div> -->
+ <div class="content__form">
+    <h2>Thank you!</h2>
+    <h3>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h3>
+    <h1 id ='place'></h1>
+    <h1 id ='flr'></h1>
+    <br>
+    <h1>[ ANIMATION ]</h1>
+  </div>
+</div>
+</div>
+
+</div>
+<footer>
+ <div class="container__line">
+    <span class="container__line--bottom"></span>
+    <span class="container__line--top"></span>
+</div>
+</footer>
 
 </div>
 
@@ -99,199 +104,20 @@
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/directory.js"></script>
 <script src="js/bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" charset="utf-8">
-
-    document.addEventListener("deviceready",onDeviceReady,false);
-
-    function onDeviceReady(){
-
-        var oReq = new XMLHttpRequest();
-        var output = $('#output');
-        var tokens =[];
-
-        $.support.cors=true;
-        $.mobile.allowCrossDomainPages=true;
-
-//Onload get directory data
-console.log("Ready to Get data");
-var urlReq ="http://esidesigndev.com/data_Demo/building.php"
-connectSql(urlReq);
-
-// Update time
-setInterval(function(){
-    var date = new Date;
-    dt = date.toLocaleString();
-    $("#dt").html(String(dt));
-},10000);
-
-// function to convert data into JSON -- Windows doesn't support jQueryAJAX, JSON.parse() or jQuery.parseJSON()
-
-function convdata(data){
-
-    var dt_one = data;
-    var key=[],toJson=[],obj=[],next= [];
-
-// Converting data into JSON object
-//* It is messy, please let me know it you have a specific Naming Convention rules
-
-if (dt_one.length > 11 ){ 
-
-// Parsing data -- Generate new array "obj" and new JSON "tokens"
-
-var filter_one= dt_one.replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":'});
-var filter_two = filter_one.replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"'});
-var tnt = filter_two.split(/[{()}]+/);
-
-for(i in tnt){
-    if( tnt[i].length > 2){
-        key.push(tnt[i]);
-    }
-}
-for(i in key){
-  var values = new Array();
-  var keyOne =key[i].split(/","+/); 
-  for (var j =0; j< keyOne.length; j++){
-    var mkey = keyOne[j].split(":");
-    var mkeytwo = mkey[1];
-    if(mkeytwo!=undefined){   
-        var res = mkeytwo.replace(/"/g, "");
-        if (res.length >= 1){
-
-            values.push(res);
-        }
-    }
-}
-toJson.push(values);
-}
-for(i in toJson){
-    if(toJson[i]!= undefined){
-        obj.push(toJson[i])
-    }
-}
-for (i in obj){
-  var _company = String(obj[i][2]);
-  var _location = String(obj[i][3]);
-  var _people = String(obj[i][4]);
-  tokens.push({'company': _company , 'location' : _location ,'people':_people});
+<style>
+#Selector-button span{
+    display: none;
 }
 
-for( var i =1;i< obj.length; i++){
-   if(obj[i][2] != obj[i-1][2]){
-    next.push(obj[i]);
-}
+#floor{
+   float:right;
 }
 
-// Link the JSON object to the selector
-
-for(i in next){
-    
-    $("#Selector").append($("<li><a>"+ next[i][2] +  "</a></li>" )
-        .attr({ value: next[i][2]}));
+#Selector-button span{
+    display: none;
 }
-}
-else{
-console.log("Login Data");
-}
-};
-
-// this is to get the data on filter 
-
-$("#Selector").delegate("li", "click", function(e){
-
-    $('#output').empty();
-
-    var rep = new Array();
-    var toSearch = String($(this).text());
-    console.log(toSearch);
-    for(i in tokens){
-        if(tokens[i].company == toSearch){
-            if(tokens[i].people!=="undefined"){
-                rep.push(tokens[i].people)
-                $('#output').append("<a>"+tokens[i].people+"</a>");
-                $('#output').append("<br>");
-            }
-        }
-    }
-    console.log(rep);
-});
-
-// Get the data  -- xhml 
-
-function handler()
-{
-    if (oReq.readyState == 4 /* complete */) {
-        if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
-            var bval=oReq.responseText;
-            console.log(oReq.status);
-            convdata(bval);
-        }
-        else{
-            navigator.notification.alert("No Internet Connection");
-            console.log("error");
-        }
-    }
-}
-
-// call get data
-
-function connectSql(data){
-
-    var url = data;
-
-    if (oReq != null) {
-        oReq.open("GET", url , true);
-        oReq.onreadystatechange = handler;
-        oReq.send();
-    }
-    else {
-
-        window.console.log("AJAX not supported.");
-    }
-}
-
-// Additional to get data. This is handy for reset the data load
-
-
-$("#_reqB").click(function () {
-    console.log("Ready to Get data");
-    var urlReq ="http://esidesigndev.com/data_Demo/building.php"
-    connectSql(urlReq);
-});
-
-//  To send form to the data base
-
-$("#_sndB").click(function(){
-
-    var name = $("#name").val();
-    var location = $("#location").val();
-    var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?lid="+name+"&location="+location;
-    connectSql(urlSnd); 
-    console.log(dt);
-});
-
-}
-
-// console.log("NOT VISIBLE");
-
-if ($("#page1").is(':visible')) {
-// 	console.log("VISIBLE");
-	$('body').click(function(){
-		$('#page1').fadeOut(function(){
-			$('#page2').fadeIn();
-		});
-	});
-}
-/*
-if ($("#page2").css(('display') == 'none')) {
-	console.log("CLICK");
-	$('body').click(function(){
-		$('#page2').fadeOut(function(){
-			$('#page3').fadeIn();
-		});
-	});
-}
-*/
-</script>
+</style>
 </body>
 </html>

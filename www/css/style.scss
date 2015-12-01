@@ -15,15 +15,16 @@ header, hgroup, footer, section, article, aside { display: block }
 
 @font-face {
     font-family: "futura";
-   
-    src: url('../font/FuturaStd-Light.otf') format('embedded-opentype');
+	src: url('../font/FuturaStd-Light.eot');
+	src: local('☺'), url('../font/FuturaStd-Light.woff') format('woff'), url('../font/FuturaStd-Light.ttf') format('truetype'), url('../font/FuturaStd-Light.svg') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: "futura";
-    src: url('../font/FuturaStd-Medium.otf') format('embedded-opentype');
+	src: url('../font/FuturaStd-Medium.eot');
+	src: local('☺'), url('../font/FuturaStd-Medium.woff') format('woff'), url('../font/FuturaStd-Medium.ttf') format('truetype'), url('../font/FuturaStd-Medium.svg') format('svg');
     font-weight: 500;
     font-style: normal;
 }
@@ -31,27 +32,44 @@ header, hgroup, footer, section, article, aside { display: block }
 @font-face {
     font-family: "funtura";
     src: url('../font/FuturaStd-Heavy.otf') format('embedded-opentype');
+	src: url('../font/FuturaStd-Heavy.eot');
+	src: local('☺'), url('../font/FuturaStd-Heavy.woff') format('woff'), url('../font/FuturaStd-Heavy.ttf') format('truetype'), url('../font/FuturaStd-Heavy.svg') format('svg');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Akzidenz';
-    src: url('../font/akzidenzgrotextbq_light-webfont.ttf') format('embedded-truetype');
+    src: url('../font/akzidenzgrotextbq_light-webfont.eot');
+    src: url('../font/akzidenzgrotextbq_light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/akzidenzgrotextbq_light-webfont.woff2') format('woff2'),
+         url('../font/akzidenzgrotextbq_light-webfont.woff') format('woff'),
+         url('../font/akzidenzgrotextbq_light-webfont.ttf') format('truetype'),
+         url('../font/akzidenzgrotextbq_light-webfont.svg#akzidenz-grotesk_extended_bRg') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Akzidenz';
-    src: url('../font/akzidenzgrotextbq_regular-webfont.ttf') format('embedded-truetype');
+    src: url('../font/akzidenzgrotextbq_regular-webfont.eot');
+    src: url('../font/akzidenzgrotextbq_regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/akzidenzgrotextbq_regular-webfont.woff2') format('woff2'),
+         url('../font/akzidenzgrotextbq_regular-webfont.woff') format('woff'),
+         url('../font/akzidenzgrotextbq_regular-webfont.ttf') format('truetype'),
+         url('../font/akzidenzgrotextbq_regular-webfont.svg#akzidenz-grotesk_extended_bRg') format('svg');
     font-weight: 500;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Akzidenz';
-    src: url('../font/akzidenzgrotextbq_medium-webfont.ttf') format('embedded-truetype');
+    src: url('../font/akzidenzgrotextbq_medium-webfont.eot');
+    src: url('../font/akzidenzgrotextbq_medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../font/akzidenzgrotextbq_medium-webfont.woff2') format('woff2'),
+         url('../font/akzidenzgrotextbq_medium-webfont.woff') format('woff'),
+         url('../font/akzidenzgrotextbq_medium-webfont.ttf') format('truetype'),
+         url('../font/akzidenzgrotextbq_medium-webfont.svg#akzidenz-grotesk_extended_bRg') format('svg');
     font-weight: 700;
     font-style: normal;
 }
@@ -70,26 +88,15 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
-    );
     background-attachment:fixed;
     color: #FFF;
     font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size:12px;
-    height:100%;
-    margin:0px;
-    padding:0px;
-    text-transform:uppercase;
-    width:100%;
+    font-size: 12px;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-transform: uppercase;
+    width: 100%;
 }
 
 h1, h2 {
@@ -308,6 +315,90 @@ footer {
 			margin-bottom: 4px;
 		}
 	}
+}
+
+#virtualKeyboard {
+    width: 100%;
+    text-align: center;
+    /*background-color:#7b8490;*/
+    /*border-top:3px solid #000;*/
+}
+
+#keyboard{
+    padding:10px;
+    width:810px;
+    margin: 0 auto;
+    height:288;
+    display:block;
+    padding-left:25px;
+    display:block;
+/*    position:absolute;*/
+    bottom:0px; left:0px;
+ }
+#keyboard:after {content: ".";display: block;height: 0;clear: both;visibility: hidden;}
+
+#keyboardHeader {position:relative;}
+#keyboardHeader div {color:#fff; background-color:#7b8490;padding:3px; padding-left:15px; padding-right:15px; position:absolute; cursor:pointer; right:-10px; top:-40px;}
+.closex {font-weight:bolder; color:#000;}
+
+#keyboardCapitalLetter {display:none;}
+#keyboardSmallLetter {display:block;}
+#keyboardNumber {display:none;}
+#keyboardSymbols {display:none;}
+
+.button
+{
+    width:60px; height:60px;
+    background-color:#fff;
+    position:relative;
+    float:left;
+    margin-right:9px;
+    margin-top:10px;
+    cursor:pointer;
+    font-size:1.9em;
+
+    /*box shadow*/
+    -webkit-box-shadow: 0px 1px 3px #000000;-moz-box-shadow: 0px 1px 3px #000000;box-shadow: 0px 1px 3px #000000;
+    /*box radius*/
+    -moz-border-radius: 5px;border-radius: 5px;
+    /*gradient*/
+    background: #ffffff; /* old browsers */
+    background: -moz-linear-gradient(top, #ffffff 0%, #e5e5e5 100%); /* firefox */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#e5e5e5)); /* webkit */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* ie */
+}
+.buttonDown {background:none;background-color: #c9cdd5; -webkit-box-shadow:none;-moz-box-shadow: none;box-shadow: none;}
+.button_a {margin-left:26px;}
+.button_dash {margin-left:26px;}
+.button_underscore {margin-left:26px;}
+.button_enter {width:103px; font-size:1.3em; }
+.button_del{width:103px; font-size:1.3em;}
+.button_smallletter{font-size:1.3em;}
+.button_capitalletterleft{font-size:1.3em;}
+.button_capitalletterright{ width:129px; font-size:1.3em;}
+.button_numberleft{width:172px; font-size:1.3em; margin-left:26px;}
+.button_numberright{width:129px; font-size:1.3em;}
+.button_space {width:376px;}
+.button_symbolsleft{width:172px; font-size:1.3em; margin-left:26px;}
+.button_symbolsright{width:129px; font-size:1.3em;}
+
+
+.key {width:100%; height:100%; text-align:center; padding-top:12px; text-shadow: 0px 1px 1px #ffffff;filter: dropshadow(color=#ffffff, offx=0, offy=1);}
+.key_del {padding-top:18px;}
+.key_enter {padding-top:18px;}
+.key_smallletter {padding-top:18px;}
+.key_capitalletterleft {padding-top:18px;}
+.key_capitalletterright {padding-top:18px;}
+.key_number {padding-top:18px;}
+.key_symbols {padding-top:18px;}
+
+.button:hover {
+border-color: rgba(82, 168, 236, 0.8);
+outline: 0;
+outline: thin dotted 9;
+-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(82, 168, 236, 0.6);
+-moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(82,168,236,0.6);
+box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),0 0 8px rgba(82, 168, 236, 0.6);
 }
 
 @keyframes fade {
