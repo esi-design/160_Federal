@@ -251,12 +251,14 @@ html.ui-nosvg .ui-btn.ui-checkbox-on:after {
 
 /* Buttons
 -----------------------------------------------------------------------------------------------------------*/
+/*
 .ui-btn,
 label.ui-btn {
-  font-weight: bold;
-  border-width: 1px;
-  border-style: solid; }
-
+	font-weight: bold;
+	border-width: 1px;
+	border-style: solid;
+}
+*/
 .ui-btn {
   text-decoration: none !important; }
 
@@ -266,10 +268,6 @@ label.ui-btn {
 /* Corner rounding
 -----------------------------------------------------------------------------------------------------------*/
 /* Class ui-btn-corner-all deprecated in 1.4 */
-.ui-corner-all {
-  -webkit-border-radius: 0.3125em;
-  border-radius: 0.3125em; }
-
 /* Buttons */
 .ui-btn-corner-all,
 .ui-btn.ui-corner-all,
@@ -380,318 +378,7 @@ html .ui-alt-icon .ui-radio-off:after {
 /* Swatches */
 /* A
 -----------------------------------------------------------------------------------------------------------*/
-/* Bar: Toolbars, dividers, slider track */
-.ui-bar-a,
-.ui-page-theme-a .ui-bar-inherit,
-html .ui-bar-a .ui-bar-inherit,
-html .ui-body-a .ui-bar-inherit,
-html body .ui-group-theme-a .ui-bar-inherit {
-  background-color: #e9e9e9;
-  border-color: #ddd;
-  color: #333;
-  text-shadow: 0 1px 0 #eee;
-  font-weight: bold; }
-
-.ui-bar-a {
-  border-width: 1px;
-  border-style: solid; }
-
-/* Page and overlay */
-.ui-overlay-a,
-.ui-page-theme-a,
-.ui-page-theme-a .ui-panel-wrapper {
-  background-color: #f9f9f9;
-  border-color: #bbb;
-  color: #333;
-  text-shadow: 0 1px 0 #f3f3f3; }
-
-/* Body: Read-only lists, text inputs, collapsible content */
-.ui-body-a,
-.ui-page-theme-a .ui-body-inherit,
-html .ui-bar-a .ui-body-inherit,
-html .ui-body-a .ui-body-inherit,
-html body .ui-group-theme-a .ui-body-inherit,
-html .ui-panel-page-container-a {
-  background-color: #fff;
-  border-color: #ddd;
-  color: #333;
-  text-shadow: 0 1px 0 #f3f3f3; }
-
-.ui-body-a {
-  border-width: 1px;
-  border-style: solid; }
-
-/* Links */
-.ui-page-theme-a a,
-html .ui-bar-a a,
-html .ui-body-a a,
-html body .ui-group-theme-a a {
-  color: #3388cc;
-  font-weight: bold; }
-
-.ui-page-theme-a a:visited,
-html .ui-bar-a a:visited,
-html .ui-body-a a:visited,
-html body .ui-group-theme-a a:visited {
-  color: #3388cc; }
-
-.ui-page-theme-a a:hover,
-html .ui-bar-a a:hover,
-html .ui-body-a a:hover,
-html body .ui-group-theme-a a:hover {
-  color: #005599; }
-
-.ui-page-theme-a a:active,
-html .ui-bar-a a:active,
-html .ui-body-a a:active,
-html body .ui-group-theme-a a:active {
-  color: #005599; }
-
-/* Button up */
-.ui-page-theme-a .ui-btn,
-html .ui-bar-a .ui-btn,
-html .ui-body-a .ui-btn,
-html body .ui-group-theme-a .ui-btn,
-html head + body .ui-btn.ui-btn-a,
-.ui-page-theme-a .ui-btn:visited,
-html .ui-bar-a .ui-btn:visited,
-html .ui-body-a .ui-btn:visited,
-html body .ui-group-theme-a .ui-btn:visited,
-html head + body .ui-btn.ui-btn-a:visited {
-  background-color: #f6f6f6;
-  border-color: #ddd;
-  color: #333;
-  text-shadow: 0 1px 0 #f3f3f3; }
-
-/* Button hover */
-.ui-page-theme-a .ui-btn:hover,
-html .ui-bar-a .ui-btn:hover,
-html .ui-body-a .ui-btn:hover,
-html body .ui-group-theme-a .ui-btn:hover,
-html head + body .ui-btn.ui-btn-a:hover {
-  background-color: #ededed;
-  border-color: #ddd;
-  color: #333;
-  text-shadow: 0 1px 0 #f3f3f3; }
-
-/* Button down */
-.ui-page-theme-a .ui-btn:active,
-html .ui-bar-a .ui-btn:active,
-html .ui-body-a .ui-btn:active,
-html body .ui-group-theme-a .ui-btn:active,
-html head + body .ui-btn.ui-btn-a:active {
-  background-color: #e8e8e8;
-  border-color: #ddd;
-  color: #333;
-  text-shadow: 0 1px 0 #f3f3f3; }
-
-/* Active button */
-.ui-page-theme-a .ui-btn.ui-btn-active,
-html .ui-bar-a .ui-btn.ui-btn-active,
-html .ui-body-a .ui-btn.ui-btn-active,
-html body .ui-group-theme-a .ui-btn.ui-btn-active,
-html head + body .ui-btn.ui-btn-a.ui-btn-active,
-.ui-page-theme-a .ui-checkbox-on:after,
-html .ui-bar-a .ui-checkbox-on:after,
-html .ui-body-a .ui-checkbox-on:after,
-html body .ui-group-theme-a .ui-checkbox-on:after,
-.ui-btn.ui-checkbox-on.ui-btn-a:after,
-.ui-page-theme-a .ui-flipswitch-active,
-html .ui-bar-a .ui-flipswitch-active,
-html .ui-body-a .ui-flipswitch-active,
-html body .ui-group-theme-a .ui-flipswitch-active,
-html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active,
-.ui-page-theme-a .ui-slider-track .ui-btn-active,
-html .ui-bar-a .ui-slider-track .ui-btn-active,
-html .ui-body-a .ui-slider-track .ui-btn-active,
-html body .ui-group-theme-a .ui-slider-track .ui-btn-active,
-html body div.ui-slider-track.ui-body-a .ui-btn-active {
-  background-color: #3388cc;
-  border-color: #3388cc;
-  color: #fff;
-  text-shadow: 0 1px 0 #005599; }
-
-/* Active radio button icon */
-.ui-page-theme-a .ui-radio-on:after,
-html .ui-bar-a .ui-radio-on:after,
-html .ui-body-a .ui-radio-on:after,
-html body .ui-group-theme-a .ui-radio-on:after,
-.ui-btn.ui-radio-on.ui-btn-a:after {
-  border-color: #3388cc; }
-
-/* Focus */
-.ui-page-theme-a .ui-btn:focus,
-html .ui-bar-a .ui-btn:focus,
-html .ui-body-a .ui-btn:focus,
-html body .ui-group-theme-a .ui-btn:focus,
-html head + body .ui-btn.ui-btn-a:focus,
-.ui-page-theme-a .ui-focus,
-html .ui-bar-a .ui-focus,
-html .ui-body-a .ui-focus,
-html body .ui-group-theme-a .ui-focus,
-html head + body .ui-btn-a.ui-focus,
-html head + body .ui-body-a.ui-focus {
-  -webkit-box-shadow: 0 0 12px #3388cc;
-  -moz-box-shadow: 0 0 12px #3388cc;
-  box-shadow: 0 0 12px #3388cc; }
-
-/* B
------------------------------------------------------------------------------------------------------------*/
-/* Bar: Toolbars, dividers, slider track */
-.ui-bar-b,
-.ui-page-theme-b .ui-bar-inherit,
-html .ui-bar-b .ui-bar-inherit,
-html .ui-body-b .ui-bar-inherit,
-html body .ui-group-theme-b .ui-bar-inherit {
-  background-color: #1d1d1d;
-  border-color: #1b1b1b;
-  color: #fff;
-  text-shadow: 0 1px 0 #111;
-  font-weight: bold; }
-
-.ui-bar-b {
-  border-width: 1px;
-  border-style: solid; }
-
-/* Page and overlay */
-.ui-overlay-b,
-.ui-page-theme-b,
-.ui-page-theme-b .ui-panel-wrapper {
-  background-color: #252525;
-  border-color: #454545;
-  color: #fff;
-  text-shadow: 0 1px 0 #111; }
-
-/* Body: Read-only lists, text inputs, collapsible content */
-.ui-body-b,
-.ui-page-theme-b .ui-body-inherit,
-html .ui-bar-b .ui-body-inherit,
-html .ui-body-b .ui-body-inherit,
-html body .ui-group-theme-b .ui-body-inherit,
-html .ui-panel-page-container-b {
-  background-color: #2a2a2a;
-  border-color: #1d1d1d;
-  color: #fff;
-  text-shadow: 0 1px 0 #111; }
-
-.ui-body-b {
-  border-width: 1px;
-  border-style: solid; }
-
-/* Links */
-.ui-page-theme-b a,
-html .ui-bar-b a,
-html .ui-body-b a,
-html body .ui-group-theme-b a {
-  color: #22aadd;
-  font-weight: bold; }
-
-.ui-page-theme-b a:visited,
-html .ui-bar-b a:visited,
-html .ui-body-b a:visited,
-html body .ui-group-theme-b a:visited {
-  color: #22aadd; }
-
-.ui-page-theme-b a:hover,
-html .ui-bar-b a:hover,
-html .ui-body-b a:hover,
-html body .ui-group-theme-b a:hover {
-  color: #0088bb; }
-
-.ui-page-theme-b a:active,
-html .ui-bar-b a:active,
-html .ui-body-b a:active,
-html body .ui-group-theme-b a:active {
-  color: #0088bb; }
-
-/* Button up */
-.ui-page-theme-b .ui-btn,
-html .ui-bar-b .ui-btn,
-html .ui-body-b .ui-btn,
-html body .ui-group-theme-b .ui-btn,
-html head + body .ui-btn.ui-btn-b,
-.ui-page-theme-b .ui-btn:visited,
-html .ui-bar-b .ui-btn:visited,
-html .ui-body-b .ui-btn:visited,
-html body .ui-group-theme-b .ui-btn:visited,
-html head + body .ui-btn.ui-btn-b:visited {
-  background-color: #333;
-  border-color: #1f1f1f;
-  color: #fff;
-  text-shadow: 0 1px 0 #111; }
-
-/* Button hover */
-.ui-page-theme-b .ui-btn:hover,
-html .ui-bar-b .ui-btn:hover,
-html .ui-body-b .ui-btn:hover,
-html body .ui-group-theme-b .ui-btn:hover,
-html head + body .ui-btn.ui-btn-b:hover {
-  background-color: #373737;
-  border-color: #1f1f1f;
-  color: #fff;
-  text-shadow: 0 1px 0 #111; }
-
-/* Button down */
-.ui-page-theme-b .ui-btn:active,
-html .ui-bar-b .ui-btn:active,
-html .ui-body-b .ui-btn:active,
-html body .ui-group-theme-b .ui-btn:active,
-html head + body .ui-btn.ui-btn-b:active {
-  background-color: #404040;
-  border-color: #1f1f1f;
-  color: #fff;
-  text-shadow: 0 1px 0 #111; }
-
-/* Active button */
-.ui-page-theme-b .ui-btn.ui-btn-active,
-html .ui-bar-b .ui-btn.ui-btn-active,
-html .ui-body-b .ui-btn.ui-btn-active,
-html body .ui-group-theme-b .ui-btn.ui-btn-active,
-html head + body .ui-btn.ui-btn-b.ui-btn-active,
-.ui-page-theme-b .ui-checkbox-on:after,
-html .ui-bar-b .ui-checkbox-on:after,
-html .ui-body-b .ui-checkbox-on:after,
-html body .ui-group-theme-b .ui-checkbox-on:after,
-.ui-btn.ui-checkbox-on.ui-btn-b:after,
-.ui-page-theme-b .ui-flipswitch-active,
-html .ui-bar-b .ui-flipswitch-active,
-html .ui-body-b .ui-flipswitch-active,
-html body .ui-group-theme-b .ui-flipswitch-active,
-html body .ui-flipswitch.ui-bar-b.ui-flipswitch-active,
-.ui-page-theme-b .ui-slider-track .ui-btn-active,
-html .ui-bar-b .ui-slider-track .ui-btn-active,
-html .ui-body-b .ui-slider-track .ui-btn-active,
-html body .ui-group-theme-b .ui-slider-track .ui-btn-active,
-html body div.ui-slider-track.ui-body-b .ui-btn-active {
-  background-color: #22aadd;
-  border-color: #22aadd;
-  color: #fff;
-  text-shadow: 0 1px 0 #0088bb; }
-
-/* Active radio button icon */
-.ui-page-theme-b .ui-radio-on:after,
-html .ui-bar-b .ui-radio-on:after,
-html .ui-body-b .ui-radio-on:after,
-html body .ui-group-theme-b .ui-radio-on:after,
-.ui-btn.ui-radio-on.ui-btn-b:after {
-  border-color: #22aadd; }
-
-/* Focus */
-.ui-page-theme-b .ui-btn:focus,
-html .ui-bar-b .ui-btn:focus,
-html .ui-body-b .ui-btn:focus,
-html body .ui-group-theme-b .ui-btn:focus,
-html head + body .ui-btn.ui-btn-b:focus,
-.ui-page-theme-b .ui-focus,
-html .ui-bar-b .ui-focus,
-html .ui-body-b .ui-focus,
-html body .ui-group-theme-b .ui-focus,
-html head + body .ui-btn-b.ui-focus,
-html head + body .ui-body-b.ui-focus {
-  -webkit-box-shadow: 0 0 12px #22aadd;
-  -moz-box-shadow: 0 0 12px #22aadd;
-  box-shadow: 0 0 12px #22aadd; }
-
+/* Bar: Toolbars, dividers, slider track REMOVED */
 /* Structure */
 /* Disabled
 -----------------------------------------------------------------------------------------------------------*/
@@ -941,22 +628,24 @@ div.ui-mobile-viewport {
   border-bottom-right-radius: inherit; }
 
 /* Buttons and icons */
+/*
 .ui-btn {
-  font-size: 16px;
-  margin: .5em 0;
-  padding: .7em 1em;
-  display: block;
-  position: relative;
-  text-align: center;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
+	font-size: 16px;
+	margin: .5em 0;
+	padding: .7em 1em;
+	display: block;
+	position: relative;
+	text-align: center;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+*/
 .ui-btn-icon-notext,
 .ui-header button.ui-btn.ui-btn-icon-notext,
 .ui-footer button.ui-btn.ui-btn-icon-notext {
@@ -1094,15 +783,17 @@ div.ui-mobile-viewport {
   right: .3125em; }
 
 /* Button elements */
+/*
 button.ui-btn,
 .ui-controlgroup-controls button.ui-btn-icon-notext {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  width: 100%; }
-
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 100%;
+}
+*/
 button.ui-btn-inline,
 .ui-header button.ui-btn,
 .ui-footer button.ui-btn {
@@ -2312,9 +2003,11 @@ li.ui-block-e {
   overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px); }
 
+/*
 .ui-collapsible {
-  margin: 0 -1em; }
-
+	margin: 0 -1em;
+}
+*/
 .ui-collapsible-inset,
 .ui-collapsible-set {
   margin: .5em 0; }
@@ -2402,9 +2095,11 @@ li.ui-block-e {
   -webkit-border-bottom-left-radius: 0;
   border-bottom-left-radius: 0; }
 
+/*
 .ui-collapsible-set .ui-collapsible {
-  margin: -1px -1em 0; }
-
+	margin: -1px -1em 0;
+}
+*/
 .ui-collapsible-set .ui-collapsible-inset {
   margin: -1px 0 0; }
 
@@ -3040,20 +2735,22 @@ fieldset.ui-controlgroup {
   padding: 0;
   list-style: none; }
 
+/*
 .ui-content .ui-listview,
 .ui-panel-inner > .ui-listview {
-  margin: -1em; }
-
+	margin: -1em;
+}
 .ui-content .ui-listview-inset,
 .ui-panel-inner > .ui-listview-inset {
-  margin: 1em 0; }
-
+	margin: 1em 0;
+}
 .ui-collapsible-content > .ui-listview {
-  margin: -.5em -1em; }
-
+	margin: -.5em -1em;
+}
 .ui-collapsible-content > .ui-listview-inset {
-  margin: .5em 0; }
-
+	margin: .5em 0;
+}
+*/
 .ui-listview > li {
   display: block;
   position: relative;
@@ -3073,12 +2770,14 @@ fieldset.ui-controlgroup {
 .ui-listview > li > .ui-btn:focus {
   z-index: 1; }
 
+/*
 .ui-listview > .ui-li-static,
 .ui-listview > .ui-li-divider,
 .ui-listview > li > a.ui-btn {
-  border-width: 1px 0 0 0;
-  border-style: solid; }
-
+	border-width: 1px 0 0 0;
+	border-style: solid;
+}
+*/
 .ui-listview-inset > .ui-li-static,
 .ui-listview-inset > .ui-li-divider,
 .ui-listview-inset > li > a.ui-btn {
@@ -3570,67 +3269,80 @@ div.ui-rangeslider label {
   margin-top: 0;
   margin-bottom: 0; }
 
+/*
 .ui-input-text,
 .ui-input-search {
-  margin: .5em 0;
-  border-width: 1px;
-  border-style: solid; }
-
+	margin: .5em 0;
+	border-width: 1px;
+	border-style: solid;
+}
+*/
 .ui-mini {
   margin: .446em; }
 
+/*
 .ui-input-text input,
 .ui-input-search input,
 textarea.ui-input-text {
-  padding: .4em;
-  line-height: 1.4em;
-  display: block;
-  width: 100%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  outline: 0; }
-
+	padding: .4em;
+	line-height: 1.4em;
+	display: block;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	outline: 0;
+}
+*/
+/*
 .ui-input-text input,
 .ui-input-search input {
-  margin: 0;
-  min-height: 2.2em;
-  text-align: left;
-  /* Opera aligns type="date" right by default */
-  border: 0;
-  background: transparent none;
-  -webkit-appearance: none;
-  -webkit-border-radius: inherit;
-  border-radius: inherit; }
-
+	margin: 0;
+	min-height: 2.2em;
+	text-align: left; 
+	border: 0;
+	background: transparent none;
+	-webkit-appearance: none;
+	-webkit-border-radius: inherit;
+	border-radius: inherit;
+}
+*/
 textarea.ui-input-text {
   overflow: auto;
   resize: vertical; }
 
+/*
 .ui-mini .ui-input-text input,
 .ui-mini .ui-input-search input,
 .ui-input-text.ui-mini input,
 .ui-input-search.ui-mini input,
 .ui-mini textarea.ui-input-text,
 textarea.ui-mini {
-  font-size: 14px; }
-
+	font-size: 14px;
+}
+*/
 /* Same margin for mini textareas as other mini sized widgets (12.5/14 * 0.5em) */
 .ui-mini textarea.ui-input-text,
 textarea.ui-mini {
   margin: .446em 0; }
 
+/*
 .ui-input-has-clear,
 .ui-input-search {
-  position: relative; }
-
+	position: relative;
+}
+*/
 /* Padding on the div instead of input because of browser spinners etc. */
+/*
 .ui-input-has-clear {
-  padding-right: 2.375em; }
-
+	padding-right: 2.375em;
+}
+*/
+/*
 .ui-mini.ui-input-has-clear {
-  padding-right: 2.923em; }
-
+	padding-right: 2.923em;
+}
+*/
 .ui-input-has-clear input {
   padding-right: 0;
   /* Autofill on Chrome has bg color so we unset corners right as well. */
@@ -3640,22 +3352,26 @@ textarea.ui-mini {
   border-bottom-right-radius: 0; }
 
 /* Search icon */
+/*
 .ui-input-search input {
-  padding-left: 1.75em; }
-
+	padding-left: 1.75em;
+}
+*/
+/*
 .ui-input-search:after {
-  position: absolute;
-  left: .3125em;
-  top: 50%;
-  margin-top: -7px;
-  content: "";
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 14px;
-  height: 14px;
-  filter: Alpha(Opacity=50);
-  opacity: .5; }
-
+	position: absolute;
+	left: .3125em;
+	top: 50%;
+	margin-top: -7px;
+	content: "";
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 14px;
+	height: 14px;
+	filter: Alpha(Opacity=50);
+	opacity: .5;
+}
+*/
 .ui-input-search.ui-input-has-clear .ui-btn.ui-input-clear,
 .ui-input-text.ui-input-has-clear .ui-btn.ui-input-clear {
   position: absolute;

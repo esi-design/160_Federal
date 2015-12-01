@@ -1,9 +1,14 @@
+// console.log('test');
+// document.addEventListener("deviceready",onDeviceReady,false);
 
-document.addEventListener("deviceready",onDeviceReady,false);
 
-
-function onDeviceReady(){
-
+// function onDeviceReady(){
+$(document).ready(function(){
+/*
+	console.log('test');
+	$(window).trigger('hashchange');
+*/
+	render(window.location.hash);
     $.support.cors=true;
     $.mobile.allowCrossDomainPages=true;
 
@@ -12,24 +17,158 @@ function onDeviceReady(){
     var next =[];
     var info_div;
 
-           // Update time
-           setInterval(function(){
+       // Update time
+       setInterval(function(){
             var date = new Date;
             dt = date.toLocaleString();
             $("#dt").html(String(dt));
         },10000);
 
 //================= Page 1 =================//
-$('#page1').show();
-$('#page2').hide();
-$('#page3').hide();
-$('#page4').hide();
 
-$('.touch').on("click",function(){
-    console.log("to page 2")
-    $('#page1').fadeOut();
-    $('#page2').fadeIn();
-});
+	// An event handler with calls the render function on every hashchange.
+	// The render function will show the appropriate content of out page.
+	$(window).on('hashchange', function(){
+		window.scrollTo(0, 0);
+		render(window.location.hash);
+	});
+	
+	function render(url) {
+
+		// Get the keyword from the url.
+		var temp = url.split('/')[0];
+
+		// Hide whatever page is currently shown.
+		$('.container .page').removeClass('visible');
+
+
+		var map = {
+
+			// The Homepage.
+			'': function() {
+				renderHome();
+			},
+
+			// Single Products page.
+			'#page2': function() {
+
+				// Get the index of which product we want to show and call the appropriate function.
+				var index = url.split('/')[0];
+
+				renderPage2();
+			},
+			
+			'#page3': function() {
+
+				// Get the index of which product we want to show and call the appropriate function.
+				var index = url.split('/')[0];
+
+				renderPage3();
+			},
+			
+			'#page4': function() {
+
+				// Get the index of which product we want to show and call the appropriate function.
+				var index = url.split('/')[0];
+
+				renderPage4();
+			}
+
+		};
+
+		// Execute the needed function depending on the url keyword (stored in temp).
+		if(map[temp]){
+			map[temp]();
+		}
+		// If the keyword isn't listed in the above - render the error page.
+		else {
+			renderErrorPage();
+		}
+
+	}
+
+	
+	function renderHome() {
+		var page = $('#page1');
+		console.log("RENDER Home");
+		// Show the page itself.
+		// (the render function hides all pages so we need to show the one we want).
+		page.addClass('visible');
+		$(document).on('click', function(e){
+			e.preventDefault();
+			window.location.hash = '#page2';
+		});
+	}
+	
+	function renderPage2() {
+		var page = $('#page2');
+		console.log("RENDER Page 2");
+		// Show the page itself.
+		// (the render function hides all pages so we need to show the one we want).
+		page.addClass('visible');
+		
+		$('#page2 input').click(function(){
+             jsKeyboard.init("virtualKeyboard");
+			 $('.keyboard').fadeIn();
+	         //first input focus
+	         var $firstInput = $(':input').first().focus();
+	         jsKeyboard.currentElement = $firstInput;
+	         jsKeyboard.currentElementCursorPosition = 0; 
+	         $('#data_Select').animate({height:300});
+	     });
+	}
+	
+	function renderPage3(comp,floor) {
+		// Hide whatever page is currently shown.
+		$('.container .page').removeClass('visible');
+		var page = $('#page3');
+		var company = comp;
+		var floor = floor;
+		console.log("RENDER Page 3");
+		// Show the page itself.
+		// (the render function hides all pages so we need to show the one we want).
+// 		$('#page2').fadeOut();
+		page.addClass('visible');
+		page.fadeIn();
+		$('#company').val(company);
+		$('#floor').val(company);
+		
+/*
+		$('#company').click(function(e){
+			e.preventDefault();
+			window.location.hash = '#page2';
+		});
+*/
+		
+		$('#page3 input').click(function(){
+             jsKeyboard.init("virtualKeyboard");
+			 $('.keyboard').fadeIn();
+	         //first input focus
+	         var $firstInput = $(':input').first().focus();
+	         jsKeyboard.currentElement = $firstInput;
+	         jsKeyboard.currentElementCursorPosition = 0; 
+	         $('#data_Select').animate({height:300});
+	     });
+	}
+	
+	function renderPage4() {
+		var page = $('#page4');
+		console.log("RENDER Page 4");
+		// Show the page itself.
+		// (the render function hides all pages so we need to show the one we want).
+		page.addClass('visible');
+		page.fadeIn();
+		$(document).on('click', function(e){
+			e.preventDefault();
+			window.location.hash = '';
+		});
+	}
+	
+	// Shows the error page.
+	function renderErrorPage(){
+		var page = $('.error');
+		page.addClass('visible');
+	}
 
 
 //================= Page 2 =================//
@@ -80,14 +219,12 @@ $('.touch').on("click",function(){
 
         //To move page 3
 
-        $('#_trdB').click(function(){
+        $('#_trdB').click(function(e){
 
             var Comp_val = $('#searchForCollapsibleSetChildren').val();
             $('#visitor-company').val(Comp_val);
-            $('#page1').hide();
-            $('#page2').fadeOut();
-            $('#page3').fadeIn();
-            $('#page4').hide();
+			e.preventDefault();
+			window.location.hash = '#page3';
         });
 
 
@@ -97,8 +234,8 @@ $('.touch').on("click",function(){
 
         //  To send form to the data base
 
-        $("#_sndB").click(function(){
-
+        $("#_sndB").click(function(e){
+// 			var name = $("#name").val();
             var name = $("#name").val();
             var location = $("#visitor-company").val();
             var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?lid="+name+"&location="+location;
@@ -106,32 +243,9 @@ $('.touch').on("click",function(){
             console.log(name + ","+ location);
 
             $('#place').text(location);
-            $('#page1').hide();
-            $('#page2').hide();
-            $('#page3').fadeOut();
-            $('#page4').fadeIn();
-            toReset();
-
+			e.preventDefault();
+			window.location.hash = '#page4';
 }); 
-
-// ================= Page 4 ================= //
-
-
-     function toReset(){  
-
-        setTimeout(function(){
-
-    //Set to first Page
-                $('#page4').fadeOut();
-                $('#page2').hide();
-                $('#page3').hide();
-                setTimeout(function(){
-                    $('#page1').fadeIn();
-                },2000);
-                
-            },10000);
-
-    }
 
 
  // ================= FUNCTIONS ================= //
@@ -148,7 +262,7 @@ function handler()
             convdata(bval);
         }
         else{
-            navigator.notification.alert("No Internet Connection");
+//             navigator.notification.alert("No Internet Connection");
             console.log("error");
         }
     }
@@ -305,9 +419,14 @@ function getValues(data){
     rep.push(toSearch);
 
     $(comp_title).click(function(){
-       c_Name = $(this).text();
+	    console.log(comp_title);
+       c_Name = $(this).find('a').text();
+       c_Location = $(this).find('h4').text();
        console.log(c_Name);
-       $('#searchForCollapsibleSetChildren').val(c_Name);
+//        $('#searchForCollapsibleSetChildren').val(c_Name);
+// 		window.location.hash = '#page3/' + c_Name;
+		renderPage3(c_Name,c_Location);
+		
    });
 
     if(c_Data!='#data_Select_cmpny'){
@@ -350,4 +469,14 @@ function getValues(data){
     $(comp_name).attr({'data-filtertext' : fil_b })
 }
 }
-}
+});
+
+// ================= TIMEOUT ================= //
+var timeout;
+$(document).on("mousemove keydown click touchstart", function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+		console.log('timeout');
+         window.location = '';
+    }, 1000 * 60 * 3);
+}).click();
