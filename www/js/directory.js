@@ -29,6 +29,7 @@ $(document).ready(function(){
 	// An event handler with calls the render function on every hashchange.
 	// The render function will show the appropriate content of out page.
 	$(window).on('hashchange', function(){
+		console.log('hash change');
 		window.scrollTo(0, 0);
 		render(window.location.hash);
 	});
@@ -46,11 +47,13 @@ $(document).ready(function(){
 
 			// The Homepage.
 			'': function() {
+				console.log('nothing');
 				renderHome();
 			},
 
 			// Single Products page.
 			'#page2': function() {
+				console.log("page 2");
 
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('/')[0];
@@ -67,7 +70,7 @@ $(document).ready(function(){
 			},
 			
 			'#page4': function() {
-
+					console.log('page 4');
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('/')[0];
 
@@ -235,10 +238,11 @@ $(document).ready(function(){
         //  To send form to the data base
 
         $("#_sndB").click(function(e){
-// 			var name = $("#name").val();
-            var name = $("#name").val();
-            var location = $("#visitor-company").val();
-            var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?lid="+name+"&location="+location;
+			var company = $("#company").val();
+            var visitor = $("#name").val();
+            var visitorCompany = $("#visitor-company").val();
+            var purpose = $("#purpose").val();
+            var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
             connectSql(urlSnd); 
             console.log(name + ","+ location);
 

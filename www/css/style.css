@@ -275,6 +275,25 @@ a {
     text-align: left;
     width: 100%; }
 
+.ui-select {
+  margin-bottom: 1%;
+  position: relative; }
+  .ui-select .ui-btn {
+    border: 0;
+    background: rgba(255, 255, 255, 0.4);
+    color: #000000;
+    font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 1.4% 3% 1%;
+    -webkit-appearance: none;
+    -webkit-border-radius: inherit;
+    border-radius: inherit;
+    outline: 0;
+    text-align: left;
+    width: 100%; }
+
 .page {
   margin: 0 auto;
   width: 66%; }
@@ -320,7 +339,7 @@ a {
 */
 #page3 #floor {
   display: none; }
-#page3 .ui-btn {
+#page3 .submit.ui-btn {
   margin: 15% auto 0;
   width: 270px;
   padding: 1% 2%; }
