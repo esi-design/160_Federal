@@ -4,6 +4,7 @@
 
 // function onDeviceReady(){
 $(document).ready(function(){
+	
 /*
 	console.log('test');
 	$(window).trigger('hashchange');

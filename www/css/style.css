@@ -104,8 +104,9 @@ body {
   font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: 500;
-  height: 100%;
+  max-height: 1080px;
   margin: 0px;
+  overflow: hidden;
   padding: 0px;
   text-transform: uppercase;
   width: 100%; }
@@ -168,7 +169,7 @@ a {
   color: #FFF;
   width: 100%; }
   .header .container__line {
-    width: 29%; }
+    width: 30%; }
     .header .container__line .container__line--top {
       margin-bottom: 4px; }
   .header .logo {
@@ -176,7 +177,7 @@ a {
     margin: 0;
     text-align: center;
     vertical-align: middle;
-    width: 40%; }
+    width: 39%; }
     .header .logo h2 {
       font-weight: 300;
       letter-spacing: 2px;
@@ -204,13 +205,13 @@ a {
     padding-top: 35%;
     margin: 0 auto;
     text-align: center;
-    width: 66%; }
+    width: 80%; }
     #page1 .touch h2 {
       background: rgba(0, 0, 0, 0.9);
       border-top: 1px solid #83691A;
       border-bottom: 1px solid #83691A;
       font-family: 'Futura', 'Helvetica', sans-serif;
-      font-size: 50px;
+      font-size: 40px;
       font-weight: 500;
       letter-spacing: 3px;
       padding: 1% 0;
@@ -257,12 +258,19 @@ a {
   .ui-btn.active {
     background-color: #414042; }
 
+.ui-input-search input {
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  background-position: 10px;
+  padding-left: 65px !important; }
+
 .ui-input-text, .ui-input-search, textarea.ui-input-text {
   margin-bottom: 1%;
   position: relative; }
   .ui-input-text input, .ui-input-search input, textarea.ui-input-text input {
     border: 0;
-    background: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+    color: #000000 !important;
     font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
     font-size: 30px;
     letter-spacing: 3px;
@@ -300,9 +308,9 @@ a {
   .page h2 {
     font-family: 'Futura', 'Helvetica', sans-serif;
     line-height: 135%;
-    margin: 2% 0;
+    margin: 20px 0 45px;
     text-align: center;
-    letter-spacing: 6px; }
+    letter-spacing: 5px; }
 
 #page2 #div_dir {
   width: 98%; }
