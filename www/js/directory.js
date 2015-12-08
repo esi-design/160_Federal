@@ -1,8 +1,10 @@
-// console.log('test');
-// document.addEventListener("deviceready",onDeviceReady,false);
+if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|Windows)/)) {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    } else {
+        onDeviceReady();
+    }
 
-
-// function onDeviceReady(){
+function onDeviceReady(){
 $(document).ready(function(){
 	
 /*
@@ -475,6 +477,7 @@ function getValues(data){
 }
 }
 });
+}
 
 // ================= TIMEOUT ================= //
 var timeout;
