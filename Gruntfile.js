@@ -11,7 +11,9 @@ module.exports = function(grunt) {
 				},
 				files: {                    
 					'www/css/style.css': 'www/css/style.scss', // 'destination': 'source'
-					'www/css/jquery.mobile-1.4.5-mod.min.css': 'www/css/jquery.mobile-1.4.5-mod.scss'
+					'www/css/jquery.mobile-1.4.5-mod.min.css': 'www/css/jquery.mobile-1.4.5-mod.scss',
+					'cms/css/style.css': 'cms/css/style.scss', 
+					'cms/css/bootstrap.css': 'cms/css/bootstrap.scss'
 				}
 		    }
 		},
@@ -29,7 +31,7 @@ module.exports = function(grunt) {
 		    },
 */
 		    css: {
-			    files: ['www/css/*.scss'],
+			    files: ['www/css/*.scss', 'cms/css/*.scss'],
 			    tasks: ['sass'],
 			    options: {
 			        spawn: false

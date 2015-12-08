@@ -83,7 +83,7 @@ header, hgroup, footer, section, article, aside {
   font-family: 'Akzidenz';
   src: url("../font/akzidenzgrotextbq_medium-webfont.eot");
   src: url("../font/akzidenzgrotextbq_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../font/akzidenzgrotextbq_medium-webfont.woff2") format("woff2"), url("../font/akzidenzgrotextbq_medium-webfont.woff") format("woff"), url("../font/akzidenzgrotextbq_medium-webfont.ttf") format("truetype"), url("../font/akzidenzgrotextbq_medium-webfont.svg#akzidenz-grotesk_extended_bRg") format("svg");
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal; }
 * {
   -webkit-tap-highlight-color: transparent;
@@ -129,13 +129,14 @@ h1, h2 {
   text-align: center; }
 
 h1 {
-  font-size: 75px; }
+  font-size: 66px; }
 
 h2 {
-  font-size: 40px; }
+  font-size: 32px;
+  font-weight: 300; }
 
 h3 {
-  font-size: 30px;
+  font-size: 24px;
   line-height: 130%; }
 
 a {
@@ -143,11 +144,11 @@ a {
   text-decoration: none; }
 
 .container {
-  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("../img/bg.png");
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 0;
-  padding: 5% 3% 66.67%;
+  padding: 4% 3% 66.67%;
   width: 100%; }
 
 .container__line {
@@ -167,7 +168,7 @@ a {
   color: #FFF;
   width: 100%; }
   .header .container__line {
-    width: 31.5%; }
+    width: 29%; }
     .header .container__line .container__line--top {
       margin-bottom: 4px; }
   .header .logo {
@@ -175,14 +176,13 @@ a {
     margin: 0;
     text-align: center;
     vertical-align: middle;
-    width: 36%; }
+    width: 40%; }
     .header .logo h2 {
-      font-size: 40px;
       font-weight: 300;
-      margin-bottom: 5px; }
+      letter-spacing: 2px;
+      margin-bottom: 4px; }
     .header .logo h1 {
-      font-size: 75px;
-      font-weight: 500; }
+      font-weight: 600; }
 
 .content {
   padding: 5% 0 56%;
@@ -302,7 +302,7 @@ a {
     line-height: 135%;
     margin: 2% 0;
     text-align: center;
-    letter-spacing: 4px; }
+    letter-spacing: 6px; }
 
 #page2 #div_dir {
   width: 98%; }

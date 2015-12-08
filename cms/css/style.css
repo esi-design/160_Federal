@@ -1,0 +1,160 @@
+@charset "UTF-8";
+/*-----------------------------------------------------------------------------------*
+/* = Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
+/*-----------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  border: 0;
+  font-family: inherit;
+  font-size: 100%;
+  font-style: inherit;
+  font-weight: inherit;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+:focus {
+  outline: 0; }
+
+body {
+  background: #fff;
+  line-height: 1; }
+
+ol, ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  font-weight: normal;
+  text-align: left; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+a img {
+  border: 0; }
+
+figure img {
+  max-width: 100%; }
+
+header, hgroup, footer, section, article, aside {
+  display: block; }
+
+@font-face {
+  font-family: "futura";
+  src: url("../font/FuturaStd-Light.eot");
+  src: local("☺"), url("../font/FuturaStd-Light.woff") format("woff"), url("../font/FuturaStd-Light.ttf") format("truetype"), url("../font/FuturaStd-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: "futura";
+  src: url("../font/FuturaStd-Medium.eot");
+  src: local("☺"), url("../font/FuturaStd-Medium.woff") format("woff"), url("../font/FuturaStd-Medium.ttf") format("truetype"), url("../font/FuturaStd-Medium.svg") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: "futura";
+  src: url("../font/FuturaStd-Heavy.otf") format("embedded-opentype");
+  src: url("../font/FuturaStd-Heavy.eot");
+  src: local("☺"), url("../font/FuturaStd-Heavy.woff") format("woff"), url("../font/FuturaStd-Heavy.ttf") format("truetype"), url("../font/FuturaStd-Heavy.svg") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_light-webfont.eot");
+  src: url("../font/akzidenzgrotextbq_light-webfont.eot?#iefix") format("embedded-opentype"), url("../font/akzidenzgrotextbq_light-webfont.woff2") format("woff2"), url("../font/akzidenzgrotextbq_light-webfont.woff") format("woff"), url("../font/akzidenzgrotextbq_light-webfont.ttf") format("truetype"), url("../font/akzidenzgrotextbq_light-webfont.svg#akzidenz-grotesk_extended_bRg") format("svg");
+  font-weight: 300;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_regular-webfont.eot");
+  src: url("../font/akzidenzgrotextbq_regular-webfont.eot?#iefix") format("embedded-opentype"), url("../font/akzidenzgrotextbq_regular-webfont.woff2") format("woff2"), url("../font/akzidenzgrotextbq_regular-webfont.woff") format("woff"), url("../font/akzidenzgrotextbq_regular-webfont.ttf") format("truetype"), url("../font/akzidenzgrotextbq_regular-webfont.svg#akzidenz-grotesk_extended_bRg") format("svg");
+  font-weight: 500;
+  font-style: normal; }
+@font-face {
+  font-family: 'Akzidenz';
+  src: url("../font/akzidenzgrotextbq_medium-webfont.eot");
+  src: url("../font/akzidenzgrotextbq_medium-webfont.eot?#iefix") format("embedded-opentype"), url("../font/akzidenzgrotextbq_medium-webfont.woff2") format("woff2"), url("../font/akzidenzgrotextbq_medium-webfont.woff") format("woff"), url("../font/akzidenzgrotextbq_medium-webfont.ttf") format("truetype"), url("../font/akzidenzgrotextbq_medium-webfont.svg#akzidenz-grotesk_extended_bRg") format("svg");
+  font-weight: 700;
+  font-style: normal; }
+* {
+  -webkit-tap-highlight-color: transparent;
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */ }
+
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+body {
+  -webkit-touch-callout: none;
+  /* prevent callout to copy image, etc when tap to hold */
+  -webkit-text-size-adjust: none;
+  /* prevent webkit from resizing text to fit */
+  -webkit-user-select: none;
+  /* prevent copy paste, to allow, change 'none' to 'text' */
+  background-attachment: fixed;
+  color: #FFF;
+  font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  text-transform: uppercase;
+  width: 100%; }
+
+.page.visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: all 0.2s ease-in-out 0s;
+  -moz-transition: all 0.2s ease-in-out 0s;
+  -ms-transition: all 0.2s ease-in-out 0s;
+  transition: all 0.2s ease-in-out 0s; }
+
+.page {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 17%;
+  left: 17%; }
+
+h1, h2 {
+  text-align: center; }
+
+h1 {
+  font-size: 75px; }
+
+h2 {
+  font-size: 40px; }
+
+h3 {
+  font-size: 30px;
+  line-height: 130%; }
+
+a {
+  color: #FFF;
+  text-decoration: none; }
+
+@keyframes fade {
+  from {
+    opacity: 1.0; }
+  50% {
+    opacity: 0.4; }
+  to {
+    opacity: 1.0; } }
+@-webkit-keyframes fade {
+  from {
+    opacity: 1.0; }
+  50% {
+    opacity: 0.4; }
+  to {
+    opacity: 1.0; } }
+
+/*# sourceMappingURL=style.css.map */
