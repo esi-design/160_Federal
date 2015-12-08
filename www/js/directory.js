@@ -7,10 +7,8 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|Windows)/)) 
 function onDeviceReady(){
 $(document).ready(function(){
 	
-/*
-	console.log('test');
 	$(window).trigger('hashchange');
-*/
+
 	render(window.location.hash);
     $.support.cors=true;
     $.mobile.allowCrossDomainPages=true;
@@ -485,6 +483,6 @@ $(document).on("mousemove keydown click touchstart", function() {
     clearTimeout(timeout);
     timeout = setTimeout(function() {
 		console.log('timeout');
-         window.location = '';
+         window.location = '../';
     }, 1000 * 60 * 3);
 }).click();

@@ -78,6 +78,12 @@ $gold: #83691A;
 
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 *, *:before, *:after {
@@ -93,7 +99,7 @@ body {
     font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 500;
-    max-height: 1080px;
+    max-height: 1029px;
     margin: 0px;
     overflow: hidden;
     padding: 0px;
@@ -111,11 +117,20 @@ body {
 }
 
 .page {
+	margin: 0 auto;
+	width: 66%;
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
     top: 17%;
     left: 17%;
+	h2 {
+		font-family: 'Futura', 'Helvetica', sans-serif;
+		line-height: 135%;
+		margin: 20px 0 45px;
+		text-align: center;
+		letter-spacing: 5px;
+	}
 }
 
 h1, h2 {
@@ -124,13 +139,13 @@ h1, h2 {
 
 h1 {
 // 	font-size: 75px;
-	font-size: 66px;
+	font-size: 60px;
 }
 
 h2 {
 // 	font-size: 40px;
-	font-size: 32px;
-	font-weight: 300;
+	font-size: 28px;
+	font-weight: 500;
 }
 
 h3 {
@@ -146,19 +161,19 @@ a {
 
 .container {
 	background: linear-gradient(
-      rgba(0, 0, 0, 0.7), 
-      rgba(0, 0, 0, 0.7)
+      rgba(0, 0, 0, 0.75), 
+      rgba(0, 0, 0, 0.75)
     ),
     url('../img/bg.png');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 0;
-	padding: 4% 3% 66.67%;
+	padding: 6% 3% 66.67%;
 	width: 100%;
 }
 
 .container__line {
-		display: inline-block;
+		float: left;
 		margin: 0;
 		vertical-align: middle;
 		.container__line--top, .container__line--bottom {
@@ -178,18 +193,19 @@ a {
 	color: #FFF;
 	width: 100%;
 	.container__line {
-		width: 30%;
+		width: 32%;
 		.container__line--top {
 			margin-bottom: 4px;
 		}
 	}
 	.logo {
-		display: inline-block;
-		margin: 0;
+		float: left;
+	    margin: -61px 0 0px;
 		text-align: center;
 		vertical-align: middle;
-		width: 39%;
+		width: 35%;
 		h2 {
+			font-size: 32px;
 			font-weight: 300;
 			letter-spacing: 2px;
 			margin-bottom: 4px;
@@ -237,6 +253,14 @@ a {
 			text-align: center;
 		}
 	}
+}
+
+#Selector-button span{
+    display: none;
+}
+
+#Selector-button span{
+    display: none;
 }
 
 ::-webkit-input-placeholder {
@@ -301,7 +325,7 @@ a {
 		background-color: rgba(255,255,255,.4);
 		color: #000000 !important;
 		font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
-		font-size: 30px;
+		font-size: 28px;
 		letter-spacing: 3px;
 		text-transform: uppercase;
 		// 	min-height: 3em;
@@ -323,7 +347,7 @@ a {
 		background: rgba(255,255,255,.4);
 		color: #000000;
 		font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
-		font-size: 30px;
+		font-size: 28px;
 		letter-spacing: 3px;
 		text-transform: uppercase;
 		// 	min-height: 3em;
@@ -337,24 +361,13 @@ a {
 	}
 }
 
-.page {
-	margin: 0 auto;
-	width: 66%;
-	h2 {
-		font-family: 'Futura', 'Helvetica', sans-serif;
-		line-height: 135%;
-		margin: 20px 0 45px;
-		text-align: center;
-		letter-spacing: 5px;
-	}
-}
-
 #page2 {
 	#div_dir {
-		width: 98%;
+		margin: 0 auto;
+		width: 90%;
 	}
 	.ui-btn {
-		height: 100px;
+		height: 71px;
 		margin-bottom: 14px;
 		width: 100%;
 	}
@@ -367,7 +380,7 @@ a {
 			margin-bottom: .5%;
 			h3 a, h4, li a {
 				color: black;
-				font-size: 30px;
+				font-size: 28px;
 			}
 			h3 a, h4 {
 				font-weight: 500;
@@ -387,12 +400,6 @@ a {
 		}
 	}
 }
-
-/*
-#page2 {
-	display: none;
-}
-*/
 
 #page3 {
 // 	display: none;
@@ -446,7 +453,7 @@ footer {
 .button__style, .button {
 	background-color: #000;
 	font-family: 'Futura', Helvetica, sans-serif;
-	font-size: 30px;
+	font-size: 28px;
 }
 
 .keyboard {
@@ -456,14 +463,15 @@ footer {
 	.filters {
 		float: right;
 		margin-top: 14px;
-		width: 17%;
+		width: 18%;
 	}
 }
 
 #virtualKeyboard {
 	float: left;
 	text-align: center;
-	width: 83%;
+	margin-left: 4%;
+	width: 77%;
 	#keyboard{
 	    margin: 0 auto;
 	    display:block;
@@ -480,11 +488,11 @@ footer {
 	#keyboardSymbols {display:none;}
 	.button
 	{
-	    width:100px; 
-	    height: 100px;
+	    width: 71px; 
+	    height: 71px;
 	    position:relative;
 	    float:left;
-	    margin: 14px 26px 0 0;
+	    margin: 10px 22px 0 0;
 	    cursor:pointer;
 	    border-bottom: 2px solid $gold;
 	}	
@@ -493,20 +501,20 @@ footer {
 	.button_dash {margin-left:26px;}
 	.button_underscore {margin-left:26px;}
 	.button_del, .button_enter{ 
-		width: 220px; 
+		width: 170px; 
 	}
 	.button_numberleft{ 
 		margin-left: 0px;
 	}
 	.button_space { 
-		width: 940px; 
+		width: 740px; 
 	}
 	
 	.key {
 		height:100%;
 		width:100%; 
 		text-align:center; 
-		padding-top: 35px; 
+		padding-top: 20px; 
 		filter: dropshadow(color=#ffffff, offx=0, offy=1);
 	}
 	
