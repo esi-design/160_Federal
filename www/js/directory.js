@@ -6,6 +6,21 @@ if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry|Windows)/)) 
 
 function onDeviceReady(){
 $(document).ready(function(){
+	$("#dam_return a").click(function(){
+		var value = $(this).html();
+        var input = $('#dam');
+        input.val(value);
+	});
+	
+		$('#keyboardCapitalLetter').on('click', function(e){
+			console.log('click');
+		});
+	
+	window.onload = function() {
+     document.getElementById('test').onclick=function(){
+	     console.log('onclick');
+	}
+}
 	
 	$(window).trigger('hashchange');
 
