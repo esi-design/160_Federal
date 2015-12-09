@@ -96,7 +96,7 @@ body {
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-attachment:fixed;
     color: #FFF;
-    font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family: 'Futura', 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
     font-size: 12px;
     font-weight: 500;
     max-height: 1029px;
@@ -122,7 +122,7 @@ body {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
-    top: 17%;
+    top: 15%;
     left: 17%;
 	h2 {
 		font-family: 'Futura', 'Helvetica', sans-serif;
@@ -139,7 +139,7 @@ h1, h2 {
 
 h1 {
 // 	font-size: 75px;
-	font-size: 60px;
+	font-size: 54px;
 }
 
 h2 {
@@ -168,7 +168,7 @@ a {
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 0;
-	padding: 6% 3% 66.67%;
+	padding: 7% 3% 66.67%;
 	width: 100%;
 }
 
@@ -182,7 +182,7 @@ a {
 		}
 		.container__line--top {
 			height: 6px;
-			margin-bottom: 4px;
+			margin-bottom: 5px;
 		}
 		.container__line--bottom {
 			height: 2px;
@@ -195,10 +195,11 @@ a {
 	.container__line {
 		width: 32%;
 		.container__line--top {
-			margin-bottom: 4px;
+			margin-bottom: 6px;
 		}
 	}
 	.logo {
+		font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
 		float: left;
 	    margin: -61px 0 0px;
 		text-align: center;
@@ -293,7 +294,7 @@ a {
 	cursor:pointer;
 	color: #ffffff;
 	font-family: 'Futura', 'Helvetica', sans-serif;
-	font-size: 40px;
+	font-size: 28px;
 	font-weight: 500;
 	letter-spacing: 3px;
 	margin: 0 auto 2%;
@@ -324,7 +325,7 @@ a {
 		border: 0;
 		background-color: rgba(255,255,255,.4);
 		color: #000000 !important;
-		font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
+		font-family: 'Futura', 'Helvetica', sans-serif;
 		font-size: 28px;
 		letter-spacing: 3px;
 		text-transform: uppercase;
@@ -346,7 +347,7 @@ a {
 		border: 0;
 		background: rgba(255,255,255,.4);
 		color: #000000;
-		font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
+// 		font-family: 'Akzidenz', 'Futura', 'Helvetica', sans-serif;
 		font-size: 28px;
 		letter-spacing: 3px;
 		text-transform: uppercase;
@@ -507,7 +508,7 @@ footer {
 		margin-left: 0px;
 	}
 	.button_space { 
-		width: 740px; 
+		width: 722px; 
 	}
 	
 	.key {

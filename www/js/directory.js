@@ -483,6 +483,6 @@ $(document).on("mousemove keydown click touchstart", function() {
     clearTimeout(timeout);
     timeout = setTimeout(function() {
 		console.log('timeout');
-         window.location = '../';
+         window.location = '#';
     }, 1000 * 60 * 3);
 }).click();
