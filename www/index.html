@@ -4,12 +4,20 @@
     <title>160 Federal</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5.min.css">
+<!--     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"> -->
+<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" type="text/css" href="css/style2.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5-mod.min.css">
     <!-- <link href="js/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+<style>
+#Selector-button span{
+    display: none;
+}
 
+#Selector-button span{
+    display: none;
+}
+</style>
 </head>
 <body>
     <div class="container overlay">
@@ -28,8 +36,8 @@
         </div>
     </header>
     <!-- <div class="content"> -->
-    <div>
-      <div id="page1">
+<!--     <div> -->
+      <div id="page1" class="page">
          <h1>[ ATTRACT LOOP ]</h1>
          <div class="touch">
             <h2>TOUCH HERE TO BEGIN SEARCH</h2>
@@ -37,57 +45,129 @@
     </div>
 
  <!-- <div id="page2" class="content__form"> -->
-   <div id="page2">
+   <div id="page2" class="page">
      <h2>Where are you going?</h2>
-     <div id = "div_dir">
-      <form >
-          <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
-      </form>
-      <br> 
-      <div style = "overflow:scroll ; height :200px">
-        <div  id ="data_Select" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
+     
+	<div id = "div_dir">
+		<form >
+	      <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR">
+		</form>
+		<div  id ="data_Select" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
         </div>
         <div  id ="data_Select_cmpny" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
         </div>
         <div  id ="data_Select__ppl" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
         </div>
-    </div>
-</div>
-<br>
-<div style = "width:70; display:inline-block"><button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> </div><div style= "width:30%; float:right; display:inline-block">
-<button  class="btn-default" id="_cmpny">COMPANIES</button>
-<button  class="btn-default" id="_ppl">PEOPLE</button> 
-<button  class="btn-default" id="_all">LIST ALL</button> 
-</div>
+	</div>
+	
+	
+    
 </div>
 
-<!-- <div id="page3" class="content__form"> -->
-<div id="page3">
+<div id="page3" class="page">
    <div id="div_form">
       <h2>Visitor Sign-In</h2>
       <form>
+		<input type="text" id="company" name="company" placeholder="">
+        <input type="text" id="floor" name="floor">
        <input type="text" id="name" name="name" placeholder="What's your name?">
-       <!-- 	                <input type="text" id="location" name="location"> -->
        <input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
-       <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?">
+<!--        <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?"> -->
+<select id="purpose" name="purpose">
+	<option value="" disabled selected>What's the purpose of your visit?</option>
+	<option value="Messanger">Messanger</option>
+	<option value="Vendor">Vendor</option>
+	<option value="Visitor">Visitor</option>
+</select>
    </form>
-   <button  class="btn btn-lg btn-default" id="_sndB">Submit</button> 
+   
 </div>
 
 </div>
 
-<div id="page4">
-  <!-- <div> -->
- <div class="content__form">
+<div id="page4" class="page">
+<!--  <div class="content__form"> -->
     <h2>Thank you!</h2>
     <h3>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h3>
     <h1 id ='place'></h1>
     <h1 id ='flr'></h1>
-    <br>
     <h1>[ ANIMATION ]</h1>
-  </div>
+<!--   </div> -->
 </div>
+
+
+<div class="keyboard">
+    <div style ='width:10px'></div>
+        <div id="key">
+    <ul id="keyboard">
+        <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
+        <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+        <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+        <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+        <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+        <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+        <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+        <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+        <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+        <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+        <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+        <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+        <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+        <li class="delete lastitem">delete</li>
+        <li class="tab">tab</li>
+        <li class="letter">q</li>
+        <li class="letter">w</li>
+        <li class="letter">e</li>
+        <li class="letter">r</li>
+        <li class="letter">t</li>
+        <li class="letter">y</li>
+        <li class="letter">u</li>
+        <li class="letter">i</li>
+        <li class="letter">o</li>
+        <li class="letter">p</li>
+        <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+        <li class="symbol"><span class="off">]</span><span class="on">}</span></li>
+        <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+        <li class="capslock">caps lock</li>
+        <li class="letter">a</li>
+        <li class="letter">s</li>
+        <li class="letter">d</li>
+        <li class="letter">f</li>
+        <li class="letter">g</li>
+        <li class="letter">h</li>
+        <li class="letter">j</li>
+        <li class="letter">k</li>
+        <li class="letter">l</li>
+        <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+        <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+        <li class="return lastitem">return</li>
+        <li class="left-shift">shift</li>
+        <li class="letter">z</li>
+        <li class="letter">x</li>
+        <li class="letter">c</li>
+        <li class="letter">v</li>
+        <li class="letter">b</li>
+        <li class="letter">n</li>
+        <li class="letter">m</li>
+        <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+        <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+        <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+        <li class="right-shift lastitem">shift</li>
+        <li class="space lastitem">&nbsp;</li>
+    </ul>
+    <textarea id="write" rows="6" cols="60"></textarea>
 </div>
+<!--        <button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> -->
+        
+        <div class="filters">
+            <button class="button__style" id="_cmpny">COMPANIES</button>
+            <button class="button__style" id="_ppl">PEOPLE</button> 
+            <button class="button__style active" id="_all">LIST ALL</button> 
+            <button class="submit" id="_sndB">Submit</button> 
+        </div>
+        <div style ='width:10px'></div>
+    </div>
+<!-- </div> -->
 
 </div>
 <footer>
@@ -99,25 +179,12 @@
 
 </div>
 
+<script type="text/javascript" src="js/winstore-jscompat.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 <script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript" src="js/cordova-1.7.0.js"></script>
 <script type="text/javascript" src="js/directory.js"></script>
-<script src="js/bootstrap/js/bootstrap.min.js"></script>
-<style>
-#Selector-button span{
-    display: none;
-}
-
-#floor{
-   float:right;
-}
-
-#Selector-button span{
-    display: none;
-}
-</style>
+<!-- <script src="js/bootstrap/js/bootstrap.min.js"></script> -->
 </body>
 </html>
