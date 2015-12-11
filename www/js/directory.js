@@ -5,8 +5,8 @@ $(document).ready(function(){
 /*
 	console.log('test');
 	$(window).trigger('hashchange');
-*/
-	render(window.location.hash);
+    */
+    render(window.location.hash);
     $.support.cors=true;
     $.mobile.allowCrossDomainPages=true;
     $('.keyboard').hide();
@@ -17,12 +17,14 @@ $(document).ready(function(){
     var info_div;
     var values =[];
     var Ldata = [];
+
+
     var companyName;
     var companyLocation;
 
-
-  
-
+    //Input to change from keyboard-inputs
+    var InputName;
+    
 
 //================= Page 1 =================//
 
@@ -72,10 +74,9 @@ $(document).ready(function(){
 			},
 			
 			'#page4': function() {
-					console.log('page 4');
+             console.log('page 4');
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('/')[0];
-
 				renderPage4();
 			}
 
@@ -92,10 +93,12 @@ $(document).ready(function(){
 
 	}
 // ================== HOME PAGE =========================//
-	
-	function renderHome() {
-		var page = $('#page1');
-		console.log("RENDER Home");
+
+function renderHome() {
+
+  //$(':input[type=text]').empty();
+  var page = $('#page1');
+  console.log("RENDER Home");
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
@@ -106,29 +109,42 @@ $(document).ready(function(){
 	}
 
 // ================== PAGE 2 =========================//
-	function renderPage2() {
-		var page = $('#page2');
-		console.log("RENDER Page 2");
+function renderPage2() {
+  var page = $('#page2');
+  console.log("RENDER Page 2");
+  $('#searchForCollapsibleSetChildren').empty();
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
 		
 		$('#page2 input').click(function(){
-             $('.keyboard').show();
-             $('.keyboard #_sndB').hide();
-	         $('#data_Select').css("height",'200');
-	     });
+         $('#write').empty();
+         InputName = '#searchForCollapsibleSetChildren';
+
+         // Set the Keyboard
+
+         $('.keyboard').show();
+         $('.keyboard #_cmpny').show();
+         $('.keyboard #_ppl').show();
+         $('.keyboard #_cmpny').show();
+         $('.keyboard #_all').show();
+         $('.keyboard #_sndB').hide();
+         $('#data_Select').animate({height : '200' });  
+         //$('#data_Select').css("height",'200');    
+     });
 
         $('#keyboard .return').click(function(){
             //window.location.hash = '#page3';
             renderPage3(companyName,companyLocation);
         })
-	}
+    }
 
 // ================== PAGE 3 =========================//
-	
-	function renderPage3(comp,floor) {
-         $('.keyboard').hide();
+
+function renderPage3(comp,floor) {
+ $('.keyboard').hide();
+ $('#name').empty();
+ $('#visitor-company').empty();
 
 		// Hide whatever page is currently shown.
 		$('.container .page').removeClass('visible');
@@ -139,11 +155,11 @@ $(document).ready(function(){
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 // 		$('#page2').fadeOut();
-		page.addClass('visible');
-		page.fadeIn();
-		$('#company').val(company);
-		$('#floor').val(company);
-		
+page.addClass('visible');
+page.fadeIn();
+$('#company').val(company);
+$('#floor').val(company);
+
 /*
 		$('#company').click(function(e){
 			e.preventDefault();
@@ -151,28 +167,45 @@ $(document).ready(function(){
 		});
 */     
 
-		
-		$('#page3 input').click(function(){
 
-             $('.keyboard').show();
-             $('.keyboard .filters').hide();
-             $('.keyboard #_sndB').show();
-	         $('#data_Select').animate({height:300});
-	     });
-	}
+$('#page3 input').click(function(){
+ $('#write').empty();
+ console.log($(this).attr('id'));
+ var inp =  $(this).attr('id');
+ console.log(inp);
+
+ if (inp == 'name'){
+    InputName = '#name';
+    console.log('Input : Name')
+}
+if(inp == 'visitor-company'){
+    InputName = '#visitor-company';
+    console.log('Input : visitor-company')
+}
+
+$('.keyboard').show();
+$('.keyboard #_cmpny').hide();
+$('.keyboard #_ppl').hide();
+$('.keyboard #_cmpny').hide();
+$('.keyboard #_all').hide();
+$('.keyboard #_sndB').show();
+});
+}
 
 // ================== PAGE 4 =========================//
-	
-	function renderPage4() {
-		var page = $('#page4');
-		console.log("RENDER Page 4");
+
+function renderPage4() {
+    $('.keyboard').hide();
+    var page = $('#page4');
+    console.log("RENDER Page 4");
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
 		page.fadeIn();
 		$(document).on('click', function(e){
 			e.preventDefault();
-			window.location.hash = '';
+			//window.location.hash = '';
+            renderHome();
 		});
 	}
 	
@@ -235,8 +268,8 @@ $(document).ready(function(){
 
             var Comp_val = $('#searchForCollapsibleSetChildren').val();
             $('#visitor-company').val(Comp_val);
-			e.preventDefault();
-			window.location.hash = '#page3';
+            e.preventDefault();
+            window.location.hash = '#page3';
         });
 
 
@@ -247,25 +280,26 @@ $(document).ready(function(){
         //  To send form to the data base
 
         $("#_sndB").click(function(e){
-			var company = $("#company").val();
-            var visitor = $("#name").val();
-            var visitorCompany = $("#visitor-company").val();
-            var purpose = $("#purpose").val();
-            var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
-            values = new Array();
-            values.push(company);
-            values.push(visitor);
-            values.push(visitorCompany);
-            values.push(purpose);
-            
-            connectSqlSed(urlSnd); 
+           var company = $("#company").val();
+           var visitor = $("#name").val();
+           var visitorCompany = $("#visitor-company").val();
+           var purpose = $("#purpose").val();
+           var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
+           values = new Array();
+           values.push(company);
+           values.push(visitor);
+           values.push(visitorCompany);
+           values.push(purpose);
 
-            console.log(name + ","+ location);
+           connectSqlSed(urlSnd); 
 
-            $('#place').text(location);
-			e.preventDefault();
-			window.location.hash = '#page4';
-}); 
+           console.log(name + ","+ location);
+
+           $('#place').text(location);
+            e.preventDefault();
+            window.location.hash = '#page4';
+
+       }); 
 
 
  // ================= CONNECTION FUNCTIONS ================= //
@@ -300,10 +334,10 @@ function handler()
         }
         else{
 //             navigator.notification.alert("No Internet Connection");
-            console.log("error");
-            convdata(LocD);
-        }
-    }
+console.log("error");
+convdata(LocD);
+}
+}
 }
 
 
@@ -328,24 +362,24 @@ function handler()
 function sendData()
 {
    var localData = values;
-    if (oReq.readyState == 4 /* complete */) {
-        if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
-            console.log(oReq.status);
-        }
-        else{
-            console.log("error");
-            Ldata.push(localData);
-
-        }
+   if (oReq.readyState == 4 /* complete */) {
+    if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
+        console.log(oReq.status);
     }
+    else{
+        console.log("error");
+        Ldata.push(localData);
+
+    }
+}
 }
 
 // Send Data
 
- function recovData(){
+function recovData(){
 
   for (i in Ldata){
-    
+
     var url= "http://esidesigndev.com/data_Demo/guestform.php?company="+Ldata[i][0]+"&lid="+Ldata[i][1]+"&visitorCompany="+Ldata[i][2]+"&purpose="+"RECOVER_ "+Ldata[i][3];
 
     if (oReq != null) {
@@ -374,7 +408,7 @@ function reData()
                 console.log("SEND EMAIL HERE");
                 //Send the email notifying the recover of data -- Internet off
             }    
-               
+
         }
         else {
             console.log("No Internet Connection");
@@ -569,9 +603,9 @@ function getValues(data){
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();
 
-        companyName = c_Name;
-        companyLocation= c_Location;
-        console.log(companyName + " | "+ companyLocation);
+       companyName = c_Name;
+       companyLocation= c_Location;
+       console.log(companyName + " | "+ companyLocation);
 
        $('#searchForCollapsibleSetChildren').val(c_Name);     
    });
@@ -582,81 +616,81 @@ function getValues(data){
 
 //===============KEYBOARD======================//
 
+var $write = $('#write'),
+shift = false,
+capslock = false;
 
-        var $write = $('#write'),
-        shift = false,
-        capslock = false;
-     
-    $('#keyboard li').click(function(){
-        var $this = $(this),
+$('#keyboard li').click(function(){
+    var $this = $(this),
             character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
-         
+
         // Shift keys
         if ($this.hasClass('left-shift') || $this.hasClass('right-shift')) {
             $('.letter').toggleClass('uppercase');
             $('.symbol span').toggle();
-             
+
             shift = (shift === true) ? false : true;
             capslock = false;
             return false;
         }
-         
+
         // Caps lock
         if ($this.hasClass('capslock')) {
             $('.letter').toggleClass('uppercase');
             capslock = true;
             return false;
         }
-         
+
         // Delete
         if ($this.hasClass('delete')) {
             var html = $write.html();
-             
+
             $write.html(html.substr(0, html.length - 1));
-            $('#searchForCollapsibleSetChildren').val($write.val());
+            $(InputName).val($write.val());
             return false;
         }
-         
+
         // Special characters
         if ($this.hasClass('symbol')) character = $('span:visible', $this).html();
         if ($this.hasClass('space')) character = ' ';
         if ($this.hasClass('tab')) character = "\t";
         if ($this.hasClass('return')) character = "\n";
-         
+
         // Uppercase letter
         if ($this.hasClass('uppercase')) character = character.toUpperCase();
-         
+
         // Remove shift once a key is clicked.
         if (shift === true) {
             $('.symbol span').toggle();
             if (capslock === false) $('.letter').toggleClass('uppercase');
-             
+
             shift = false;
         }
-         
+
         // Add the character
         console.log($write.html() + character);
         $write.html($write.html() + character);
-        $('#searchForCollapsibleSetChildren').val($write.val());
+        $(InputName).val($write.val());
         $('#data_Select').filterable( "refresh" );
         $('#data_Select_cmpn').filterable( "refresh" );
         $('#data_Select__ppl').filterable( "refresh" );
        // var wtr= document.getElementById('searchForCollapsibleSetChildren');
-    });
+   });
 
 
 
 
-    setInterval(function(){
-            var date = new Date();
-            if(date.getHours() === 6 && date.getMinutes() === 00 && date.getSeconds() === 00){
-               recovData();
-            }
-        },1000);
+setInterval(function(){
+    var date = new Date();
+    if(date.getHours() === 6 && date.getMinutes() === 00 && date.getSeconds() === 00){
+       recovData();
+   }
+},1000);
 
 
 
 });
+
 
 // ================= TIMEOUT ================= //
 // var timeout;
