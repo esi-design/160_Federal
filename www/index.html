@@ -4,7 +4,6 @@
     <title>160 Federal</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-<!--     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"> -->
 <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.4.5-mod.min.css">
@@ -12,7 +11,6 @@
 </head>
 <body>
     <div class="container overlay">
-      
       <header class="header">
          <div class="container__line">
             <span class="container__line--top"></span>
@@ -27,26 +25,31 @@
             <span class="container__line--bottom"></span>
         </div>
     </header>
-    
+    <!-- <div class="content"> -->
+<!--     <div> -->
       <div id="page1" class="page">
          <h1>[ ATTRACT LOOP ]</h1>
+<!--
+     		<div id="weather_icon">
+		<video id="video" style="display:none" autoplay>
+			<source src="img/fair-output.mp4" type='video/mp4; codecs="avc1.42E01E"' />
+		</video>
+		<canvas width="1876" height="2006" id="buffer"></canvas>
+		<canvas width="1876" height="1003" id="output"></canvas>
+	</div>
+-->
          <div class="touch">
             <h2>TOUCH HERE TO BEGIN SEARCH</h2>
         </div>
     </div>
 
+ <!-- <div id="page2" class="content__form"> -->
    <div id="page2" class="page">
      <h2>Where are you going?</h2>
-       <input id="dam" type="text" />
-
-<div id="dam_return">
-    <a id="test" href="#" class="test">DLH Victoria</a>
-    <a href="#" class="test">DLH Sam</a>
-    <a href="#" class="test">Studly</a>
-</div>
+     
 	<div id = "div_dir">
 		<form >
-	          <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY NAME, PERSON OR FLOOR" name="search">
+	      <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY, PERSON OR FLOOR">
 		</form>
 		<div  id ="data_Select" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false">
         </div>
@@ -56,60 +59,143 @@
         </div>
 	</div>
 	
-	<div class="keyboard">
-		<div id="virtualKeyboard"></div>
-<!-- 		<button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> -->	
-		<div class="filters">
-			<button class="button__style" id="_cmpny">COMPANIES</button>
-			<button class="button__style" id="_ppl">PEOPLE</button> 
-			<button class="button__style active" id="_all">LIST ALL</button> 
-		</div>
-	</div>
+	
+    
 </div>
 
-	<div id="page3" class="page">
-		<div id="div_form">
-			<h2>Visitor Sign-In</h2>
-			<form>
-				<input type="text" id="company" name="company" placeholder="">
-				<input type="text" id="floor" name="floor">
-				<input type="text" id="name" name="name" placeholder="What's your name?">
-				<input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
-	<!--        <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?"> -->
-				<select id="purpose" name="purpose">
-					<option value="" disabled selected>What's the purpose of your visit?</option>
-					<option value="Messanger">Messanger</option>
-					<option value="Vendor">Vendor</option>
-					<option value="Visitor">Visitor</option>
-				</select>
-		   </form>
-	   <button class="submit" id="_sndB">Submit</button> 
-		</div>
-	</div>
-
-	<div id="page4" class="page">
-	    <h2>Thank you!</h2>
-	    <h3>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h3>
-	    <h1 id ='place'></h1>
-	    <h1 id ='flr'></h1>
-	    <h1>[ ANIMATION ]</h1>
-	</div>
+<div id="page3" class="page">
+   <div id="div_form">
+      <h2>Visitor Sign-In</h2>
+      <form>
+		<input type="text" id="company" name="company" placeholder="">
+        <input type="text" id="floor" name="floor">
+       <input type="text" id="name" name="name" placeholder="What's your name?">
+       <input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
+<!--        <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?"> -->
+<select id="purpose" name="purpose">
+	<option value="" disabled selected>What's the purpose of your visit?</option>
+	<option value="Messenger">Messenger</option>
+	<option value="Vendor">Vendor</option>
+	<option value="Visitor">Visitor</option>
+</select>
+   </form>
+   
+</div>
 
 </div>
 
-	<footer>
-		 <div class="container__line">
-		    <span class="container__line--bottom"></span>
-		    <span class="container__line--top"></span>
-		</div>
-	</footer>
+<div id="page4" class="page">
+<!--  <div class="content__form"> -->
+    <h2>Thank you!</h2>
+    <h3>PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h3>
+    <h1 id ='place'></h1>
+    <h1 id ='flr'></h1>
+    <h1>[ ANIMATION ]</h1>
+<!--   </div> -->
+</div>
 
-<script type="text/javascript" src="cordova.js"></script>
+
+<!-- keyBoard -->
+
+<div class="keyboard">
+        <div id="key">
+    <ul id="keyboard">
+<!--
+        <li class="symbol"><span class="off">`</span><span class="on">~</span></li>
+        <li class="symbol"><span class="off">1</span><span class="on">!</span></li>
+        <li class="symbol"><span class="off">2</span><span class="on">@</span></li>
+        <li class="symbol"><span class="off">3</span><span class="on">#</span></li>
+        <li class="symbol"><span class="off">4</span><span class="on">$</span></li>
+        <li class="symbol"><span class="off">5</span><span class="on">%</span></li>
+        <li class="symbol"><span class="off">6</span><span class="on">^</span></li>
+        <li class="symbol"><span class="off">7</span><span class="on">&amp;</span></li>
+        <li class="symbol"><span class="off">8</span><span class="on">*</span></li>
+        <li class="symbol"><span class="off">9</span><span class="on">(</span></li>
+        <li class="symbol"><span class="off">0</span><span class="on">)</span></li>
+        <li class="symbol"><span class="off">-</span><span class="on">_</span></li>
+        <li class="symbol"><span class="off">=</span><span class="on">+</span></li>
+-->
+<!--         <li class="tab">tab</li> -->
+        <li class="letter"><span class="off">q</span><span class="on">1</span></li>
+        <li class="letter"><span class="off">w</span><span class="on">2</span></li>
+        <li class="letter"><span class="off">e</span><span class="on">3</span></li>
+        <li class="letter"><span class="off">r</span><span class="on">4</span></li>
+        <li class="letter"><span class="off">t</span><span class="on">5</span></li>
+        <li class="letter"><span class="off">y</span><span class="on">6</span></li>
+        <li class="letter"><span class="off">u</span><span class="on">7</span></li>
+        <li class="letter"><span class="off">i</span><span class="on">8</span></li>
+        <li class="letter"><span class="off">o</span><span class="on">9</span></li>
+        <li class="letter"><span class="off">p</span><span class="on">0</span></li>
+<!--
+        <li class="symbol"><span class="off">[</span><span class="on">{</span></li>
+        <li class="symbol clear"><span class="off">]</span><span class="on">}</span></li>
+        <li class="symbol lastitem"><span class="off">\</span><span class="on">|</span></li>
+-->
+<!--         <li class="capslock">caps lock</li> -->
+        <li class="letter clear middle"><span class="off">a</span><span class="on">-</span></li>
+        <li class="letter"><span class="off">s</span><span class="on">/</span></li>
+        <li class="letter"><span class="off">d</span><span class="on">:</span></li>
+        <li class="letter"><span class="off">f</span><span class="on">;</span></li>
+        <li class="letter"><span class="off">g</span><span class="on">(</span></li>
+        <li class="letter"><span class="off">h</span><span class="on">)</span></li>
+        <li class="letter"><span class="off">j</span><span class="on">$</span></li>
+        <li class="letter"><span class="off">k</span><span class="on">&</span></li>
+        <li class="letter"><span class="off">l</span><span class="on">@</span></li>
+<!--
+        <li class="symbol"><span class="off">;</span><span class="on">:</span></li>
+        <li class="symbol"><span class="off">'</span><span class="on">&quot;</span></li>
+-->
+        <li class="symbol-toggle clear">123</li>
+        <li class="letter"><span class="off">z</span><span class="on">.</span></li>
+        <li class="letter"><span class="off">x</span><span class="on">,</span></li>
+        <li class="letter"><span class="off">c</span><span class="on">?</span></li>
+        <li class="letter"><span class="off">v</span><span class="on">!</span></li>
+        <li class="letter"><span class="off">b</span><span class="on">'</span></li>
+        <li class="letter"><span class="off">n</span><span class="on">~</span></li>
+        <li class="letter"><span class="off">m</span><span class="on">"</span></li>
+        <li class="delete lastitem">delete</li>
+<!--
+        <li class="symbol"><span class="off">,</span><span class="on">&lt;</span></li>
+        <li class="symbol"><span class="off">.</span><span class="on">&gt;</span></li>
+        <li class="symbol"><span class="off">/</span><span class="on">?</span></li>
+-->
+<!--         <li class="right-shift lastitem">shift</li> -->
+        <div class="close-keyboard clear">X</div>
+        <li class="space lastitem">Space</li>
+        <li class="return lastitem">return</li>
+    </ul>
+    <textarea id="write" rows="6" cols="60"></textarea>
+</div>
+<!--        <button  class="btn btn-lg btn-default" id="_trdB">To Next Page</button> -->
+        
+        <div class="filters">
+            <button class="button__style" id="_cmpny">COMPANIES</button>
+            <button class="button__style" id="_ppl">PEOPLE</button> 
+            <button class="button__style active" id="_all">LIST ALL</button> 
+            <button class="submit" id="_sndB">Submit</button> 
+        </div>
+        <div style ='width:10px'></div>
+    </div>
+<!-- </div> -->
+
+</div>
+<footer>
+ <div class="container__line">
+    <span class="container__line--bottom"></span>
+    <span class="container__line--top"></span>
+</div>
+</footer>
+
+</div>
+
 <script type="text/javascript" src="js/winstore-jscompat.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+<!-- <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" /> -->
+<!-- <script src="js/select2.min.js"></script> -->
 <script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript" src="js/cordova-1.7.0.js"></script>
 <script type="text/javascript" src="js/directory.js"></script>
-<script type="text/javascript" src="js/jsKeyboard.js"></script>
 </body>
 </html>
