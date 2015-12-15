@@ -147,8 +147,8 @@ a {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 0;
-  padding: 4% 3% 66.67%;
+  height: 1029px;
+  padding: 0 3%;
   width: 100%; }
 
 .container__line {
@@ -167,7 +167,7 @@ a {
 .header {
   color: #FFF;
   width: 100%;
-  margin: -10px 0 0; }
+  padding: 3.5% 0 0; }
   .header .container__line {
     width: 29%; }
     .header .container__line .container__line--top {
@@ -293,13 +293,6 @@ a {
     text-align: left;
     width: 100%; }
 
-#page2 input {
-  margin-bottom: 0;
-  background: rgba(255, 255, 255, 0.4) url("../img/search.png");
-  background-position: 10px 14px;
-  background-repeat: no-repeat;
-  padding: 2% 3% 1.8% 7%; }
-
 .ui-select {
   margin-bottom: 1%;
   position: relative; }
@@ -331,6 +324,14 @@ a {
 
 #page2 #div_dir {
   width: 98%; }
+#page2 .ui-input-text, #page2 .ui-input-search, #page2 textarea.ui-input-text {
+  margin-bottom: 0 !important; }
+  #page2 .ui-input-text input, #page2 .ui-input-search input, #page2 textarea.ui-input-text input {
+    margin-bottom: 0;
+    background: rgba(255, 255, 255, 0.4) url("../img/search.png");
+    background-position: 10px 14px;
+    background-repeat: no-repeat;
+    padding: 2% 3% 1.8% 7%; }
 #page2 .ui-btn {
   height: 60px;
   margin: 0px;
