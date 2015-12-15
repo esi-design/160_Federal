@@ -93,7 +93,7 @@ $(document).ready(function(){
 
 	}
 // ================== HOME PAGE =========================//
-// canvas();
+canvas();
 
 function renderHome() {
 
@@ -142,7 +142,7 @@ function canvas(){
 	video.addEventListener('ended', function() {
 		video.play();
 	}, false);
-	video.setAttribute("src", 'img/DesignDirectory_Interstitial_21_RGB+A_h264.mp4');
+	video.setAttribute("src", 'img/DesignDirectory_Interstitial_22_RGB+A-sm.mp4');
 }
 
 
