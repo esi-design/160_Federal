@@ -25,6 +25,11 @@ $(document).ready(function(){
     //Input to change from keyboard-inputs
     var InputName;
     
+    $('.delete').click(function(){
+	    $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+	    
+    });
+    
 
 //================= Page 1 =================//
 
@@ -51,7 +56,6 @@ $(document).ready(function(){
 
 			// The Homepage.
 			'': function() {
-				console.log('nothing');
 				renderHome();
 			},
 
@@ -96,14 +100,14 @@ $(document).ready(function(){
 canvas();
 
 function renderHome() {
-
+$('.black-bg').fadeIn();
   //$(':input[type=text]').empty();
   var page = $('#page1');
   console.log("RENDER Home");
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
-		$(document).on('click', function(e){
+		$('#page1').on('click', function(e){
 			e.preventDefault();
 			window.location.hash = '#page2';
 		});
@@ -150,6 +154,8 @@ function canvas(){
 function renderPage2() {
   var page = $('#page2');
   console.log("RENDER Page 2");
+  $('.black-bg').fadeOut();
+  $('#submit').hide();
   $('#searchForCollapsibleSetChildren').empty();
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
@@ -160,43 +166,41 @@ function renderPage2() {
          InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('.keyboard').show();
-         $('.keyboard #_cmpny').show();
-         $('.keyboard #_ppl').show();
-         $('.keyboard #_cmpny').show();
-         $('.keyboard #_all').show();
-         $('.keyboard #_sndB').hide();
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '200' });  
-         //$('#data_Select').css("height",'200');    
+         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '200' }, function(){
+	         $('.keyboard').fadeIn();
+         });   
      });
 
-        $('#keyboard .return').click(function(){
-            //window.location.hash = '#page3';
-            renderPage3(companyName,companyLocation);
+/*
+        $('#div_dir a').click(function(e){
+	        console.log('click');
+            var Comp_val = $('#searchForCollapsibleSetChildren').val();
+            $('#visitor-company').val(Comp_val);
+            e.preventDefault();
+            window.location.hash = '#page3';
+//             renderPage3(companyName,companyLocation);
         });
+        
+*/
+
 
     }
 
 // ================== PAGE 3 =========================//
-
-function renderPage3(comp,floor) {
- $('.keyboard').hide();
+function renderPage3() {
+ $('.keyboard').fadeOut();
  $('#name').empty();
  $('#visitor-company').empty();
 
 		// Hide whatever page is currently shown.
 		$('.container .page').removeClass('visible');
 		var page = $('#page3');
-		var company = comp;
-		var floor = floor;
+
 		console.log("RENDER Page 3");
 		// Show the page itself.
 		// (the render function hides all pages so we need to show the one we want).
-// 		$('#page2').fadeOut();
-page.addClass('visible');
-page.fadeIn();
-$('#company').val(company);
-$('#floor').val(company);
+		page.addClass('visible');
+		page.fadeIn();
 
 /*
 		$('#company').click(function(e){
@@ -221,12 +225,29 @@ if(inp == 'visitor-company'){
     console.log('Input : visitor-company')
 }
 
-$('.keyboard').show();
-$('.keyboard #_cmpny').hide();
-$('.keyboard #_ppl').hide();
-$('.keyboard #_cmpny').hide();
-$('.keyboard #_all').hide();
-$('.keyboard #_sndB').show();
+$('#submit').show();
+$('#_cmpny, #_ppl, #_all').hide();
+$('.keyboard').fadeIn();
+});
+
+$('#page3 .ui-select').click(function(){
+	$('#write').empty();
+	console.log($(this).attr('id'));
+	var inp =  $(this).attr('id');
+	console.log(inp);
+	
+	if (inp == 'name'){
+	InputName = '#name';
+	console.log('Input : Name')
+	}
+	if(inp == 'visitor-company'){
+	InputName = '#visitor-company';
+	console.log('Input : visitor-company')
+	}
+	
+	$('#submit').show();
+	$('#_cmpny, #_ppl, #_all').hide();
+	$('.keyboard').fadeOut();
 });
 }
 
@@ -240,10 +261,9 @@ function renderPage4() {
 		// (the render function hides all pages so we need to show the one we want).
 		page.addClass('visible');
 		page.fadeIn();
-		$(document).on('click', function(e){
+		$('#page4').on('click', function(e){
 			e.preventDefault();
-			//window.location.hash = '';
-            renderHome();
+			window.location.hash = '';
 		});
 	}
 	
@@ -272,45 +292,35 @@ function renderPage4() {
         //Show the company names and locations in the html element page 2     
         //div page 2
         $('#data_Select').show();
-        $('#data_Select_cmpny').hide();
-        $('#data_Select__ppl').hide();
-
+        $('#data_Select_cmpny, #data_Select__ppl').hide();
         
         //Show ByCompany page 2
         $('#_cmpny').click(function(){
+	        $('.active').removeClass('active');
+	        $('#_cmpny').addClass('active');
             console.log("Show Company");
-            $('#data_Select').hide();
+            $('#data_Select, #data_Select__ppl').hide();
             $('#data_Select_cmpny').show();
-            $('#data_Select__ppl').hide();
             getValues('#data_Select_cmpny');
         });
         //Show ByPeople page 2
         $('#_ppl').click(function(){
+	        $('.active').removeClass('active');
+	        $('#_ppl').addClass('active');
             console.log("Show people");
-            $('#data_Select').hide();
-            $('#data_Select_cmpny').hide();
+            $('#data_Select, #data_Select_cmpny').hide();
             $('#data_Select__ppl').show();
             getValues('#data_Select__ppl');
         });
         //Show default All page 2
         $('#_all').click(function(){
+	        $('.active').removeClass('active');
+	        $('#_all').addClass('active');
             console.log("Show All");
             $('#data_Select').show();
-            $('#data_Select_cmpny').hide();
-            $('#data_Select__ppl').hide();
+            $('#data_Select_cmpny, #data_Select__ppl').hide();
             getValues('#data_Select');
         });
-
-        //To move page 3
-
-        $('#_trdB').click(function(e){
-
-            var Comp_val = $('#searchForCollapsibleSetChildren').val();
-            $('#visitor-company').val(Comp_val);
-            e.preventDefault();
-            window.location.hash = '#page3';
-        });
-
 
 
 
@@ -318,8 +328,9 @@ function renderPage4() {
 
         //  To send form to the data base
 
-        $("#_sndB").click(function(e){
+        $("#submit").click(function(e){
            var company = $("#company").val();
+           var floor = $("#floor").val();
            var visitor = $("#name").val();
            var visitorCompany = $("#visitor-company").val();
            var purpose = $("#purpose").val();
@@ -332,16 +343,13 @@ function renderPage4() {
 
            connectSqlSed(urlSnd); 
 
-           console.log(name + ","+ location);
+           console.log(name + ","+ floor);
 
-           $('#place').text(location);
+           $('#place').text(company);
+           $('#flr').text(floor);
             e.preventDefault();
-//             window.location.hash = '#page4';
-			$('.container .page').removeClass('visible', function(){
-				$('#page4').addClass('visible');
-			});
+            window.location.hash = '#page4';
 			
-
        }); 
 
 
@@ -629,7 +637,7 @@ function getValues(data){
 
                         console.log(companyName + " | "+ companyLocation);
                         $('#searchForCollapsibleSetChildren').val(companyName);
-
+							
                     });
                     $(list).append(list_link);
                     $(ul_data).append(list);
@@ -650,7 +658,10 @@ function getValues(data){
        companyLocation= c_Location;
        console.log(companyName + " | "+ companyLocation);
 
-       $('#searchForCollapsibleSetChildren').val(c_Name);     
+       $('#searchForCollapsibleSetChildren').val(c_Name); 
+       $('#company').val(c_Name); 
+       $('#floor').val(c_Location); 
+       window.location.hash = '#page3';    
    });
 }
 }
@@ -664,22 +675,17 @@ symbol = false,
 capslock = false;
 
 $('.close-keyboard').click(function(){
-	$('.keyboard').fadeOut();
-	$('.keyboard #_cmpny').fadeOut();
-	$('.keyboard #_ppl').fadeOut();
-	$('.keyboard #_cmpny').fadeOut();
-	$('.keyboard #_all').fadeOut();
-	$('.keyboard #_sndB').fadeIn();
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '500' }); 
+	$('.keyboard').fadeOut(function(){
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '500' }); 
+	});
 }); 
 
 $('#keyboard li').click(function(){
     var $this = $(this),
-            character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
+        character = $this.html(); // If it's a lowercase letter, nothing happens to this variable
 
         // Shift keys
         if ($this.hasClass('symbol-toggle')) {
-//             $('.letter').toggleClass('uppercase');
             $('.letter span').toggle();
 
             symbol = (symbol === true) ? false : true;
@@ -696,17 +702,18 @@ $('#keyboard li').click(function(){
 
         // Delete
         if ($this.hasClass('delete')) {
-            var html = $write.html();
-
-            $write.html(html.substr(0, html.length - 1));
-            $(InputName).val($write.val());
+			var html = $write.html();
+			
+			$write.html(html.substr(0, html.length - 1));
+			$(InputName).val($write.val());
+			$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+          
             return false;
         }
 
         // Special characters
         if ($this.hasClass('letter')) character = $('span:visible', $this).html();
         if ($this.hasClass('space')) character = ' ';
-//         if ($this.hasClass('tab')) character = "\t";
         if ($this.hasClass('return')) character = "\n";
 
         // Uppercase letter
@@ -724,10 +731,7 @@ $('#keyboard li').click(function(){
         console.log($write.html() + character);
         $write.html($write.html() + character);
         $(InputName).val($write.val());
-        $('#data_Select').filterable( "refresh" );
-        $('#data_Select_cmpn').filterable( "refresh" );
-        $('#data_Select__ppl').filterable( "refresh" );
-       // var wtr= document.getElementById('searchForCollapsibleSetChildren');
+        $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
    });
 
 

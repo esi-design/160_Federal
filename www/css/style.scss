@@ -135,7 +135,7 @@ h2 {
 }
 
 h3 {
-// 	font-size: 28px;
+// 	font-size: 24px;
 	font-size: 24px;
 	line-height: 130%;
 }
@@ -158,6 +158,13 @@ a {
 	width: 100%;
 }
 
+.black-bg {
+	background: #000;
+	position: absolute;
+	height: 1029px;
+	width: 100%;
+}
+
 .container__line {
 		display: inline-block;
 		margin: 0;
@@ -176,24 +183,28 @@ a {
 	}
 
 .header {
-	color: #FFF;
-	width: 100%;
-    padding: 3.5% 0 0;
+    color: #FFF;
+    width: 100%;
+    padding: 2% 3% 0;
+    position: absolute;
+    top: 0;
 	.container__line {
-		width: 29%;
+		width: 465px;
 		.container__line--top {
 			margin-bottom: 6px;
 		}
 	}
 	.logo {
+		background: url('../img/logo.png') no-repeat;
 		display: inline-block;
-		font-family: 'Akzidenz', Helvetica;
-		margin: 0;
+// 		font-family: 'Akzidenz', Helvetica;
+		margin: 0 30px;
 		text-align: center;
-		vertical-align: -21px;
-		width: 40%;
+		vertical-align: -28px;
+		height: 89px;
+		width: 450px;
 		h2 {
-			font-size: 28px;
+			font-size: 24px;
 			font-weight: 300;
 			letter-spacing: 2px;
 			margin-bottom: 4px;
@@ -214,7 +225,7 @@ a {
 
 #attract {
 	position: absolute;
-	top: -30px;
+	top: -50px;
 	left: 0;
 	width: 100%;
 }
@@ -248,10 +259,10 @@ a {
 	    width: 90%;
 		h2 {
 			background: rgba(0,0,0,.9);
-			border-top: 1px solid $gold;
-			border-bottom: 1px solid $gold;
+			border-top: medium double $gold;
+			border-bottom: medium double $gold;
 			font-family: 'Futura', 'Helvetica', sans-serif;
-			font-size: 28px;
+			font-size: 24px;
 			font-weight: 500;
 			letter-spacing: 5px;
 			padding: 1% 0;
@@ -281,7 +292,7 @@ a {
 }
 
 .ui-btn {
-	background-color: #000;
+	background-color: rba(0,0,0,.8);
 	border-top: 2px solid $gold;
 	border-bottom: 2px solid $gold;
 	border-left: none;
@@ -290,7 +301,7 @@ a {
 	cursor:pointer;
 	color: #ffffff;
 	font-family: 'Futura', 'Helvetica', sans-serif;
-	font-size: 40px;
+	font-size: 24px;
 	font-weight: 500;
 	letter-spacing: 3px;
 	margin: 0 auto 2%;
@@ -315,7 +326,7 @@ a {
 		background: rgba(255,255,255,.4);
 		color: #000 !important;
 		font-family: 'Futura', 'Helvetica', sans-serif;
-		font-size: 28px;
+		font-size: 24px;
 		letter-spacing: 3px;
 		text-transform: uppercase;
 		// 	min-height: 3em;
@@ -330,18 +341,14 @@ a {
 }
 
 .ui-select {
-	margin-bottom: 1%;
+	margin-bottom: 2%;
 	position: relative;
 	.ui-btn {
 		border: 0;
 		background: rgba(255,255,255,.4);
-		color: #000000;
-		font-family: 'Futura', 'Helvetica', sans-serif;
-		font-size: 28px;
-		letter-spacing: 3px;
-		text-transform: uppercase;
+		color: #000 !important;
 		// 	min-height: 3em;
-		padding: 1.4% 3% 1%;
+		padding: 2.2% 3% 2%;
 		-webkit-appearance: none;
 		-webkit-border-radius: inherit;
 		border-radius: inherit;
@@ -349,6 +356,10 @@ a {
 		text-align: left;
 		width: 100%;	
 	}
+}
+
+.active {
+	background-color: #414042 !important;
 }
 
 .page {
@@ -359,7 +370,7 @@ a {
 		line-height: 135%;
 		margin: 2% 0;
 		text-align: center;
-		letter-spacing: 6px;
+		letter-spacing: 4px;
 	}
 }
 
@@ -392,7 +403,7 @@ a {
 			margin-bottom: .5%;
 			h3 a, h4, li a {
 				color: black;
-				font-size: 28px;
+				font-size: 24px;
 			}
 			h3 a, h4 {
 				font-weight: 500;
@@ -424,23 +435,27 @@ a {
 	#floor {
 		display: none;
 	}
+	#_cmpny, #_ppl, #all {
+		display: none;
+	}
 	.submit.ui-btn {
 		margin: 15% auto 0;
 		width: 270px;
 		padding: 1% 2%;
 	}
+/*
 	select {
 	    display: inline-block;
 	    padding: 4px 3px 3px 5px;
 	    margin: 0;
 	    font-family: 'Futura', 'Helvetica', sans-serif;
-	    outline:none; /* remove focus ring from Webkit */
+	    outline:none; 
 	    line-height: 1.2;
 	    background: #000;
 	    color:white;
 	    border:0;
 	}
-
+*/
 }
 
 #page4 {
@@ -449,11 +464,12 @@ a {
 		width: 80%;
 	}
 	h2:nth-of-type(2) {
+		line-height: 140%;
 		margin: 5% auto 0;
-		width: 70%;
+		width: 80%;
 	}
 	h1 {
-		font-size: 60px;
+		font-size: 50px;
 		font-family: 'Futura', 'Helvetica', sans-serif;
 		letter-spacing: 6px;
 		margin-top: 6%;
@@ -469,7 +485,7 @@ a {
 footer {
 	position: absolute;
 	padding: 0 3%;
-	bottom: 8%;
+	bottom: 3%;
 	left: 0;
 	width: 100%;
 	.container__line {
@@ -483,7 +499,7 @@ footer {
 .button__style, .button {
 	background-color: #000;
 	font-family: 'Futura', Helvetica, sans-serif;
-	font-size: 28px;
+	font-size: 24px;
 }
 
 .keyboard {
@@ -500,7 +516,7 @@ footer {
 
 .keyboard{
   position: absolute;
-  top: 52%;
+  top: 54%;
   left: 17%;
   margin: auto;
   width: 80%;
@@ -511,9 +527,9 @@ footer {
   margin: 0 0px 15px 0;
   background-color: #000;
   font-family: 'Futura', Helvetica, sans-serif;
-  font-size: 28px;
+  font-size: 24px;
   border-bottom: 2px solid #83691A;
-  height: 76px;
+  height: 74px;
   width: 100%;
   text-align: center;
 }
@@ -541,13 +557,13 @@ footer {
 
 #keyboard li, .close-keyboard {
 	color: #fff;
-	background-color: black;
+	background-color: rgba(0,0,0,.8);
 	float: left;
-	margin: 0 26px 15px 0;
-	width: 76px;
-	height: 76px;
-	line-height: 76px;
-	font-size: 28px;
+	margin: 0 28px 15px 0;
+	width: 74px;
+	height: 74px;
+	line-height: 74px;
+	font-size: 24px;
 	text-align: center;
 	/*background: #fff;*/
 	border-bottom: 2px solid #83691A;
