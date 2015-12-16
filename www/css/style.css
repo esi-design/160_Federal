@@ -123,7 +123,7 @@ body {
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 17%;
+  top: 16%;
   left: 17%; }
 
 h1, h2 {
@@ -173,7 +173,7 @@ a {
 .header {
   color: #FFF;
   width: 100%;
-  padding: 2% 3% 0;
+  padding: 2.2% 3% 0;
   position: absolute;
   top: 0; }
   .header .container__line {
@@ -221,13 +221,7 @@ a {
   #page1 h1 {
     text-align: center; }
   #page1 .touch {
-    /*
-    		position: absolute;
-    		left: 0;
-    		right: 0;
-    		bottom: 3%;
-    */
-    padding-top: 40%;
+    padding-top: 44%;
     margin: 0 auto;
     text-align: center;
     width: 90%; }
@@ -236,10 +230,10 @@ a {
       border-top: medium double #83691A;
       border-bottom: medium double #83691A;
       font-family: 'Futura', 'Helvetica', sans-serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 500;
       letter-spacing: 5px;
-      padding: 1% 0;
+      padding: 1.8% 0;
       text-align: center; }
 
 ::-webkit-input-placeholder {
@@ -326,16 +320,16 @@ a {
   .page h2 {
     font-family: 'Futura', 'Helvetica', sans-serif;
     line-height: 135%;
-    margin: 2% 0;
+    margin: 2% 0 2.5%;
     text-align: center;
     letter-spacing: 4px; }
 
 #page2 #div_dir {
   width: 98%; }
 #page2 .ui-input-text, #page2 .ui-input-search, #page2 textarea.ui-input-text {
-  margin-bottom: 0 !important; }
+  margin-bottom: 1px !important; }
   #page2 .ui-input-text input, #page2 .ui-input-search input, #page2 textarea.ui-input-text input {
-    margin-bottom: 0;
+    margin-bottom: 1px;
     background: rgba(255, 255, 255, 0.4) url("../img/search.png");
     background-position: 10px 14px;
     background-repeat: no-repeat;
@@ -346,7 +340,7 @@ a {
   top: 0; }
 #page2 #data_Select, #page2 #data_Select_cmpny, #page2 #data_Select__ppl {
   background: rgba(255, 255, 255, 0.4);
-  height: 500px;
+  height: 560px;
   margin: 1px 0 0;
   overflow: scroll;
   padding: 3% 7%; }
@@ -438,7 +432,7 @@ footer {
 /*KeyBoard CSS*/
 .keyboard {
   position: absolute;
-  top: 54%;
+  top: 58%;
   left: 17%;
   margin: auto;
   width: 80%;

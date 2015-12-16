@@ -58,6 +58,10 @@ $(document).ready(function(){
 			'': function() {
 				renderHome();
 			},
+			
+			'#': function() {
+				renderHome();
+			},
 
 			// Single Products page.
 			'#page2': function() {
@@ -78,7 +82,6 @@ $(document).ready(function(){
 			},
 			
 			'#page4': function() {
-             console.log('page 4');
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('/')[0];
 				renderPage4();
@@ -166,7 +169,7 @@ function renderPage2() {
          InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '200' }, function(){
+         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '230' }, function(){
 	         $('.keyboard').fadeIn();
          });   
      });
@@ -263,7 +266,7 @@ function renderPage4() {
 		page.fadeIn();
 		$('#page4').on('click', function(e){
 			e.preventDefault();
-			window.location.hash = '';
+			window.location.hash = '#';
 		});
 	}
 	
@@ -676,7 +679,7 @@ capslock = false;
 
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '500' }); 
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
 	});
 }); 
 

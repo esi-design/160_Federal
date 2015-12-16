@@ -114,7 +114,7 @@ body {
 	opacity: 0;
 	visibility: hidden;
 	position: absolute;
-    top: 17%;
+    top: 16%;
     left: 17%;
 }
 
@@ -185,7 +185,7 @@ a {
 .header {
     color: #FFF;
     width: 100%;
-    padding: 2% 3% 0;
+    padding: 2.2% 3% 0;
     position: absolute;
     top: 0;
 	.container__line {
@@ -247,13 +247,7 @@ a {
 		text-align: center;
 	}
 	.touch {
-/*
-		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 3%;
-*/
-	    padding-top: 40%;
+	    padding-top: 44%;
 	    margin: 0 auto;
 	    text-align: center;
 	    width: 90%;
@@ -262,10 +256,10 @@ a {
 			border-top: medium double $gold;
 			border-bottom: medium double $gold;
 			font-family: 'Futura', 'Helvetica', sans-serif;
-			font-size: 24px;
+			font-size: 26px;
 			font-weight: 500;
 			letter-spacing: 5px;
-			padding: 1% 0;
+			padding: 1.8% 0;
 			text-align: center;
 		}
 	}
@@ -368,7 +362,7 @@ a {
 	h2 {
 		font-family: 'Futura', 'Helvetica', sans-serif;
 		line-height: 135%;
-		margin: 2% 0;
+		margin: 2% 0 2.5%;
 		text-align: center;
 		letter-spacing: 4px;
 	}
@@ -379,9 +373,9 @@ a {
 		width: 98%;
 	}
 	.ui-input-text, .ui-input-search, textarea.ui-input-text {
-	    margin-bottom: 0 !important;
+	    margin-bottom: 1px !important;
 		input {
-				margin-bottom: 0;
+				margin-bottom: 1px;
 				background: rgba(255,255,255,.4) url('../img/search.png');
 			    background-position: 10px 14px;
 				background-repeat: no-repeat;
@@ -395,7 +389,7 @@ a {
 	}
 	#data_Select, #data_Select_cmpny, #data_Select__ppl {
 		background: rgba(255,255,255,.4);
-		height: 500px;
+		height: 560px;
 		margin: 1px 0 0;
 		overflow: scroll;
 	    padding: 3% 7%;
@@ -516,7 +510,7 @@ footer {
 
 .keyboard{
   position: absolute;
-  top: 54%;
+  top: 58%;
   left: 17%;
   margin: auto;
   width: 80%;
