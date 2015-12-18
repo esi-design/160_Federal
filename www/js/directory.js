@@ -108,6 +108,7 @@ canvas();
 function renderHome() {
 $('.black-bg').fadeIn();
   $('input').empty();
+	$('input').val('');
   $('#searchForCollapsibleSetChildren').empty();
   $('#searchForCollapsibleSetChildren').val('');
   $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
@@ -256,6 +257,7 @@ $('#page3 .ui-select').click(function(){
 });
 
 	$('#page3 .ui-icon-edit').on('click', function(e){
+		$('.keyboard').fadeOut();
 		e.preventDefault();
 		window.location.hash = '#page2';
 	});

@@ -76,6 +76,8 @@ header, hgroup, footer, section, article, aside { display: block }
 
 $gold: #83691A;
 
+$red: #ad1919;
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -270,19 +272,31 @@ a {
 }
 
 .denied::-webkit-input-placeholder {
-   color: #ad1919;
+   color: $red;
 }
 
 :-moz-placeholder { /* Firefox 18- */
    color: #000;
 }
 
+.denied:-moz-placeholder {
+   color: $red;
+}
+
 ::-moz-placeholder {  /* Firefox 19+ */
    color: #000;
 }
 
+.denied::-moz-placeholder {
+   color: $red;
+}
+
 :-ms-input-placeholder {  
    color: #000;
+}
+
+.denied:-ms-input-placeholder {
+   color: $red;
 }
 
 .ui-loader {

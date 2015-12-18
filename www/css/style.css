@@ -246,12 +246,21 @@ a {
   /* Firefox 18- */
   color: #000; }
 
+.denied:-moz-placeholder {
+  color: #ad1919; }
+
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #000; }
 
+.denied::-moz-placeholder {
+  color: #ad1919; }
+
 :-ms-input-placeholder {
   color: #000; }
+
+.denied:-ms-input-placeholder {
+  color: #ad1919; }
 
 .ui-loader {
   display: none; }
