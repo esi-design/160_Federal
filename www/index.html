@@ -76,16 +76,15 @@
        <input type="text" id="name" name="name" placeholder="What's your name?">
        <input type="text" id="visitor-company" name="visitor-company" placeholder="What company are you with?">
 <!--        <input type="text" id="purpose" name="visitor-company" placeholder="What's the purpose of your visit?"> -->
-<select id="purpose" name="purpose">
-	<option value="" disabled selected>What's the purpose of your visit?</option>
-	<option value="Messenger">Messenger</option>
-	<option value="Vendor">Vendor</option>
-	<option value="Visitor">Visitor</option>
-</select>
-   </form>
-   
+	<select id="purpose" name="purpose">
+		<option value="" disabled selected>What's the purpose of your visit?</option>
+		<option value="Messenger">Messenger</option>
+		<option value="Vendor">Vendor</option>
+		<option value="Visitor">Visitor</option>
+	</select>
+</form>
 </div>
-
+	<button class="submit" id="submit">Submit</button>
 </div>
 
 <div id="page4" class="page">
@@ -136,7 +135,8 @@
         
         <div class="close-keyboard clear">X</div>
         <li class="space">Space</li>
-        <li class="return lastitem">return</li>
+        <div class="submit lastitem submit-page2">Submit</div>
+        <div class="submit lastitem submit-page3">Submit</div>
     </ul>
     <textarea id="write" rows="6" cols="60"></textarea>
 </div>  
@@ -145,9 +145,8 @@
             <button class="button__style" id="_cmpny">COMPANIES</button>
             <button class="button__style" id="_ppl">PEOPLE</button> 
             <button class="button__style active" id="_all">LIST ALL</button> 
-            <button class="submit" id="submit">Submit</button> 
+<!--             <button class="submit" id="submit">Submit</button>  -->
         </div>
-        <div style ='width:10px'></div>
     </div>
 <!-- </div> -->
 
@@ -164,8 +163,7 @@
 <script type="text/javascript" src="js/winstore-jscompat.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
 
-<!-- <link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css" rel="stylesheet" /> -->
-<!-- <script src="js/select2.min.js"></script> -->
+
 <script type="text/javascript" src="js/jquery.jsonp-2.4.0.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript" src="js/cordova-1.7.0.js"></script>

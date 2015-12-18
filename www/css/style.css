@@ -278,7 +278,7 @@ a {
     background-color: #414042; }
 
 .ui-input-text, .ui-input-search, textarea.ui-input-text {
-  margin-bottom: 2%;
+  margin-bottom: 1.5%;
   position: relative; }
   .ui-input-text input, .ui-input-search input, textarea.ui-input-text input {
     border: 0;
@@ -361,11 +361,6 @@ a {
       font-weight: 300;
       padding-left: 2%; }
 
-/*
-#page2 {
-	display: none;
-}
-*/
 #page3 {
   /*
   	select {
@@ -382,10 +377,9 @@ a {
   */ }
   #page3 #floor {
     display: none; }
-  #page3 #_cmpny, #page3 #_ppl, #page3 #all {
-    display: none; }
   #page3 .submit.ui-btn {
-    margin: 15% auto 0;
+    display: block;
+    margin: 5% auto 0;
     width: 270px;
     padding: 1% 2%; }
 
@@ -465,7 +459,7 @@ footer {
   padding: 0;
   list-style: none; }
 
-#keyboard li, .close-keyboard {
+#keyboard li, .close-keyboard, #keyboard .submit {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   float: left;
@@ -491,7 +485,7 @@ footer {
   text-indent: -9999px;
   width: 176px; }
 
-#keyboard .return {
+#keyboard .submit {
   width: 190px; }
 
 .lastitem {
