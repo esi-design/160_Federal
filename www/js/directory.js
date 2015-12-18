@@ -107,11 +107,13 @@ canvas();
 
 function renderHome() {
 $('.black-bg').fadeIn();
-  //$(':input[type=text]').empty();
+  $('input').empty();
+  $('#searchForCollapsibleSetChildren').empty();
+  $('#searchForCollapsibleSetChildren').val('');
+  $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
   var page = $('#page1');
   console.log("RENDER Home");
-		// Show the page itself.
-		// (the render function hides all pages so we need to show the one we want).
+
 		page.addClass('visible');
 		$('#page1').on('click', function(e){
 			e.preventDefault();
@@ -159,16 +161,13 @@ function canvas(){
 // ================== PAGE 2 =========================//
 function renderPage2() {
 $('#_cmpny, #_ppl, #_all').show();
-$('.submit-page2').show();
-$('.submit-page3').hide();
+$('.space-page2').show();
+$('.submit-page3, .space-page3').hide();
 
   var page = $('#page2');
   console.log("RENDER Page 2");
   $('.black-bg').fadeOut();
-  
-  $('#searchForCollapsibleSetChildren').empty();
-		// Show the page itself.
-		// (the render function hides all pages so we need to show the one we want).
+
 		page.addClass('visible');
 		
 		$('#page2 input').click(function(){
@@ -199,8 +198,8 @@ $('.submit-page3').hide();
 // ================== PAGE 3 =========================//
 function renderPage3() {
 $('.keyboard, #_cmpny, #_ppl, #_all').fadeOut();
-$('.submit-page3').show();
-$('.submit-page2').hide();
+$('.submit-page3, .space-page3, #submit').show();
+$('.space-page2').hide();
 
  $('#name').empty();
  $('#visitor-company').empty();
@@ -255,6 +254,11 @@ $('#page3 .ui-select').click(function(){
 		$('#submit').fadeIn();
 	});
 });
+
+	$('#page3 .ui-icon-edit').on('click', function(e){
+		e.preventDefault();
+		window.location.hash = '#page2';
+	});
 }
 
 // ================== PAGE 4 =========================//
@@ -334,29 +338,34 @@ function renderPage4() {
 
         //  To send form to the data base
 
-        $("#submit, .submit-page3").click(function(e){
-           var company = $("#company").val();
-           var floor = $("#floor").val();
-           var visitor = $("#name").val();
-           var visitorCompany = $("#visitor-company").val();
-           var purpose = $("#purpose").val();
-           var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
-           values = new Array();
-           values.push(company);
-           values.push(visitor);
-           values.push(visitorCompany);
-           values.push(purpose);
+$("#submit, .submit-page3").click(function(e){
 
-           connectSqlSed(urlSnd); 
-
-           console.log(name + ","+ floor);
-
-           $('#place').text(company);
-           $('#flr').text(floor);
-            e.preventDefault();
-            window.location.hash = '#page4';
-			
-       }); 
+	if( !$('#name').val() ) {
+		$('#name').addClass('denied');
+		console.log('denied');
+	} else {
+		var company = $("#company").val();
+		var floor = $("#floor").val();
+		var visitor = $("#name").val();
+		var visitorCompany = $("#visitor-company").val();
+		var purpose = $("#purpose").val();
+		var urlSnd= "http://esidesigndev.com/data_Demo/guestform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
+		values = new Array();
+		values.push(company);
+		values.push(visitor);
+		values.push(visitorCompany);
+		values.push(purpose);
+		
+		connectSqlSed(urlSnd); 
+		
+		console.log(name + ","+ floor);
+		
+		$('#place').text(company);
+		$('#flr').text(floor);
+		e.preventDefault();
+		window.location.hash = '#page4';
+	}	
+}); 
 
 
  // ================= CONNECTION FUNCTIONS ================= //
@@ -676,6 +685,12 @@ function getValues(data){
        }
     
    });
+   
+      if(comp_selected === true) {
+	       window.location.hash = '#page3';	       
+       } else {
+	       
+       }
    
     $(comp_title).click(function(){
 	    comp_selected = true;

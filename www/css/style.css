@@ -239,6 +239,9 @@ a {
 ::-webkit-input-placeholder {
   color: #000; }
 
+.denied::-webkit-input-placeholder {
+  color: #ad1919; }
+
 :-moz-placeholder {
   /* Firefox 18- */
   color: #000; }
@@ -382,6 +385,10 @@ a {
     margin: 5% auto 0;
     width: 270px;
     padding: 1% 2%; }
+  #page3 .ui-icon-edit {
+    position: absolute;
+    top: 114px;
+    right: 12px; }
 
 #page4 .page {
   width: 80%; }
