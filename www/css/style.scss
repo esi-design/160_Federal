@@ -447,7 +447,7 @@ a {
 */
 	.ui-icon-edit {
 		position: absolute;
-		top: 114px;
+		top: 115px;
 		right: 12px;
 	}
 }
@@ -584,8 +584,11 @@ footer {
         margin-right: 0 !important;
         }
         
-        #keyboard .space {
-        width: 660px;
+        #keyboard .space-page3 {
+	        width: 660px;
+        }
+        #keyboard .space-page2 {
+	        width: 892px;
         }
         .on {
         display: none;

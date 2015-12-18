@@ -387,7 +387,7 @@ a {
     padding: 1% 2%; }
   #page3 .ui-icon-edit {
     position: absolute;
-    top: 114px;
+    top: 115px;
     right: 12px; }
 
 #page4 .page {
@@ -498,8 +498,11 @@ footer {
 .lastitem {
   margin-right: 0 !important; }
 
-#keyboard .space {
+#keyboard .space-page3 {
   width: 660px; }
+
+#keyboard .space-page2 {
+  width: 892px; }
 
 .on {
   display: none; }
