@@ -87,7 +87,13 @@ header, hgroup, footer, section, article, aside {
   font-style: normal; }
 * {
   -webkit-tap-highlight-color: transparent;
-  /* make transparent link selection, adjust last value opacity 0 to 1.0 */ }
+  /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
 
 *, *:before, *:after {
   box-sizing: border-box; }
@@ -124,7 +130,13 @@ body {
   visibility: hidden;
   position: absolute;
   top: 16%;
-  left: 17%; }
+  left: 17%;
+  margin: 0 auto;
+  width: 66%; }
+  .page h2 {
+    line-height: 135%;
+    margin: 2% 0 2.5%;
+    letter-spacing: 4px; }
 
 h1, h2 {
   text-align: center; }
@@ -247,21 +259,36 @@ a {
   color: #000; }
 
 .denied:-moz-placeholder {
-  color: #ad1919; }
+  color: #ad1919 !important; }
 
 ::-moz-placeholder {
   /* Firefox 19+ */
   color: #000; }
 
 .denied::-moz-placeholder {
-  color: #ad1919; }
+  color: #ad1919 !important; }
 
 :-ms-input-placeholder {
   color: #000; }
 
 .denied:-ms-input-placeholder {
-  color: #ad1919; }
+  color: #ad1919 !important; }
 
+input:focus::-webkit-input-placeholder {
+  opacity: 0; }
+
+input:focus:-moz-placeholder {
+  opacity: 0; }
+
+/* FF 4-18 */
+input:focus::-moz-placeholder {
+  opacity: 0; }
+
+/* FF 19+ */
+input:focus:-ms-input-placeholder {
+  opacity: 0; }
+
+/* IE 10+ */
 .ui-loader {
   display: none; }
 
@@ -295,7 +322,7 @@ a {
   .ui-input-text input, .ui-input-search input, textarea.ui-input-text input {
     border: 0;
     background: rgba(255, 255, 255, 0.4);
-    color: #000 !important;
+    color: #000;
     font-family: 'Futura', 'Helvetica', sans-serif;
     font-size: 24px;
     letter-spacing: 3px;
@@ -326,18 +353,6 @@ a {
 .active {
   background-color: #414042 !important; }
 
-.page {
-  margin: 0 auto;
-  width: 66%; }
-  .page h2 {
-    font-family: 'Futura', 'Helvetica', sans-serif;
-    line-height: 135%;
-    margin: 2% 0 2.5%;
-    text-align: center;
-    letter-spacing: 4px; }
-
-#page2 #div_dir {
-  width: 98%; }
 #page2 .ui-input-text, #page2 .ui-input-search, #page2 textarea.ui-input-text {
   margin-bottom: 1px !important; }
   #page2 .ui-input-text input, #page2 .ui-input-search input, #page2 textarea.ui-input-text input {
@@ -458,11 +473,13 @@ footer {
   width: 100%;
   text-align: center; }
 
-#SFC_button {
+/*
+#SFC_button{
   margin-left: -50px;
-  height: 20px;
-  width: 50px; }
-
+  height:  20px;
+  width:  50px;
+}
+*/
 #write {
   visibility: hidden; }
 
@@ -479,7 +496,7 @@ footer {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   float: left;
-  margin: 0 28px 15px 0;
+  margin: 0 29px 15px 0;
   width: 74px;
   height: 74px;
   line-height: 74px;

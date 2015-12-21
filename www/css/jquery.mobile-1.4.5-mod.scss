@@ -3364,17 +3364,21 @@ textarea.ui-mini {
 	display: none;
 }
 /* Resolves issue #5166: Added to support issue introduced in Firefox 15. We can likely remove this in the future. */
+/*
 .ui-input-text input::-moz-placeholder,
 .ui-input-search input::-moz-placeholder,
 textarea.ui-input-text::-moz-placeholder {
 	color: #aaa;
 }
+*/
 /* Same for IE10 */
+/*
 .ui-input-text input:-ms-input-placeholder,
 .ui-input-search input:-ms-input-placeholder,
 textarea.ui-input-text:-ms-input-placeholder {
 	color: #aaa;
 }
+*/
 /* Resolves issue #5131: Width of textinput depends on its type,
 for Android 4.1 */
 .ui-input-text input[type=number]::-webkit-outer-spin-button {

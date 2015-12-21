@@ -3,11 +3,25 @@ var LocD ='[{"id":"75","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING
 
 $(document).ready(function(){
 
+/*
 	$(document).on('click', function(e){
 		$('input').blur();
 		e.preventDefault();
 		return false;
 	})
+*/
+
+	$('input').on('focus', function(e) {
+	    e.preventDefault(); e.stopPropagation();
+	    window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
+	});
+	
+    $('input,textarea').focus(function () {
+        $(this).data('placeholder', $(this).attr('placeholder'))
+               .attr('placeholder', '');
+    }).blur(function () {
+        $(this).attr('placeholder', $(this).data('placeholder'));
+    });
 
     render(window.location.hash);
     $.support.cors=true;
@@ -573,7 +587,8 @@ function getValues(data){
 
     var comp_title =$(document.createElement('h3')).attr({
      'class': "ui-collapsible-heading ui-collapsible-heading-collapsed",
- });
+	});
+	
     var spam_a =$(document.createElement('a')).attr({
         'class': 'ui-collapsible-heading-toggle',
         'href': "#"
@@ -594,7 +609,7 @@ function getValues(data){
     var comp_name = $(document.createElement("div")).attr({ 
         'data-role':"collapsible",
         'data-collapsed':'false',
-        value:next[i][2] ,
+        value:next[i][2],
         'data-inset': 'false',
         'data-content-theme':"false",
         'class': clase,
@@ -654,6 +669,10 @@ function getValues(data){
 
                         console.log(companyName + " | "+ companyLocation);
                         $('#searchForCollapsibleSetChildren').val(companyName);
+
+					   $('#company').val(companyName); 
+					   $('#floor').val(companyLocation); 
+					   window.location.hash = '#page3'; 
 							
                     });
                     $(list).append(list_link);
@@ -669,7 +688,7 @@ function getValues(data){
 
 	var comp_selected = false;
 	
-    $('.submit-page2').click(function(){
+    $(list_link).click(function(){
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();
 
@@ -680,11 +699,11 @@ function getValues(data){
        $('#searchForCollapsibleSetChildren').val(c_Name); 
        $('#company').val(c_Name); 
        $('#floor').val(c_Location); 
-       if(comp_selected === true) {
+//        if(comp_selected === true) {
 	       window.location.hash = '#page3';	       
-       } else {
+//        } else {
 	       
-       }
+//        }
     
    });
    
@@ -695,6 +714,7 @@ function getValues(data){
        }
    
     $(comp_title).click(function(){
+	    console.log('clicked');
 	    comp_selected = true;
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();
