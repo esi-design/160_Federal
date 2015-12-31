@@ -22,6 +22,16 @@ $(document).ready(function(){
     }).blur(function () {
         $(this).attr('placeholder', $(this).data('placeholder'));
     });
+    
+    $('.hover').bind('touchstart touchend', function(e) {
+        e.preventDefault();
+        $(this).toggleClass('hover_effect');
+    });
+    
+    $('.logo').click(function(e){
+	    e.preventDefault();
+		window.location.hash = '#';
+    });
 
     render(window.location.hash);
     $.support.cors=true;
@@ -120,21 +130,22 @@ $(document).ready(function(){
 canvas();
 
 function renderHome() {
-$('.black-bg').fadeIn();
-  $('input').empty();
+	$('.black-bg').fadeIn();
+	$('input').empty();
 	$('input').val('');
-  $('#searchForCollapsibleSetChildren').empty();
-  $('#searchForCollapsibleSetChildren').val('');
-  $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
-  var page = $('#page1');
-  console.log("RENDER Home");
+	$('#searchForCollapsibleSetChildren').empty();
+	$('#searchForCollapsibleSetChildren').val('');
+	$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+	var page = $('#page1');
+	console.log("RENDER Home");
 
-		page.addClass('visible');
-		$('#page1').on('click', function(e){
-			e.preventDefault();
-			window.location.hash = '#page2';
-		});
-	}
+	page.addClass('visible');
+	$('#page1').on('click', function(e){
+		e.preventDefault();
+		window.location.hash = '#page2';
+	});
+}
 
 function canvas(){
 	console.log('canvas');
@@ -824,5 +835,5 @@ $(document).on("mousemove keydown click touchstart", function() {
     timeout = setTimeout(function() {
 		$('.keyboard').fadeOut();
          window.location = '#';
-    }, 1000 * 60 * 3);
+    }, 1000 * 60 * 1);
 }).click();
