@@ -57,6 +57,7 @@ $(document).ready(function(){
 	    
     });
     
+    
 
 //================= Page 1 =================//
 
@@ -385,10 +386,18 @@ $("#submit, .submit-page3").click(function(e){
 		
 		connectSqlSed(urlSnd); 
 		
-		console.log(name + ","+ floor);
+		console.log(company + ","+ floor);
 		
+		var noElevator = floor.toUpperCase().search('FLOOR');
+		
+		if(noElevator == -1) {
+			$('#direction').text('PLEASE PROCEED TO YOUR DESTINATION.');
+		} else {
+			$('#direction').text('PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.');
+		}
 		$('#place').text(company);
 		$('#flr').text(floor);
+		
 		e.preventDefault();
 		window.location.hash = '#page4';
 	}	
