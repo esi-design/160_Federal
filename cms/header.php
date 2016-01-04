@@ -5,20 +5,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />  
 <title>160 Federal Directory</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+<link rel="stylesheet" href="css/datatables.css" type="text/css" />
+<!--     <link href="css/bootstrap.css" rel="stylesheet"> -->
+<!--     <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 
 </head>  
 <body>  
 <div id="main" class="container">
 	
-	<div class="masthead">
+	<div class="nav">
 	<?php if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) { ?>
-		<ul class="nav nav-pills pull-right">
+		<ul class="nav-pills pull-right">
 			<li class="active"><a href="#">Visitor Log</a></li>
 			<li><a href="#">Directory</a></li>
 			<li><a href="logout.php">Logout</a></li>
         </ul>
     <?php } ?>
-        <h3 class="muted">160 Federal</h3>
+        <h1 class="logo">160 Federal</h1>
 	</div>
+
+<div class="content">

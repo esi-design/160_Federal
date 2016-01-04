@@ -89,15 +89,21 @@ body {
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
     background-attachment:fixed;
-    color: #FFF;
+	font-size: 14px;
+	line-height: 135%;
+	color: #333333;
     font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
-    font-size: 12px;
     font-weight: 500;
-    height: 100%;
+//     height: 100%;
     margin: 0px;
     padding: 0px;
     text-transform: uppercase;
     width: 100%;
+}
+
+.container {
+	margin: 2% auto 5%;
+	width: 80%;
 }
 
 .page.visible {
@@ -117,28 +123,129 @@ body {
     left: 17%;
 }
 
-h1, h2 {
-	text-align: center;
+h1,
+h2,
+h3 {
+  line-height: 40px;
 }
 
 h1 {
-	font-size: 75px;
+  font-size: 38.5px;
 }
 
 h2 {
-	font-size: 40px;
+  font-size: 31.5px;
 }
 
 h3 {
-	font-size: 30px;
-	line-height: 130%;
+  font-size: 24.5px;
+}
+
+h4 {
+  font-size: 17.5px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 11.9px;
 }
 
 a {
-	color: #FFF;
+	color: #0088cc;
 	text-decoration: none;
 }
 
+.nav {
+  margin-bottom: 5%;
+  margin-left: 0;
+  list-style: none;
+}
+
+.nav > li > a {
+  display: block;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  text-decoration: none;
+  background-color: #eeeeee;
+}
+
+.nav > li > a > img {
+  max-width: none;
+}
+
+.pull-right {
+  float: right;
+}
+
+.nav-tabs:before,
+.nav-pills:before,
+.nav-tabs:after,
+.nav-pills:after {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+
+.nav-tabs,
+.nav-pills {
+  *zoom: 1;
+}
+
+.nav-tabs:after,
+.nav-pills:after {
+  clear: both;
+}
+
+.nav-tabs > li,
+.nav-pills > li {
+  float: left;
+}
+
+.nav-tabs > li > a,
+.nav-pills > li > a {
+  padding-right: 12px;
+  padding-left: 12px;
+  margin-right: 2px;
+  line-height: 14px;
+}
+
+.nav-pills > li > a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: #ffffff;
+  background-color: #0088cc;
+}
+
+.nav-pills > .active > a,
+.nav-pills > .active > a:hover,
+.nav-pills > .active > a:focus {
+  color: #ffffff;
+  background-color: #0088cc;
+}
+
+.logo {
+	font-weight: 700;
+}
+
+
+.dataTables_wrapper {
+	margin-top: 5%;
+}
 
 @keyframes fade {
     from { opacity: 1.0; }

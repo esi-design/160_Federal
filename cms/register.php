@@ -19,7 +19,7 @@ if(!empty($_POST['username']) && !empty($_POST['password']))
      if(mysql_num_rows($checkusername) == 1)
      {
      	echo "<h1>Error</h1>";
-        echo "<p>Sorry, that username is taken. Please go back and try again.</p>";
+        echo "<p>Sorry, that username is taken. Please <a href=\"register.php\">go back</a> and try again.</p>";
      }
      else
      {
@@ -56,6 +56,5 @@ else
    <?php
 }
 ?>
-</div>
-</body>
-</html>
+
+<?php include "footer.php"; ?>
