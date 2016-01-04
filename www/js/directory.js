@@ -133,6 +133,7 @@ canvas();
 function renderHome() {
 	$('.black-bg').fadeIn();
 	$('input').empty();
+	$('#name').removeClass('denied');
 	$('input').val('');
 	$('#searchForCollapsibleSetChildren').empty();
 	$('#searchForCollapsibleSetChildren').val('');
@@ -228,8 +229,8 @@ $('.keyboard, #_cmpny, #_ppl, #_all').fadeOut();
 $('.submit-page3, .space-page3, #submit').show();
 $('.space-page2').hide();
 
- $('#name').empty();
- $('#visitor-company').empty();
+ $('#name, #visitor-company').empty();
+//  $('#visitor-company').empty();
 
 		// Hide whatever page is currently shown.
 		$('.container .page').removeClass('visible');
@@ -763,6 +764,9 @@ capslock = false;
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
 		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+		if($('#page3').hasClass('visible')) {
+			$('#submit').fadeIn();
+		}
 	});
 }); 
 
