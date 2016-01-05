@@ -157,8 +157,7 @@ a {
   text-decoration: none; }
 
 .nav {
-  margin-bottom: 5%;
-  margin-left: 0;
+  margin: 3% 0 5%;
   list-style: none; }
 
 .nav > li > a {
@@ -172,9 +171,6 @@ a {
 .nav > li > a > img {
   max-width: none; }
 
-.pull-right {
-  float: right; }
-
 .nav-tabs:before,
 .nav-pills:before,
 .nav-tabs:after,
@@ -185,6 +181,10 @@ a {
 
 .nav-tabs,
 .nav-pills {
+  display: inline-block;
+  text-align: right;
+  vertical-align: top;
+  width: 35%;
   *zoom: 1; }
 
 .nav-tabs:after,
@@ -193,7 +193,8 @@ a {
 
 .nav-tabs > li,
 .nav-pills > li {
-  float: left; }
+  display: inline-block;
+  text-align: right; }
 
 .nav-tabs > li > a,
 .nav-pills > li > a {
@@ -224,7 +225,11 @@ a {
   background-color: #0088cc; }
 
 .logo {
+  display: inline-block;
+  width: 62%;
   font-weight: 700; }
+  .logo h1 {
+    line-height: 100%; }
 
 .dataTables_wrapper {
   margin-top: 5%; }

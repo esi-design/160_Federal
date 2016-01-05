@@ -159,9 +159,8 @@ a {
 }
 
 .nav {
-  margin-bottom: 5%;
-  margin-left: 0;
-  list-style: none;
+	margin: 3% 0 5%;
+	list-style: none;
 }
 
 .nav > li > a {
@@ -178,10 +177,6 @@ a {
   max-width: none;
 }
 
-.pull-right {
-  float: right;
-}
-
 .nav-tabs:before,
 .nav-pills:before,
 .nav-tabs:after,
@@ -193,7 +188,11 @@ a {
 
 .nav-tabs,
 .nav-pills {
-  *zoom: 1;
+	display: inline-block;
+    text-align: right;
+    vertical-align: top;
+	width: 35%;
+	*zoom: 1;
 }
 
 .nav-tabs:after,
@@ -203,7 +202,8 @@ a {
 
 .nav-tabs > li,
 .nav-pills > li {
-  float: left;
+	display: inline-block;
+    text-align: right;
 }
 
 .nav-tabs > li > a,
@@ -239,7 +239,12 @@ a {
 }
 
 .logo {
+	display: inline-block;
+	width: 62%;
 	font-weight: 700;
+	h1 {
+		line-height: 100%;
+	}
 }
 
 

@@ -14,14 +14,15 @@
 <div id="main" class="container">
 	
 	<div class="nav">
+    <h1 class="logo">160 Federal</h1>
+    	
 	<?php if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) { ?>
-		<ul class="nav-pills pull-right">
+		<ul class="nav-pills">
 			<li class="active"><a href="#">Visitor Log</a></li>
 			<li><a href="#">Directory</a></li>
 			<li><a href="logout.php">Logout</a></li>
         </ul>
     <?php } ?>
-        <h1 class="logo">160 Federal</h1>
 	</div>
 
 <div class="content">

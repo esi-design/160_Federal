@@ -19,5 +19,3 @@
             </tr>
         </tfoot>
     </table>
-
-<?php include "footer.php"; ?>
