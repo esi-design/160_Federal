@@ -139,6 +139,8 @@ function renderHome() {
 	$('#searchForCollapsibleSetChildren').val('');
 	$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+	$('#purpose').val('What\'s the purpose of your visit?');
+	
 	var page = $('#page1');
 	console.log("RENDER Home");
 
@@ -222,8 +224,8 @@ $('.submit-page3, .space-page3').hide();
 
 }
 
-	$('#page2 .close').on('click', function(e){
-		console.log('close');
+	$('#page2 .icon-close').on('click', function(e){
+		//console.log('close');
 		e.preventDefault();
 		$('#write').empty();
 		$('#searchForCollapsibleSetChildren').empty().val('');
@@ -252,9 +254,9 @@ $('.space-page2').hide();
 
 $('#page3 input').click(function(){
 	$('#write').empty();
-	console.log($(this).attr('id'));
+	//console.log($(this).attr('id'));
 	var inp =  $(this).attr('id');
-	console.log(inp);
+	//console.log(inp);
 	
 	if (inp == 'name'){
 		InputName = '#name';
@@ -265,6 +267,10 @@ $('#page3 input').click(function(){
 		console.log('Input : visitor-company')
 	}
 	
+	if($('#purpose-option').is(':visible')) {
+		$('#purpose-option').slideUp();	
+	}
+	
 	$('#submit').fadeOut(function(){
 		$('.keyboard').fadeIn();
 	});
@@ -272,17 +278,17 @@ $('#page3 input').click(function(){
 
 $('#page3 .ui-select').click(function(){
 	$('#write').empty();
-	console.log($(this).attr('id'));
+	//console.log($(this).attr('id'));
 	var inp =  $(this).attr('id');
-	console.log(inp);
+	//console.log(inp);
 	
 	if (inp == 'name'){
-	InputName = '#name';
-	console.log('Input : Name')
+		InputName = '#name';
+		//console.log('Input : Name')
 	}
 	if(inp == 'visitor-company'){
-	InputName = '#visitor-company';
-	console.log('Input : visitor-company')
+		InputName = '#visitor-company';
+		//console.log('Input : visitor-company');
 	}
 	
 	$('.keyboard').fadeOut(function(){
@@ -290,7 +296,7 @@ $('#page3 .ui-select').click(function(){
 	});
 });
 
-	$('#page3 .close').on('click', function(e){
+	$('#page3 .icon-close.edit-company').on('click', function(e){
 		$('.keyboard').fadeOut();
 		e.preventDefault();
 		window.location.hash = '#page2';
@@ -378,13 +384,15 @@ $("#submit, .submit-page3").click(function(e){
 
 	if( !$('#name').val() ) {
 		$('#name').addClass('denied');
-		console.log('denied');
 	} else {
 		var company = $("#company").val();
 		var floor = $("#floor").val();
 		var visitor = $("#name").val();
 		var visitorCompany = $("#visitor-company").val();
-		var purpose = $("#purpose").val();
+		var purpose = $("#purpose").text();
+		if(purpose.length > 10) {
+			purpose = '';
+		}
 		var urlSnd= "http://esidesigndev.com/data_Demo/visitorform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
 		values = new Array();
 		values.push(company);
@@ -410,6 +418,31 @@ $("#submit, .submit-page3").click(function(e){
 		window.location.hash = '#page4';
 	}	
 }); 
+
+$('#purpose').click(function(){
+     $('#page3 #submit, .keyboard').fadeOut(function(){
+         $('#purpose-option').slideDown(function(){
+	         $('.purpose-drop .icon-close').fadeIn();
+         }); 
+    });    
+});
+$('#purpose-option a').click(function(e){
+     $('#purpose').text($(this).text());
+     $('#purpose-option').slideUp(function(){
+         $('.purpose-drop .icon-close').fadeOut();
+         $(this).addClass('current');
+         $('#page3 #submit').fadeIn();
+     }); 
+    e.preventDefault();
+});
+
+$('.purpose-drop .icon-close').click(function(){
+     $('.purpose-drop .icon-close').fadeOut();
+     $('#purpose-option').slideUp(function(){
+         $(this).addClass('current');
+         $('#page3 #submit').fadeIn();
+     }); 
+});
 
 
  // ================= CONNECTION FUNCTIONS ================= //
@@ -784,9 +817,9 @@ $('#keyboard li').click(function(){
 	
 	var searchLength = $('#write').html();
 	if(searchLength.length >= 0) {
-		$('#page2 .close').fadeIn();
+		$('#page2 .icon-close').fadeIn();
 	} else {
-		$('#page2 .close').fadeOut();
+		$('#page2 .icon-close').fadeOut();
 	}
 
     var $this = $(this),

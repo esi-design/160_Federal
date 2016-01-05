@@ -402,18 +402,20 @@ input:focus:-ms-input-placeholder {
     text-transform: none !important; }
 #page2 form {
   position: relative; }
-#page2 .close {
+#page2 .icon-close {
   display: none;
+  top: 14px;
+  right: 10px; }
+#page2 .ui-input-clear {
+  display: none !important; }
+
+.icon-close {
   background-image: url("../img/close.png");
   position: absolute;
   background-repeat: no-repeat;
   background-size: 90% 90%;
-  top: 14px;
-  right: 10px;
   height: 36px;
   width: 36px; }
-#page2 .ui-input-clear {
-  display: none !important; }
 
 #page3 {
   /*
@@ -436,17 +438,49 @@ input:focus:-ms-input-placeholder {
     margin: 5% auto 0;
     width: 270px;
     padding: 1% 2%; }
-  #page3 .close {
-    background-image: url("../img/close.png");
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: 90% 90%;
+  #page3 .icon-close {
     top: 104px;
-    right: 12px;
-    height: 36px;
-    width: 36px; }
+    right: 12px; }
   #page3 #purpose-button.ui-icon-carat-d {
     display: none; }
+  #page3 .purpose-drop {
+    position: relative;
+    width: 100%; }
+    #page3 .purpose-drop .icon-close {
+      display: none;
+      top: 18px;
+      right: 12px; }
+  #page3 #purpose {
+    padding: 2.5% 3% 2%; }
+  #page3 #purpose, #page3 #purpose-option {
+    border: 0;
+    background: rgba(255, 255, 255, 0.4);
+    color: #000;
+    display: block;
+    font-family: 'Futura', 'Helvetica', sans-serif;
+    font-size: 24px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    -webkit-border-radius: inherit;
+    border-radius: inherit;
+    outline: 0;
+    text-align: left;
+    width: 100%; }
+  #page3 #purpose-option {
+    position: absolute;
+    display: none;
+    padding: 0;
+    border-top: 1px solid #000; }
+    #page3 #purpose-option a {
+      color: #000; }
+      #page3 #purpose-option a.current {
+        color: #999; }
+    #page3 #purpose-option li {
+      padding: 2% 3%;
+      border-bottom: 1px solid #000; }
+      #page3 #purpose-option li:last-of-type {
+        border-bottom: none; }
 
 #page4 .page {
   width: 80%; }
