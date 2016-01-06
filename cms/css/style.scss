@@ -103,7 +103,7 @@ body {
 
 .container {
 	margin: 2% auto 5%;
-	width: 80%;
+	width: 90%;
 }
 
 .page.visible {
@@ -164,7 +164,7 @@ a {
 }
 
 .nav > li > a {
-  display: block;
+//   display: block;
 }
 
 .nav > li > a:hover,
@@ -177,6 +177,7 @@ a {
   max-width: none;
 }
 
+/*
 .nav-tabs:before,
 .nav-pills:before,
 .nav-tabs:after,
@@ -185,13 +186,15 @@ a {
   line-height: 0;
   content: "";
 }
+*/
 
 .nav-tabs,
 .nav-pills {
-	display: inline-block;
+// 	display: inline-block;
+	float: right;
     text-align: right;
-    vertical-align: top;
-	width: 68%;
+    vertical-align: 4px;
+	width: 59%;
 	*zoom: 1;
 }
 
@@ -203,6 +206,7 @@ a {
 .nav-tabs > li,
 .nav-pills > li {
 	display: inline-block;
+// 	float: right;
     text-align: right;
 }
 
@@ -240,7 +244,7 @@ a {
 
 .logo {
 	display: inline-block;
-	width: 32%;
+	width: 40%;
 	font-weight: 700;
 	h1 {
 		line-height: 100%;
@@ -250,6 +254,22 @@ a {
 
 .dataTables_wrapper {
 	margin-top: 5%;
+}
+
+.login {
+	background: #F2F2F2;
+	border: 1px solid #EFEFEF;
+	margin: 5% auto 0;
+	padding: 5% 7%;
+	width: 400px;
+	label {
+		width: 100%;
+	}
+	input[type=text], input[type=password] {
+	    clear: both;
+	    margin: 3% 0 8%;
+	    width: 100%;
+	}
 }
 
 @keyframes fade {
@@ -262,4 +282,18 @@ a {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }
     to { opacity: 1.0; }
+}
+
+@media only screen and (min-width: 490px) and (max-width: 890px) {
+
+.container {
+	width: 96%;
+}
+
+.logo, .nav-pills {
+	margin-bottom: 5%;
+	text-align: center;
+	width: 100%;
+}
+
 }

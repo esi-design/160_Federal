@@ -34,7 +34,7 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
         $_SESSION['EmailAddress'] = $email;
         $_SESSION['LoggedIn'] = 1;
  
-		echo '<h3>Logged in successfully.</h3>';
+// 		echo '<h3>Logged in successfully.</h3>';
 		echo '<meta http-equiv="refresh" content="1; url=visitor.php">';
     }
     else
@@ -47,8 +47,10 @@ else
 {
 	?>
     
-   <p>Thanks for visiting! Please either login below, or <a href="register.php">click here to register</a>.</p>
-    
+
+<!--    <p>Thanks for visiting! Please either login below, or <a href="register.php">click here to register</a>.</p>   -->
+
+	<div class="login">
 	<form method="post" action="index.php" name="loginform" id="loginform" class="form-signin">
 	<fieldset>
 		<label for="username">Username:</label><input type="text" name="username" id="username" /><br />
@@ -56,7 +58,8 @@ else
 		<input type="submit" name="login" id="login" value="Login" />
 	</fieldset>
 	</form>
-    
+	</div>
+	
    <?php
 }
 ?>

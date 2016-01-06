@@ -112,7 +112,7 @@ body {
 
 .container {
   margin: 2% auto 5%;
-  width: 80%; }
+  width: 90%; }
 
 .page.visible {
   opacity: 1;
@@ -160,9 +160,6 @@ a {
   margin: 3% 0 5%;
   list-style: none; }
 
-.nav > li > a {
-  display: block; }
-
 .nav > li > a:hover,
 .nav > li > a:focus {
   text-decoration: none;
@@ -171,20 +168,22 @@ a {
 .nav > li > a > img {
   max-width: none; }
 
+/*
 .nav-tabs:before,
 .nav-pills:before,
 .nav-tabs:after,
 .nav-pills:after {
   display: table;
   line-height: 0;
-  content: ""; }
-
+  content: "";
+}
+*/
 .nav-tabs,
 .nav-pills {
-  display: inline-block;
+  float: right;
   text-align: right;
-  vertical-align: top;
-  width: 68%;
+  vertical-align: 4px;
+  width: 59%;
   *zoom: 1; }
 
 .nav-tabs:after,
@@ -226,13 +225,26 @@ a {
 
 .logo {
   display: inline-block;
-  width: 32%;
+  width: 40%;
   font-weight: 700; }
   .logo h1 {
     line-height: 100%; }
 
 .dataTables_wrapper {
   margin-top: 5%; }
+
+.login {
+  background: #F2F2F2;
+  border: 1px solid #EFEFEF;
+  margin: 5% auto 0;
+  padding: 5% 7%;
+  width: 400px; }
+  .login label {
+    width: 100%; }
+  .login input[type=text], .login input[type=password] {
+    clear: both;
+    margin: 3% 0 8%;
+    width: 100%; }
 
 @keyframes fade {
   from {
@@ -248,5 +260,13 @@ a {
     opacity: 0.4; }
   to {
     opacity: 1.0; } }
+@media only screen and (min-width: 490px) and (max-width: 890px) {
+  .container {
+    width: 96%; }
+
+  .logo, .nav-pills {
+    margin-bottom: 5%;
+    text-align: center;
+    width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

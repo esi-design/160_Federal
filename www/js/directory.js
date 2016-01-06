@@ -133,6 +133,7 @@ function renderHome() {
 	$('input').empty();
     $('#data_Select').show(); 
     $('#data_Select_cmpny, #data_Select__ppl').hide();
+    $('input, #purpose, #purpose-option').removeClass('focus');
     $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#name').removeClass('denied');
 	$('input').val('');
@@ -140,7 +141,7 @@ function renderHome() {
 	$('#searchForCollapsibleSetChildren').val('');
 	$('.keyboard').fadeOut();
 	$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
 	$('#purpose').text('What\'s the purpose of your visit?');
 	
 	var page = $('#page1');
@@ -204,7 +205,7 @@ $('.submit-page3, .space-page3').hide();
          InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '230' }, function(){
+         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '230' }, 'fast', function(){
 	         $('.keyboard').fadeIn();
          });   
      });
@@ -233,10 +234,10 @@ $('.space-page2').hide();
 		// Show the page itself.
 		page.addClass('visible');
 		page.fadeIn(function(){
-			$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+			$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
 		});
 
-$('#page3 input').click(function(){
+$('#page3 input#name, #page3 input#visitor-company').click(function(){
 	$('#write').empty();
 	//console.log($(this).attr('id'));
 	var inp =  $(this).attr('id');
@@ -405,7 +406,7 @@ $("#submit, .submit-page3").click(function(e){
 
 $('#purpose').click(function(){
      $('#page3 #submit, .keyboard').fadeOut(function(){
-        $('#purpose-option').slideDown(function(){
+        $('#purpose-option').slideDown(200, function(){
 	        $('.purpose-drop .icon-close').fadeIn();
 			$('#purpose-option').addClass('focus');
 			$('#purpose').addClass('focus');
@@ -414,7 +415,7 @@ $('#purpose').click(function(){
 });
 $('#purpose-option a').click(function(e){
      $('#purpose').text($(this).text());
-     $('#purpose-option').slideUp(function(){
+     $('#purpose-option').slideUp(200, function(){
 		$('#purpose-option').removeClass('focus');
 		$('#purpose').removeClass('focus');
         $('.purpose-drop .icon-close').fadeOut();
@@ -426,7 +427,7 @@ $('#purpose-option a').click(function(e){
 
 $('.purpose-drop .icon-close').click(function(){
      $('.purpose-drop .icon-close').fadeOut();
-     $('#purpose-option').slideUp(function(){
+     $('#purpose-option').slideUp(200, function(){
          $(this).addClass('current');
          $('#page3 #submit').fadeIn();
      }); 
@@ -453,7 +454,7 @@ $('.purpose-drop .icon-close').click(function(){
 }
 
 
-// Get the data  -- xhml 
+// Get the data  -- xml 
 
 function handler()
 {
@@ -758,15 +759,17 @@ function getValues(data){
     
    });
    
+/*
       if(comp_selected === true) {
 	       window.location.hash = '#page3';	       
        } else {
 	       
        }
+*/
    
     $(comp_title).click(function(){
 	    //console.log('clicked');
-	    comp_selected = true;
+	    //comp_selected = true;
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();
 
@@ -793,7 +796,7 @@ capslock = false;
 
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
 		if($('#page3').hasClass('visible')) {
 			$('#submit').fadeIn();
 		}
@@ -887,5 +890,5 @@ $(document).on("mousemove keydown click touchstart", function() {
     timeout = setTimeout(function() {
 		$('.keyboard').fadeOut();
          window.location = '#';
-    }, 1000 * 60 * 1);
+    }, 1000 * 60 * 30);
 }).click();
