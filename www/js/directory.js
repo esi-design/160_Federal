@@ -3,14 +3,6 @@ var LocD ='[{"id":"75","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING
 
 $(document).ready(function(){
 
-/*
-	$(document).on('click', function(e){
-		$('input').blur();
-		e.preventDefault();
-		return false;
-	})
-*/
-
 	$('input').on('focus', function(e) {
 	    e.preventDefault(); e.stopPropagation();
 	    window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
@@ -45,7 +37,6 @@ $(document).ready(function(){
     var values =[];
     var Ldata = [];
 
-
     var companyName;
     var companyLocation;
 
@@ -69,7 +60,6 @@ $(document).ready(function(){
 	});
 
 
-	
 	function render(url) {
 
 		// Get the keyword from the url.
@@ -77,7 +67,6 @@ $(document).ready(function(){
 
 		// Hide whatever page is currently shown.
 		$('.container .page').removeClass('visible');
-
 
 		var map = {
 
@@ -121,7 +110,7 @@ $(document).ready(function(){
 		}
 		// If the keyword isn't listed in the above - render the error page.
 		else {
-			renderErrorPage();
+			renderHome();
 		}
 
 	}
@@ -138,9 +127,8 @@ function renderHome() {
     $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#name').removeClass('denied');
 	$('input').val('');
-	$('#searchForCollapsibleSetChildren').empty();
-	$('#searchForCollapsibleSetChildren').val('');
-	$('.keyboard').fadeOut();
+	$('#searchForCollapsibleSetChildren').empty().val('');
+	$('.keyboard').hide();
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
 	$('#purpose').text('What\'s the purpose of your visit?');
@@ -206,19 +194,19 @@ $('.submit-page3, .space-page3').hide();
          InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '240' }, 'fast', function(){
+         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '250' }, 'fast', function(){
 	         $('.keyboard').fadeIn();
          });   
      });
 
 }
 
-	$('#page2 .icon-close').on('click', function(e){
-		e.preventDefault();
-		$('#write').empty();
-		$('#searchForCollapsibleSetChildren').empty().val('');
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable("refresh");
-	});    
+$('#page2 .icon-close').on('click', function(e){
+	e.preventDefault();
+	$('#write').empty();
+	$('#searchForCollapsibleSetChildren').empty().val('');
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable("refresh");
+});    
 
 // ================== PAGE 3 =========================//
 function renderPage3() {
@@ -226,17 +214,14 @@ $('.keyboard, #_cmpny, #_ppl, #_all').fadeOut();
 $('.submit-page3, .space-page3, #submit').show();
 $('.space-page2').hide();
 
- $('#name, #visitor-company').empty();
-//  $('#visitor-company').empty();
+$('#name, #visitor-company').empty();
 
-		// Hide whatever page is currently shown.
-		var page = $('#page3');
-		
-		// Show the page itself.
-		page.addClass('visible');
-		page.fadeIn(function(){
-			$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
-		});
+// Hide whatever page is currently shown.
+var page = $('#page3');
+
+page.addClass('visible');
+
+$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
 
 $('#page3 input#name, #page3 input#visitor-company').click(function(){
 	$('#write').empty();
@@ -263,31 +248,15 @@ $('#page3 input#name, #page3 input#visitor-company').click(function(){
 	});
 });
 
-$('#page3 .ui-select').click(function(){
-	$('#write').empty();
-	//console.log($(this).attr('id'));
-	var inp =  $(this).attr('id');
-	//console.log(inp);
-	
-	if (inp == 'name'){
-		InputName = '#name';
-		//console.log('Input : Name')
+$('#page3 .icon-close.edit-company').on('click', function(e){
+	e.preventDefault();
+	window.location.hash = '#page2';
+	$('.keyboard').fadeOut();
+	if($('#purpose-option').is(':visible')) {
+		$('#purpose-option').slideUp().removeClass('focus');
+		$('#purpose').removeClass('focus');	
 	}
-	if(inp == 'visitor-company'){
-		InputName = '#visitor-company';
-		//console.log('Input : visitor-company');
-	}
-	
-	$('.keyboard').fadeOut(function(){
-		$('#submit').fadeIn();
-	});
 });
-
-	$('#page3 .icon-close.edit-company').on('click', function(e){
-		$('.keyboard').fadeOut();
-		e.preventDefault();
-		window.location.hash = '#page2';
-	});
 }
 
 // ================== PAGE 4 =========================//
@@ -296,21 +265,19 @@ function renderPage4() {
     $('.keyboard').hide();
     var page = $('#page4');
 
-		page.addClass('visible');
-		page.fadeIn();
-		$('#page4').on('click', function(e){
-			e.preventDefault();
-			window.location.hash = '#';
-		});
-	}
+	page.addClass('visible');
+	$('#page4').on('click', function(e){
+		e.preventDefault();
+		window.location.hash = '#';
+	});
+}
 	
 	// Shows the error page.
-	function renderErrorPage(){
-		var page = $('.error');
-		page.addClass('visible');
-	}
+function renderErrorPage(){
+	var page = $('.error');
+	page.addClass('visible');
+}
 
-// $('select').select2({minimumResultsForSearch: Infinity});
 
 //================= Page 2 =================//
 
@@ -363,7 +330,7 @@ function renderPage4() {
 
 //================= Page 3 =================//
 
-        //  To send form to the data base
+//  To send form to the data base
 
 $("#submit, .submit-page3").click(function(e){
 
@@ -414,6 +381,7 @@ $('#purpose').click(function(){
         }); 
     });    
 });
+
 $('#purpose-option a').click(function(e){
      $('#purpose').text($(this).text());
      $('#purpose-option').slideUp(200, function(){
@@ -457,22 +425,19 @@ $('.purpose-drop .icon-close').click(function(){
 
 // Get the data  -- xml 
 
-function handler()
-{
+function handler() {
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             var bval=oReq.responseText;
             console.log(oReq.status);
             convdata(bval);
-        }
-        else{
-//             navigator.notification.alert("No Internet Connection");
-console.log("error");
-convdata(LocD);
+        } else {
+		//navigator.notification.alert("No Internet Connection");
+		console.log("error");
+		convdata(LocD);
+	}
+	}	
 }
-}
-}
-
 
  // Send Data
 
@@ -491,24 +456,19 @@ convdata(LocD);
 }
 
 // Call to check for connection
-
-function sendData()
-{
+function sendData() {
    var localData = values;
    if (oReq.readyState == 4 /* complete */) {
-    if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
-        console.log(oReq.status);
-    }
-    else{
-        console.log("error");
-        Ldata.push(localData);
-
-    }
-}
+		if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
+		    console.log(oReq.status);
+		} else {
+		    console.log("error");
+		    Ldata.push(localData);
+		}
+	}
 }
 
 // Send Data
-
 function recovData(){
 
   for (i in Ldata){
@@ -520,19 +480,17 @@ function recovData(){
         oReq.onreadystatechange = reData;
         oReq.send();
 
-    }
-    else {
+    } else {
         window.console.log("NO INTERNET");
     }
     Ldata.shift(); 
     console.log(Ldata.length);
-}
+	}
 }
 
 // Call to check for connection
 
-function reData()
-{
+function reData() {
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             //console.log(oReq.status); 
@@ -557,38 +515,38 @@ function convdata(data){
     var dt_one = data;
     var key=[],toJson=[],obj=[];
 
-                // Converting data into JSON object
+        // Converting data into JSON object
 
-                if (dt_one.length > 11 ){ 
+        if (dt_one.length > 11 ){ 
 
-                // Parsing data -- Generate new array "obj" and new JSON "tokens"
+        // Parsing data -- Generate new array "obj" and new JSON "tokens"
 
-                var filter_one= dt_one.replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":'});
-                var filter_two = filter_one.replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"'});
-                var tnt = filter_two.split(/[{()}]+/);
+        var filter_one= dt_one.replace(/([\$\w]+)\s*:/g, function(_, $1){return '"'+$1+'":'});
+        var filter_two = filter_one.replace(/'([^']+)'/g, function(_, $1){return '"'+$1+'"'});
+        var tnt = filter_two.split(/[{()}]+/);
 
-                for(i in tnt){
-                    if( tnt[i].length > 2){
-                        key.push(tnt[i]);
-                    }
-                }
-                console.log(key);
-                for(i in key){
-                  var values = new Array();
-                  var keyOne =key[i].split(/","+/); 
-                  for (var j =0; j< keyOne.length; j++){
-                    var mkey = keyOne[j].split(":");
-                    var mkeytwo = mkey[1];
-                    if(mkeytwo!=undefined){   
-                        var res = mkeytwo.replace(/"/g, "");
-                        if (res.length >= 1){
-
-                            values.push(res);
-                        }
-                    }
-                }
-                toJson.push(values);
+        for(i in tnt){
+            if( tnt[i].length > 2){
+                key.push(tnt[i]);
             }
+        }
+        //console.log(key);
+        for(i in key){
+          var values = new Array();
+          var keyOne =key[i].split(/","+/); 
+          for (var j =0; j< keyOne.length; j++){
+            var mkey = keyOne[j].split(":");
+            var mkeytwo = mkey[1];
+            if(mkeytwo!=undefined){   
+                var res = mkeytwo.replace(/"/g, "");
+                if (res.length >= 1){
+
+                    values.push(res);
+                }
+            }
+        }
+        toJson.push(values);
+    }
 
             for(i in toJson){
                 if(toJson[i]!= undefined){
@@ -717,7 +675,7 @@ function getValues(data){
                         companyName = NLoc[0] + " | " + inputText;
                         companyLocation= NLoc[1];
 
-                        console.log(companyName + " | "+ companyLocation);
+                        //console.log(companyName + " | "+ companyLocation);
                         $('#searchForCollapsibleSetChildren').val(companyName);
 
 					   $('#company').val(companyName); 
@@ -737,17 +695,17 @@ function getValues(data){
     $(comp_name).attr({'data-filtertext' : fil_b })
    
     $(comp_title).click(function(){
-       c_Name = $(this).find('a').text();
-       c_Location = $(this).find('h4').text();
-
-       companyName = c_Name;
-       companyLocation= c_Location;
-       console.log(companyName + " | "+ companyLocation);
-
-       $('#searchForCollapsibleSetChildren').val(c_Name); 
-       $('#company').val(c_Name); 
-       $('#floor').val(c_Location); 
-       window.location.hash = '#page3';    
+		c_Name = $(this).find('a').text();
+		c_Location = $(this).find('h4').text();
+		
+		companyName = c_Name;
+		companyLocation= c_Location;
+		//console.log(companyName + " | "+ companyLocation);
+		
+		$('#company').val(c_Name); 
+		$('#floor').val(c_Location); 
+		window.location.hash = '#page3';    
+		$('#searchForCollapsibleSetChildren').val(c_Name);
    });
 }
 
@@ -756,7 +714,6 @@ function getValues(data){
 
 
 //===============KEYBOARD======================//
-
 var $write = $('#write'),
 symbol = false,
 capslock = false;
