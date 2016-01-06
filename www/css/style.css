@@ -120,10 +120,10 @@ body {
 .page.visible {
   opacity: 1 !important;
   visibility: visible !important;
-  -webkit-transition: all 0.2s ease-in-out 0s;
-  -moz-transition: all 0.2s ease-in-out 0s;
-  -ms-transition: all 0.2s ease-in-out 0s;
-  transition: all 0.2s ease-in-out 0s; }
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  transition: opacity 0.2s; }
 
 .page {
   opacity: 0;
@@ -551,13 +551,6 @@ footer {
 .filters .button__style {
   margin: 0 0px 15px 0 !important; }
 
-/*
-#SFC_button{
-  margin-left: -50px;
-  height:  20px;
-  width:  50px;
-}
-*/
 #write {
   visibility: hidden; }
 

@@ -815,4 +815,7 @@ $(document).on("mousemove keydown click touchstart", function() {
 		$('.keyboard').fadeOut();
          window.location = '#';
     }, 1000 * 60 * .5);
+    timeout = setTimeout(function() {
+		location.reload(true);
+    }, 1000 * 60 * 5);
 }).click();
