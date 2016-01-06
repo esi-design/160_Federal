@@ -53,7 +53,7 @@ $(document).ready(function(){
     var InputName;
     
     $('.delete').click(function(){
-	    $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+	    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
 	    
     });
     
@@ -133,6 +133,7 @@ function renderHome() {
 	$('input').empty();
     $('#data_Select').show(); 
     $('#data_Select_cmpny, #data_Select__ppl').hide();
+    $('.active').removeClass('active');
     $('input, #purpose, #purpose-option').removeClass('focus');
     $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#name').removeClass('denied');
@@ -140,7 +141,7 @@ function renderHome() {
 	$('#searchForCollapsibleSetChildren').empty();
 	$('#searchForCollapsibleSetChildren').val('');
 	$('.keyboard').fadeOut();
-	$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
 	$('#purpose').text('What\'s the purpose of your visit?');
 	
@@ -205,7 +206,7 @@ $('.submit-page3, .space-page3').hide();
          InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '230' }, 'fast', function(){
+         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '240' }, 'fast', function(){
 	         $('.keyboard').fadeIn();
          });   
      });
@@ -216,7 +217,7 @@ $('.submit-page3, .space-page3').hide();
 		e.preventDefault();
 		$('#write').empty();
 		$('#searchForCollapsibleSetChildren').empty().val('');
-		$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable("refresh");
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable("refresh");
 	});    
 
 // ================== PAGE 3 =========================//
@@ -684,9 +685,6 @@ function getValues(data){
     var toSearch = String(next[i][2]);
     rep.push(toSearch);
 
-
-
-
     if(c_Data!='#data_Select_cmpny'){
 
         for(i in tokens){
@@ -737,39 +735,8 @@ function getValues(data){
     var fil_a = rep.toString();  
     var fil_b= fil_a.replace(/,/g," ");
     $(comp_name).attr({'data-filtertext' : fil_b })
-
-	var comp_selected = false;
-	
-    $(list_link).click(function(){
-       c_Name = $(this).find('a').text();
-       c_Location = $(this).find('h4').text();
-
-       companyName = c_Name;
-       companyLocation= c_Location;
-       console.log(companyName + " | "+ companyLocation);
-
-       $('#searchForCollapsibleSetChildren').val(c_Name); 
-       $('#company').val(c_Name); 
-       $('#floor').val(c_Location); 
-//        if(comp_selected === true) {
-	       window.location.hash = '#page3';	       
-//        } else {
-	       
-//        }
-    
-   });
-   
-/*
-      if(comp_selected === true) {
-	       window.location.hash = '#page3';	       
-       } else {
-	       
-       }
-*/
    
     $(comp_title).click(function(){
-	    //console.log('clicked');
-	    //comp_selected = true;
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();
 
@@ -841,7 +808,7 @@ $('#keyboard li').click(function(){
 			
 			$write.html(html.substr(0, html.length - 1));
 			$(InputName).val($write.val());
-			$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+			$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
           
             return false;
         }
@@ -866,7 +833,7 @@ $('#keyboard li').click(function(){
         console.log($write.html() + character);
         $write.html($write.html() + character);
         $(InputName).val($write.val());
-        $('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
+        $('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
    });
 
 
@@ -890,5 +857,5 @@ $(document).on("mousemove keydown click touchstart", function() {
     timeout = setTimeout(function() {
 		$('.keyboard').fadeOut();
          window.location = '#';
-    }, 1000 * 60 * 30);
+    }, 1000 * 60 * .5);
 }).click();
