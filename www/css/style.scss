@@ -280,12 +280,16 @@ a {
 	}
 }
 
+input:focus, .focus { 
+	background: rgba(255,255,255,.7) !important;
+}
+
 ::-webkit-input-placeholder {
    color: #000;
 }
 
 .denied::-webkit-input-placeholder {
-   color: $red;
+   color: #FFF !important;
 }
 
 :-moz-placeholder { /* Firefox 18- */
@@ -293,7 +297,7 @@ a {
 }
 
 .denied:-moz-placeholder {
-   color: $red !important;
+   color: #FFF !important;
   font-weight: 700;
 }
 
@@ -302,7 +306,7 @@ a {
 }
 
 .denied::-moz-placeholder {
-   color: $red !important;
+   color: #FFF !important;
    font-weight: 700;
 }
 
@@ -311,7 +315,7 @@ a {
 }
 
 .denied:-ms-input-placeholder {
-   color: $red !important;
+   color: #FFF !important;
   font-weight: 700;
 }
 
@@ -403,7 +407,8 @@ input:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 	    margin-bottom: 1px !important;
 		input {
 				margin-bottom: 1px;
-				background: rgba(255,255,255,.6) url('../img/search-black.png');
+				background-color: rgba(255,255,255,.6);
+				background-image: url('../img/search-black.png');
 				background-size: 34px 33px;
 			    background-position: 10px 14px;
 				background-repeat: no-repeat;

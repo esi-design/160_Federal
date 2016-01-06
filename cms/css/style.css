@@ -184,7 +184,7 @@ a {
   display: inline-block;
   text-align: right;
   vertical-align: top;
-  width: 35%;
+  width: 68%;
   *zoom: 1; }
 
 .nav-tabs:after,
@@ -226,7 +226,7 @@ a {
 
 .logo {
   display: inline-block;
-  width: 62%;
+  width: 32%;
   font-weight: 700; }
   .logo h1 {
     line-height: 100%; }

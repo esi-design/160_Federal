@@ -64,7 +64,6 @@ $(document).ready(function(){
 	// An event handler with calls the render function on every hashchange.
 	// The render function will show the appropriate content of out page.
 	$(window).on('hashchange', function(){
-		console.log('hash change');
 		window.scrollTo(0, 0);
 		render(window.location.hash);
 	});
@@ -93,7 +92,6 @@ $(document).ready(function(){
 
 			// Single Products page.
 			'#page2': function() {
-				console.log("page 2");
 
 				// Get the index of which product we want to show and call the appropriate function.
 				var index = url.split('/')[0];
@@ -133,16 +131,19 @@ canvas();
 function renderHome() {
 	$('.black-bg').fadeIn();
 	$('input').empty();
+    $('#data_Select').show(); 
+    $('#data_Select_cmpny, #data_Select__ppl').hide();
+    $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#name').removeClass('denied');
 	$('input').val('');
 	$('#searchForCollapsibleSetChildren').empty();
 	$('#searchForCollapsibleSetChildren').val('');
+	$('.keyboard').fadeOut();
 	$('#data_Select, #data_Select_cmpn, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }); 
-	$('#purpose').val('What\'s the purpose of your visit?');
+	$('#purpose').text('What\'s the purpose of your visit?');
 	
 	var page = $('#page1');
-	console.log("RENDER Home");
 
 	page.addClass('visible');
 	$('#page1').on('click', function(e){
@@ -152,7 +153,6 @@ function renderHome() {
 }
 
 function canvas(){
-	console.log('canvas');
 	var outputCanvas = document.getElementById('output'),
 		output = outputCanvas.getContext('2d'),
 		bufferCanvas = document.getElementById('buffer'),
@@ -195,7 +195,6 @@ $('.space-page2').show();
 $('.submit-page3, .space-page3').hide();
 
   var page = $('#page2');
-  console.log("RENDER Page 2");
   $('.black-bg').fadeOut();
 
 		page.addClass('visible');
@@ -210,22 +209,9 @@ $('.submit-page3, .space-page3').hide();
          });   
      });
 
-/*
-        $('#div_dir a').click(function(e){
-	        console.log('click');
-            var Comp_val = $('#searchForCollapsibleSetChildren').val();
-            $('#visitor-company').val(Comp_val);
-            e.preventDefault();
-            window.location.hash = '#page3';
-//             renderPage3(companyName,companyLocation);
-        });
-        
-*/
-
 }
 
 	$('#page2 .icon-close').on('click', function(e){
-		//console.log('close');
 		e.preventDefault();
 		$('#write').empty();
 		$('#searchForCollapsibleSetChildren').empty().val('');
@@ -242,10 +228,8 @@ $('.space-page2').hide();
 //  $('#visitor-company').empty();
 
 		// Hide whatever page is currently shown.
-		$('.container .page').removeClass('visible');
 		var page = $('#page3');
 		
-		console.log("RENDER Page 3");
 		// Show the page itself.
 		page.addClass('visible');
 		page.fadeIn(function(){
@@ -260,15 +244,16 @@ $('#page3 input').click(function(){
 	
 	if (inp == 'name'){
 		InputName = '#name';
-		console.log('Input : Name')
+		//console.log('Input : Name')
 	}
 	if(inp == 'visitor-company'){
 		InputName = '#visitor-company';
-		console.log('Input : visitor-company')
+		//console.log('Input : visitor-company')
 	}
 	
 	if($('#purpose-option').is(':visible')) {
-		$('#purpose-option').slideUp();	
+		$('#purpose-option').slideUp().removeClass('focus');
+		$('#purpose').removeClass('focus');	
 	}
 	
 	$('#submit').fadeOut(function(){
@@ -308,9 +293,7 @@ $('#page3 .ui-select').click(function(){
 function renderPage4() {
     $('.keyboard').hide();
     var page = $('#page4');
-    console.log("RENDER Page 4");
-		// Show the page itself.
-		// (the render function hides all pages so we need to show the one we want).
+
 		page.addClass('visible');
 		page.fadeIn();
 		$('#page4').on('click', function(e){
@@ -350,7 +333,7 @@ function renderPage4() {
         $('#_cmpny').click(function(){
 	        $('.active').removeClass('active');
 	        $('#_cmpny').addClass('active');
-            console.log("Show Company");
+            //console.log("Show Company");
             $('#data_Select, #data_Select__ppl').hide();
             $('#data_Select_cmpny').show();
             getValues('#data_Select_cmpny');
@@ -359,7 +342,7 @@ function renderPage4() {
         $('#_ppl').click(function(){
 	        $('.active').removeClass('active');
 	        $('#_ppl').addClass('active');
-            console.log("Show people");
+            //console.log("Show people");
             $('#data_Select, #data_Select_cmpny').hide();
             $('#data_Select__ppl').show();
             getValues('#data_Select__ppl');
@@ -368,7 +351,7 @@ function renderPage4() {
         $('#_all').click(function(){
 	        $('.active').removeClass('active');
 	        $('#_all').addClass('active');
-            console.log("Show All");
+            //console.log("Show All");
             $('#data_Select').show();
             $('#data_Select_cmpny, #data_Select__ppl').hide();
             getValues('#data_Select');
@@ -386,6 +369,7 @@ $("#submit, .submit-page3").click(function(e){
 		$('#name').addClass('denied');
 	} else {
 		var company = $("#company").val();
+		//company.toString().replace('&','test');
 		var floor = $("#floor").val();
 		var visitor = $("#name").val();
 		var visitorCompany = $("#visitor-company").val();
@@ -402,7 +386,7 @@ $("#submit, .submit-page3").click(function(e){
 		
 		connectSqlSed(urlSnd); 
 		
-		console.log(company + ","+ floor);
+		//console.log(company + ","+ floor);
 		
 		var noElevator = floor.toUpperCase().search('FLOOR');
 		
@@ -421,17 +405,21 @@ $("#submit, .submit-page3").click(function(e){
 
 $('#purpose').click(function(){
      $('#page3 #submit, .keyboard').fadeOut(function(){
-         $('#purpose-option').slideDown(function(){
-	         $('.purpose-drop .icon-close').fadeIn();
-         }); 
+        $('#purpose-option').slideDown(function(){
+	        $('.purpose-drop .icon-close').fadeIn();
+			$('#purpose-option').addClass('focus');
+			$('#purpose').addClass('focus');
+        }); 
     });    
 });
 $('#purpose-option a').click(function(e){
      $('#purpose').text($(this).text());
      $('#purpose-option').slideUp(function(){
-         $('.purpose-drop .icon-close').fadeOut();
-         $(this).addClass('current');
-         $('#page3 #submit').fadeIn();
+		$('#purpose-option').removeClass('focus');
+		$('#purpose').removeClass('focus');
+        $('.purpose-drop .icon-close').fadeOut();
+        $(this).addClass('current');
+        $('#page3 #submit').fadeIn();
      }); 
     e.preventDefault();
 });
@@ -777,7 +765,7 @@ function getValues(data){
        }
    
     $(comp_title).click(function(){
-	    console.log('clicked');
+	    //console.log('clicked');
 	    comp_selected = true;
        c_Name = $(this).find('a').text();
        c_Location = $(this).find('h4').text();

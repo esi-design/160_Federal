@@ -46,10 +46,10 @@ $columns = array(
  
 // SQL server connection information
 $sql_details = array(
-    'user' => 'root',
-    'pass' => 'root',
-    'db'   => '160-cms-visitors-test',
-    'host' => 'localhost'
+    'user' => 'esidesign',
+    'pass' => 'Z7895123',
+    'db'   => 'guestdemo',
+    'host' => 'esidesigndev.com'
 );
  
  

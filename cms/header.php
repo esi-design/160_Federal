@@ -18,8 +18,8 @@
     	
 	<?php if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) { ?>
 		<ul class="nav-pills">
-			<li class="active"><a href="#">Visitor Log</a></li>
-			<li><a href="#">Directory</a></li>
+			<li class="active"><a href="#">Visitor Sign-In</a></li>
+			<li><a href="./directory.php">Directory</a></li>
 			<li><a href="logout.php">Logout</a></li>
         </ul>
     <?php } ?>

@@ -248,18 +248,21 @@ a {
       padding: 1.8% 0;
       text-align: center; }
 
+input:focus, .focus {
+  background: rgba(255, 255, 255, 0.7) !important; }
+
 ::-webkit-input-placeholder {
   color: #000; }
 
 .denied::-webkit-input-placeholder {
-  color: #d62525; }
+  color: #FFF !important; }
 
 :-moz-placeholder {
   /* Firefox 18- */
   color: #000; }
 
 .denied:-moz-placeholder {
-  color: #d62525 !important;
+  color: #FFF !important;
   font-weight: 700; }
 
 ::-moz-placeholder {
@@ -267,14 +270,14 @@ a {
   color: #000; }
 
 .denied::-moz-placeholder {
-  color: #d62525 !important;
+  color: #FFF !important;
   font-weight: 700; }
 
 :-ms-input-placeholder {
   color: #000; }
 
 .denied:-ms-input-placeholder {
-  color: #d62525 !important;
+  color: #FFF !important;
   font-weight: 700; }
 
 input:focus::-webkit-input-placeholder {
@@ -360,7 +363,8 @@ input:focus:-ms-input-placeholder {
   margin-bottom: 1px !important; }
   #page2 .ui-input-text input, #page2 .ui-input-search input, #page2 textarea.ui-input-text input {
     margin-bottom: 1px;
-    background: rgba(255, 255, 255, 0.6) url("../img/search-black.png");
+    background-color: rgba(255, 255, 255, 0.6);
+    background-image: url("../img/search-black.png");
     background-size: 34px 33px;
     background-position: 10px 14px;
     background-repeat: no-repeat;
