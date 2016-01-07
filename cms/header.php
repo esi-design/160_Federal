@@ -6,6 +6,7 @@
 <title>160 Federal Directory</title>
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/datatables.css" type="text/css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <!--     <link href="css/bootstrap.css" rel="stylesheet"> -->
 <!--     <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 
@@ -17,9 +18,12 @@
     <h1 class="logo">160 Federal</h1>
     	
 	<?php if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username'])) { ?>
+		
+		<?php $uri = $_SERVER['REQUEST_URI']; ?>
+		
 		<ul class="nav-pills">
-			<li class="active"><a href="#">Visitor Sign-In</a></li>
-			<li><a href="./directory.php">Directory</a></li>
+			<li class="<?php echo ($_SERVER['PHP_SELF'] == "/160_Federal/cms/visitor.php" ? "active" : "");?>"><a href="visitor.php">Visitor Sign-In</a></li>
+			<li class="<?php echo ($_SERVER['PHP_SELF'] == "/160_Federal/cms/directory.php" ? "active" : "");?>"><a href="./directory.php">Directory</a></li>
 			<li><a href="logout.php">Logout</a></li>
         </ul>
     <?php } ?>

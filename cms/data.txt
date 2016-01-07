@@ -1,0 +1,173 @@
+{ "data": [
+[
+"1",
+"TAURUS MANAGEMENT SERVICES",
+"Lobby"
+],
+[
+"2",
+"RACKEMANN, SAWYER & BREWSTER",
+"Floor 15"
+],
+[
+"33",
+"RISK STRATEGIES COMPANY BROKERAGE",
+"Floor 2"
+],
+[
+"34",
+"RISK STRATEGIES COMPANY BROKERAGE",
+"Floor 4"
+],
+[
+"39",
+"ROCKPORT GROUP",
+"Floor 18"
+],
+[
+"46",
+"STONE PHOTO & COPY",
+"FEDERAL STREET"
+],
+[
+"47",
+"TASHTEGO",
+"Floor 17"
+],
+[
+"64",
+"GANSON & COMPANY",
+"Floor 19"
+],
+[
+"67",
+"TETRA TEC",
+"Floor 3"
+],
+[
+"69",
+"TRIBE HAIR SALON",
+"HIGH STREET"
+],
+[
+"70",
+"TURAN CORPORATION",
+"Floor 21"
+],
+[
+"71",
+"SMITH, LEVENSON & SMITH",
+"Floor 21"
+],
+[
+"72",
+"VISION CARE 2000",
+"HIGH STREET"
+],
+[
+"73",
+"WILKINS INVESTMENT COUNSEL",
+"Floor 17"
+],
+[
+"74",
+"TAYLOR, GANSON & PERRIN",
+"Floor 29"
+],
+[
+"75",
+"ALEXANDER, ARONSON, FINNING & CO",
+"Floor 16"
+],
+[
+"92",
+"AM TRUST E&S INSURANCE SERVICES",
+"Floor 3"
+],
+[
+"93",
+"BARTON & GILMAN",
+"Floor 10"
+],
+[
+"99",
+"BOSTON BUSINESS JOURNAL",
+"Floor 12"
+],
+[
+"100",
+"BOSTON PROJECTS",
+"Floor 6"
+],
+[
+"101",
+"CITIZENS RESOURCES",
+"Floor 18"
+],
+[
+"103",
+"CLOVER FAST FOOD",
+"HIGH STREET"
+],
+[
+"104",
+"STANLEY M. COHEN",
+"Floor 24"
+],
+[
+"105",
+"COLLIERS INTERNATIONAL",
+"Floor 11"
+],
+[
+"117",
+"EDELSTEIN & COMPANY",
+"Floor 9"
+],
+[
+"133",
+"EDELSTEIN WEALTH MANAGEMENT",
+"Floor 9"
+],
+[
+"134",
+"FIRST REPUBLIC BANK",
+"FEDERAL STREET"
+],
+[
+"135",
+"FIRST REPUBLIC BANK",
+"Floor 7"
+],
+[
+"136",
+"FIRST REPUBLIC BANK",
+"Floor 8"
+],
+[
+"138",
+"LEXIS NEXIS",
+"Floor 22"
+],
+[
+"139",
+"MASS. EDUCATIONAL FINANCING AUTHORITY",
+"Floor 4"
+],
+[
+"140",
+"MASSACHUSETTS HOUSING PARTNERSHIP",
+"Floor 2"
+],
+[
+"142",
+"NISSENBAUM HICKEY",
+"Floor 24"
+],
+[
+"147",
+"QUABBIN CAPITAL",
+"Floor 6"
+]
+]
+}
