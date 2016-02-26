@@ -74,7 +74,7 @@ header, hgroup, footer, section, article, aside { display: block }
     font-style: normal;
 }
 
-$gold: #83691A;
+$gold: #be6326;
 
 $red: #d62525;
 
@@ -644,7 +644,7 @@ footer {
 	background-color: #000;
 	font-family: 'Futura', Helvetica, sans-serif;
 	font-size: 24px;
-	border-bottom: 2px solid #83691A;
+	border-bottom: 2px solid $gold;
 	height: 82px;
 	width: 100%;
 	text-align: center;

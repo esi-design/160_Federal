@@ -808,6 +808,7 @@ setInterval(function(){
 
 
 // ================= TIMEOUT ================= //
+/*
 var timeout;
 $(document).on("mousemove keydown click touchstart", function() {
     clearTimeout(timeout);
@@ -819,3 +820,4 @@ $(document).on("mousemove keydown click touchstart", function() {
 		location.reload(true);
     }, 1000 * 60 * 5);
 }).click();
+*/

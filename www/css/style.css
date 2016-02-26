@@ -176,7 +176,7 @@ a {
   margin: 0;
   vertical-align: middle; }
   .container__line .container__line--top, .container__line .container__line--bottom {
-    background-color: #83691A;
+    background-color: #be6326;
     display: block; }
   .container__line .container__line--top {
     height: 6px;
@@ -241,8 +241,8 @@ a {
     width: 90%; }
     #page1 .touch h2 {
       background: rgba(0, 0, 0, 0.9);
-      border-top: 2px solid #83691A;
-      border-bottom: 2px solid #83691A;
+      border-top: 2px solid #be6326;
+      border-bottom: 2px solid #be6326;
       font-family: 'Futura', 'Helvetica', sans-serif;
       font-size: 26px;
       font-weight: 500;
@@ -302,8 +302,8 @@ input:focus:-ms-input-placeholder {
 
 .ui-btn {
   background-color: rba(0, 0, 0, 0.8);
-  border-top: 2px solid #83691A;
-  border-bottom: 2px solid #83691A;
+  border-top: 2px solid #be6326;
+  border-bottom: 2px solid #be6326;
   border-left: none;
   border-right: none;
   display: inline-block;
@@ -483,8 +483,8 @@ input:focus:-ms-input-placeholder {
   width: 50%; }
   #page4 .new-session h2 {
     background: rgba(0, 0, 0, 0.9);
-    border-top: 2px solid #83691A;
-    border-bottom: 2px solid #83691A;
+    border-top: 2px solid #be6326;
+    border-bottom: 2px solid #be6326;
     font-family: 'Futura', 'Helvetica', sans-serif;
     font-size: 26px;
     font-weight: 500;
@@ -545,7 +545,7 @@ footer {
   background-color: #000;
   font-family: 'Futura', Helvetica, sans-serif;
   font-size: 24px;
-  border-bottom: 2px solid #83691A;
+  border-bottom: 2px solid #be6326;
   height: 82px;
   width: 100%;
   text-align: center; }
