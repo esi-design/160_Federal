@@ -74,7 +74,7 @@ header, hgroup, footer, section, article, aside { display: block }
     font-style: normal;
 }
 
-$gold: #be6326;
+$gold: #83691A;
 
 $red: #d62525;
 
@@ -489,72 +489,6 @@ input:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 }
 
 #page3 {
-	#floor {
-		display: none;
-	}
-	.submit.ui-btn {
-		display: block;
-		margin: 5% auto 0;
-		width: 270px;
-		padding: 1% 2%;
-	}
-	.icon-close {
-	    top: 104px;
-	    right: 12px;
-	}
-	#purpose-button.ui-icon-carat-d {
-		display: none;
-	}
-	.purpose-drop {
-		position: relative;
-		width: 100%;
-		.icon-close {
-			display: none;
-		    top: 18px;
-		    right: 12px;
-		}
-	}
-	#purpose {
-		padding: 2.5% 3% 2%;
-	}
-	#purpose, #purpose-option {
-		border: 0;
-		background: rgba(255,255,255,.4);
-		color: #000;
-		display: block;
-		font-family: 'Futura', 'Helvetica', sans-serif;
-		font-size: 24px;
-		letter-spacing: 3px;
-		text-transform: uppercase;
-		-webkit-appearance: none;
-		-webkit-border-radius: inherit;
-		border-radius: inherit;
-		outline: 0;
-		text-align: left;
-		width: 100%;
-	}
-	#purpose-option {
-		position: absolute;
-		border-top: 1px solid #000;
-		display: none;
-		padding: 0;
-		a {
-			color: #000;
-			&.current {
-				color: #999;
-			}
-		}
-		li {
-			padding: 2% 3%;
-			border-bottom: 1px solid #000;
-			&:last-of-type {
-				border-bottom: none;
-			}
-		}
-	}
-}
-
-#page4 {
 // 	display: none;
 	.page {
 		width: 80%;

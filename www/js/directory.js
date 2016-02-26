@@ -120,6 +120,7 @@ canvas();
 function renderHome() {
 	$('.black-bg').fadeIn();
 	$('input').empty();
+// 	$('.keyboard').fadeOut();
     $('#data_Select').show(); 
     $('#data_Select_cmpny, #data_Select__ppl').hide();
     $('.active').removeClass('active');
@@ -223,59 +224,11 @@ page.addClass('visible');
 
 $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
 
-$('#page3 input#name, #page3 input#visitor-company').click(function(){
-	$('#write').empty();
-	//console.log($(this).attr('id'));
-	var inp =  $(this).attr('id');
-	//console.log(inp);
-	
-	if (inp == 'name'){
-		InputName = '#name';
-		//console.log('Input : Name')
-	}
-	if(inp == 'visitor-company'){
-		InputName = '#visitor-company';
-		//console.log('Input : visitor-company')
-	}
-	
-	if($('#purpose-option').is(':visible')) {
-		$('#purpose-option').slideUp().removeClass('focus');
-		$('#purpose').removeClass('focus');	
-	}
-	
-	$('#submit').fadeOut(function(){
-		$('.keyboard').fadeIn();
-	});
-});
 
-$('#page3 .icon-close.edit-company').on('click', function(e){
+$('#page3').on('click', function(e){
 	e.preventDefault();
-	window.location.hash = '#page2';
-	$('.keyboard').fadeOut();
-	if($('#purpose-option').is(':visible')) {
-		$('#purpose-option').slideUp().removeClass('focus');
-		$('#purpose').removeClass('focus');	
-	}
+	window.location.hash = '#';
 });
-}
-
-// ================== PAGE 4 =========================//
-
-function renderPage4() {
-    $('.keyboard').hide();
-    var page = $('#page4');
-
-	page.addClass('visible');
-	$('#page4').on('click', function(e){
-		e.preventDefault();
-		window.location.hash = '#';
-	});
-}
-	
-	// Shows the error page.
-function renderErrorPage(){
-	var page = $('.error');
-	page.addClass('visible');
 }
 
 
@@ -330,77 +283,6 @@ function renderErrorPage(){
 
 //================= Page 3 =================//
 
-//  To send form to the data base
-
-$("#submit, .submit-page3").click(function(e){
-
-	if( !$('#name').val() ) {
-		$('#name').addClass('denied');
-	} else {
-		var company = $("#company").val();
-		//company.toString().replace('&','test');
-		var floor = $("#floor").val();
-		var visitor = $("#name").val();
-		var visitorCompany = $("#visitor-company").val();
-		var purpose = $("#purpose").text();
-		if(purpose.length > 10) {
-			purpose = '';
-		}
-		var urlSnd= "http://esidesigndev.com/data_Demo/visitorform.php?company="+company+"&lid="+visitor+"&visitorCompany="+visitorCompany+"&purpose="+purpose;
-		values = new Array();
-		values.push(company);
-		values.push(visitor);
-		values.push(visitorCompany);
-		values.push(purpose);
-		
-		connectSqlSed(urlSnd); 
-		
-		//console.log(company + ","+ floor);
-		
-		var noElevator = floor.toUpperCase().search('FLOOR');
-		
-		if(noElevator == -1) {
-			$('#direction').text('PLEASE PROCEED TO YOUR DESTINATION.');
-		} else {
-			$('#direction').text('PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.');
-		}
-		$('#place').text(company);
-		$('#flr').text(floor);
-		
-		e.preventDefault();
-		window.location.hash = '#page4';
-	}	
-}); 
-
-$('#purpose').click(function(){
-     $('#page3 #submit, .keyboard').fadeOut(function(){
-        $('#purpose-option').slideDown(200, function(){
-	        $('.purpose-drop .icon-close').fadeIn();
-			$('#purpose-option').addClass('focus');
-			$('#purpose').addClass('focus');
-        }); 
-    });    
-});
-
-$('#purpose-option a').click(function(e){
-     $('#purpose').text($(this).text());
-     $('#purpose-option').slideUp(200, function(){
-		$('#purpose-option').removeClass('focus');
-		$('#purpose').removeClass('focus');
-        $('.purpose-drop .icon-close').fadeOut();
-        $(this).addClass('current');
-        $('#page3 #submit').fadeIn();
-     }); 
-    e.preventDefault();
-});
-
-$('.purpose-drop .icon-close').click(function(){
-     $('.purpose-drop .icon-close').fadeOut();
-     $('#purpose-option').slideUp(200, function(){
-         $(this).addClass('current');
-         $('#page3 #submit').fadeIn();
-     }); 
-});
 
 
  // ================= CONNECTION FUNCTIONS ================= //
@@ -675,12 +557,7 @@ function getValues(data){
                         companyName = NLoc[0] + " | " + inputText;
                         companyLocation= NLoc[1];
 
-                        //console.log(companyName + " | "+ companyLocation);
-                        $('#searchForCollapsibleSetChildren').val(companyName);
-
-					   $('#company').val(companyName); 
-					   $('#floor').val(companyLocation); 
-					   window.location.hash = '#page3'; 
+                        confirmation(companyName,companyLocation);
 							
                     });
                     $(list).append(list_link);
@@ -698,20 +575,33 @@ function getValues(data){
 		c_Name = $(this).find('a').text();
 		c_Location = $(this).find('h4').text();
 		
-		companyName = c_Name;
-		companyLocation= c_Location;
-		//console.log(companyName + " | "+ companyLocation);
+		confirmation(c_Name,c_Location);
 		
-		$('#company').val(c_Name); 
-		$('#floor').val(c_Location); 
-		window.location.hash = '#page3';    
-		$('#searchForCollapsibleSetChildren').val(c_Name);
    });
 }
 
 }
 
+function confirmation(company,location) {
+		var urlSnd= "http://esidesigndev.com/data_Demo/visitorform.php?company="+company;
+		values = new Array();
+		values.push(company);
+		
+		connectSqlSed(urlSnd);  
 
+		var noElevator = location.toUpperCase().search('FLOOR');
+		
+		if(noElevator == -1) {
+			$('#direction').text('PLEASE PROCEED TO YOUR DESTINATION.');
+		} else {
+			$('#direction').text('PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.');
+		}
+		$('#company').text(company);
+		$('#location').text(location); 
+
+		window.location.hash = '#page3';    
+		$('#searchForCollapsibleSetChildren').val(company);		
+}
 
 //===============KEYBOARD======================//
 var $write = $('#write'),
@@ -808,16 +698,16 @@ setInterval(function(){
 
 
 // ================= TIMEOUT ================= //
-/*
 var timeout;
 $(document).on("mousemove keydown click touchstart", function() {
     clearTimeout(timeout);
     timeout = setTimeout(function() {
-		$('.keyboard').fadeOut();
          window.location = '#';
     }, 1000 * 60 * .5);
+}).click();
+
+/*
     timeout = setTimeout(function() {
 		location.reload(true);
     }, 1000 * 60 * 5);
-}).click();
 */
