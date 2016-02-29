@@ -51,7 +51,6 @@ $(document).ready(function(){
 		url: variableUrl,
 	    dataType: "text",
 		success: function(data) {
-			console.log(variableUrl);
 			var json = $.parseJSON(data);
 			var gold = json['variables'][0]['gold'];
 			console.log(gold);
@@ -138,13 +137,13 @@ canvas();
 function renderHome() {
 	$('.black-bg').fadeIn();
 	$('input').empty();
-    $('#data_Select').show(); 
-    $('#data_Select_cmpny, #data_Select__ppl, .keyboard').hide();
+    $('#data_Select_cmpny').show(); 
+    $('#data_Select, #data_Select__ppl, .keyboard').hide();
     $('.active').removeClass('active');
     $('input, #purpose, #purpose-option').removeClass('focus');
 	$('input').val('');
 	$('#searchForCollapsibleSetChildren').empty().val('');
-    $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
+    $("#data_Select, #data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
 	
@@ -258,15 +257,13 @@ connectSql(urlReq);
 });
 
 //Show the company names and locations in the html element page 2     
-//div page 2
-$('#data_Select').show();
-$('#data_Select_cmpny, #data_Select__ppl').hide();
+$('#data_Select_cmpny').show();
+$('#data_Select, #data_Select__ppl').hide();
 
 //Show ByCompany page 2
 $('#_cmpny').click(function(){
     $('.active').removeClass('active');
     $('#_cmpny').addClass('active');
-    //console.log("Show Company");
     $('#data_Select, #data_Select__ppl').hide();
     $('#data_Select_cmpny').show();
     getValues('#data_Select_cmpny');
@@ -275,7 +272,6 @@ $('#_cmpny').click(function(){
 $('#_ppl').click(function(){
     $('.active').removeClass('active');
     $('#_ppl').addClass('active');
-    //console.log("Show people");
     $('#data_Select, #data_Select_cmpny').hide();
     $('#data_Select__ppl').show();
     getValues('#data_Select__ppl');
@@ -284,7 +280,6 @@ $('#_ppl').click(function(){
 $('#_all').click(function(){
     $('.active').removeClass('active');
     $('#_all').addClass('active');
-    //console.log("Show All");
     $('#data_Select').show();
     $('#data_Select_cmpny, #data_Select__ppl').hide();
     getValues('#data_Select');
@@ -300,7 +295,7 @@ $('#_all').click(function(){
  
 function online(status){
 	status=status;
-	console.log('status'+status);
+// 	console.log('status'+status);
 } 
  
 // call get data
@@ -454,7 +449,8 @@ function convdata(data){
                                     next.push(obj[i]);
                                 }
                             }
-                            getValues('#data_Select');      
+                            $('#_cmpny').addClass('active');
+                            getValues('#data_Select_cmpny');      
                         }
 
                         else {
@@ -717,7 +713,6 @@ if(status != false) {
 	url: variableUrl,
     dataType: "text",
 	success: function(data) {
-		console.log(variableUrl);
 		var json = $.parseJSON(data);
 		var refresh = json['variables'][0]['refresh'];
 			
