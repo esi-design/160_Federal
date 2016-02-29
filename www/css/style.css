@@ -195,7 +195,6 @@ a {
     .header .container__line .container__line--top {
       margin-bottom: 6px; }
   .header .logo {
-    background: url("../img/logo.png") no-repeat;
     display: inline-block;
     margin: 0 30px;
     text-align: center;
@@ -494,7 +493,6 @@ footer {
   background-color: #000;
   font-family: 'Futura', Helvetica, sans-serif;
   font-size: 24px;
-  border-bottom: 2px solid #83691A;
   height: 82px;
   width: 100%;
   text-align: center; }

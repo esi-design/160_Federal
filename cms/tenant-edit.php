@@ -49,26 +49,32 @@ $people_count = count($people);
 $people_array = [];
 if($people_count > 1) {
 	for ($i = 0; $i < $people_count; $i++) {
-		array_push($people_array, '<i class="material-icons remove">remove_circle</i><p>'.$people[$i].'</p>');
+		array_push($people_array, '<i class="material-icons remove">remove_circle</i><input type="text" name="fieldStaff" class="input" value="'.$people[$i].'" />');
 	}
 }
 }
 echo '<div class="tenant-edit">';
 echo '<h2>'.$text.' '.$company.'</h2><h3>Tenant Information</h3>';
+echo '<div id="form-messages"></div>';
 if($id != 'new') {        
-	echo '<form method="post" action="tenant-update.php?id='.$id.'">';
+	echo '<form id="ajax-form" method="post" action="tenant-update.php?id='.$id.'">';
 } else {
-	echo '<form method="post" action="tenant-add.php">';
+	echo '<form id="ajax-form" method="post" action="tenant-update.php">';
 }
-echo '<div class="field">
-          <input type="text" name="fieldCompany" id="fieldCompany" class="input" value="'.$company.'" />';           
+if($id != 'new') {        
+	echo '<input type="text" style="display:none" name="fieldNew" id="fieldNew" class="input" value="update" />';
+} else {
+	echo '<input type="text" style="display:none" name="fieldNew" id="fieldNew" class="input" value="add" />';
+}
+echo '<div class="field">';
+          echo '<input type="text" name="fieldCompany" id="fieldCompany" class="input" value="'.$company.'" />';           
           echo '<label for="fieldCompany" class="label">Company Name</label>
         </div>';
 echo '<div class="field">
           <input type="text" name="fieldFloor" id="fieldFloor" class="input" value="'.$floor.'" />
           <label for="fieldFloor" class="label">Floor</label>
         </div>';
-        if($id == 'new') { 
+if($id == 'new') { 
 	echo '<input type="text" name="fieldID" id="fieldID" class="input" value="'.$new_id.'" />';
 } 
 else {
@@ -85,9 +91,11 @@ if($id != 'new') {
 echo '<h3>Tenant Staff</h3><div class="staff">';
 $people_array_count = count($people_array);
 if($people_count > 1) {
+	echo '<div class="field">';
 	for ($i = 0; $i < $people_array_count; $i++) {
 		echo $people_array[$i];
 	}
+	echo '</div>';
 } else {
 	echo '<p>No Staff Entered</p>';
 }

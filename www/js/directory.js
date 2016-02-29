@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 	$('input').on('focus', function(e) {
 	    e.preventDefault(); e.stopPropagation();
-	    window.scrollTo(0,0); //the second 0 marks the Y scroll pos. Setting this to i.e. 100 will push the screen up by 100px. 
+	    window.scrollTo(0,0); 
 	});
 	
     $('input,textarea').focus(function () {
@@ -28,7 +28,6 @@ $(document).ready(function(){
     render(window.location.hash);
     $.support.cors=true;
     $.mobile.allowCrossDomainPages=true;
-    $('.keyboard').hide();
 
     var oReq = new XMLHttpRequest();
     var tokens =[];
@@ -36,7 +35,31 @@ $(document).ready(function(){
     var info_div;
     var values =[];
     var Ldata = [];
-
+    var status = true;
+    var remoteUrl = 'http://www.esidesign.com/160federal-cms/';
+	var variableUrl;
+	
+    if(status == false) {
+		$('.logo').attr("src", 'img/logo.png');	
+		variableUrl = 'js/variables.json';
+	} else {
+		$('.logo').attr("src", remoteUrl+'img/logo.png');
+		variableUrl = remoteUrl+'js/variables.json';	
+	}
+	
+	$.ajax({
+		url: variableUrl,
+	    dataType: "text",
+		success: function(data) {
+			console.log(variableUrl);
+			var json = $.parseJSON(data);
+			var gold = json['variables'][0]['gold'];
+			console.log(gold);
+			$('.container__line--top, .container__line--bottom').css({'background-color': gold});
+			$('#page1 .touch h2, .ui-btn, #page3 .new-session h2').css({'border-top-color': gold, 'border-bottom-color': gold});
+		}
+	});
+	
     var companyName;
     var companyLocation;
 
@@ -52,87 +75,78 @@ $(document).ready(function(){
 
 //================= Page 1 =================//
 
-	// An event handler with calls the render function on every hashchange.
-	// The render function will show the appropriate content of out page.
-	$(window).on('hashchange', function(){
-		window.scrollTo(0, 0);
-		render(window.location.hash);
-	});
+// An event handler with calls the render function on every hashchange.
+// The render function will show the appropriate content of out page.
+$(window).on('hashchange', function(){
+	window.scrollTo(0, 0);
+	render(window.location.hash);
+});
 
 
-	function render(url) {
+function render(url) {
 
-		// Get the keyword from the url.
-		var temp = url.split('/')[0];
+	// Get the keyword from the url.
+	var temp = url.split('/')[0];
 
-		// Hide whatever page is currently shown.
-		$('.container .page').removeClass('visible');
+	// Hide whatever page is currently shown.
+	$('.container .page').removeClass('visible');
 
-		var map = {
+	var map = {
 
-			// The Homepage.
-			'': function() {
-				renderHome();
-			},
-			
-			'#': function() {
-				renderHome();
-			},
-
-			// Single Products page.
-			'#page2': function() {
-
-				// Get the index of which product we want to show and call the appropriate function.
-				var index = url.split('/')[0];
-
-				renderPage2();
-			},
-			
-			'#page3': function() {
-
-				// Get the index of which product we want to show and call the appropriate function.
-				var index = url.split('/')[0];
-
-				renderPage3();
-			},
-			
-			'#page4': function() {
-				// Get the index of which product we want to show and call the appropriate function.
-				var index = url.split('/')[0];
-				renderPage4();
-			}
-
-		};
-
-		// Execute the needed function depending on the url keyword (stored in temp).
-		if(map[temp]){
-			map[temp]();
-		}
-		// If the keyword isn't listed in the above - render the error page.
-		else {
+		// The Homepage.
+		'': function() {
 			renderHome();
+		},
+		
+		'#': function() {
+			renderHome();
+		},
+
+		// Single Products page.
+		'#page2': function() {
+
+			// Get the index of which product we want to show and call the appropriate function.
+			var index = url.split('/')[0];
+
+			renderPage2();
+		},
+		
+		'#page3': function() {
+
+			// Get the index of which product we want to show and call the appropriate function.
+			var index = url.split('/')[0];
+
+			renderPage3();
 		}
 
+	};
+
+	// Execute the needed function depending on the url keyword (stored in temp).
+	if(map[temp]){
+		map[temp]();
 	}
+	// If the keyword isn't listed in the above - render the home page.
+	else {
+		renderHome();
+	}
+
+}
 // ================== HOME PAGE =========================//
+//attract loop
 canvas();
 
 function renderHome() {
 	$('.black-bg').fadeIn();
 	$('input').empty();
-// 	$('.keyboard').fadeOut();
     $('#data_Select').show(); 
-    $('#data_Select_cmpny, #data_Select__ppl').hide();
+    $('#data_Select_cmpny, #data_Select__ppl, .keyboard').hide();
     $('.active').removeClass('active');
     $('input, #purpose, #purpose-option').removeClass('focus');
-    $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
-	$('#name').removeClass('denied');
 	$('input').val('');
 	$('#searchForCollapsibleSetChildren').empty().val('');
-	$('.keyboard').hide();
+    $("#data_Select,#data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
-	$('#purpose').text('What\'s the purpose of your visit?');
 	
 	var page = $('#page1');
 
@@ -175,31 +189,33 @@ function canvas(){
 	video.addEventListener('ended', function() {
 		video.play();
 	}, false);
-	video.setAttribute("src", 'img/DesignDirectory_Interstitial_22_RGB+A-sm.mp4');
+	if(status == false) {
+		video.setAttribute("src", 'img/attract.mp4');		
+	} else {
+		video.setAttribute('crossOrigin', '');
+		video.setAttribute("src", remoteUrl+'img/attract.mp4');	
+	}
 }
 
 
 // ================== PAGE 2 =========================//
 function renderPage2() {
-$('#_cmpny, #_ppl, #_all').show();
-$('.space-page2').show();
-$('.submit-page3, .space-page3').hide();
+	$('#_cmpny, #_ppl, #_all, .space-page2').show();
+	
+	var page = $('#page2');
+	$('.black-bg').fadeOut();
 
-  var page = $('#page2');
-  $('.black-bg').fadeOut();
-
-		page.addClass('visible');
-		
-		$('#page2 input').click(function(){
-         $('#write').empty();
-         InputName = '#searchForCollapsibleSetChildren';
+	page.addClass('visible');
+	
+	$('#page2 input').click(function(){
+	$('#write').empty();
+	InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '250' }, 'fast', function(){
+    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '250' }, 'fast', function(){
 	         $('.keyboard').fadeIn();
          });   
      });
-
 }
 
 $('#page2 .icon-close').on('click', function(e){
@@ -211,73 +227,68 @@ $('#page2 .icon-close').on('click', function(e){
 
 // ================== PAGE 3 =========================//
 function renderPage3() {
-$('.keyboard, #_cmpny, #_ppl, #_all').fadeOut();
-$('.submit-page3, .space-page3, #submit').show();
-$('.space-page2').hide();
+	$('.keyboard, #_cmpny, #_ppl, #_all').fadeOut();
+	
+	// Hide whatever page is currently shown.
+	var page = $('#page3');
+	
+	page.addClass('visible');
+	
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
 
-$('#name, #visitor-company').empty();
-
-// Hide whatever page is currently shown.
-var page = $('#page3');
-
-page.addClass('visible');
-
-$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
-
-
-$('#page3').on('click', function(e){
-	e.preventDefault();
-	window.location.hash = '#';
-});
+	$('#page3').on('click', function(e){
+		e.preventDefault();
+		window.location.hash = '#';
+	});
 }
 
 
 //================= Page 2 =================//
 
-        //Onload get directory data
-        var urlReq ="http://esidesigndev.com/data_Demo/building.php"
-        
-        connectSql(urlReq);
+//Onload get directory data
+var urlReq ="http://esidesigndev.com/160-federal/directory-handlers/building.php"
 
-         // To retrieve data --- Debug button 
-         $("#_reqB").click(function () {
-            console.log("Ready to Get data");
-            var urlReq ="http://esidesigndev.com/data_Demo/building.php"
-            connectSql(urlReq);
-        });
+connectSql(urlReq);
 
-        //Show the company names and locations in the html element page 2     
-        //div page 2
-        $('#data_Select').show();
-        $('#data_Select_cmpny, #data_Select__ppl').hide();
-        
-        //Show ByCompany page 2
-        $('#_cmpny').click(function(){
-	        $('.active').removeClass('active');
-	        $('#_cmpny').addClass('active');
-            //console.log("Show Company");
-            $('#data_Select, #data_Select__ppl').hide();
-            $('#data_Select_cmpny').show();
-            getValues('#data_Select_cmpny');
-        });
-        //Show ByPeople page 2
-        $('#_ppl').click(function(){
-	        $('.active').removeClass('active');
-	        $('#_ppl').addClass('active');
-            //console.log("Show people");
-            $('#data_Select, #data_Select_cmpny').hide();
-            $('#data_Select__ppl').show();
-            getValues('#data_Select__ppl');
-        });
-        //Show default All page 2
-        $('#_all').click(function(){
-	        $('.active').removeClass('active');
-	        $('#_all').addClass('active');
-            //console.log("Show All");
-            $('#data_Select').show();
-            $('#data_Select_cmpny, #data_Select__ppl').hide();
-            getValues('#data_Select');
-        });
+ // To retrieve data --- Debug button 
+ $("#_reqB").click(function () {
+    console.log("Ready to Get data");
+    var urlReq ="http://esidesigndev.com/160-federal/directory-handlers/building.php"
+    connectSql(urlReq);
+});
+
+//Show the company names and locations in the html element page 2     
+//div page 2
+$('#data_Select').show();
+$('#data_Select_cmpny, #data_Select__ppl').hide();
+
+//Show ByCompany page 2
+$('#_cmpny').click(function(){
+    $('.active').removeClass('active');
+    $('#_cmpny').addClass('active');
+    //console.log("Show Company");
+    $('#data_Select, #data_Select__ppl').hide();
+    $('#data_Select_cmpny').show();
+    getValues('#data_Select_cmpny');
+});
+//Show ByPeople page 2
+$('#_ppl').click(function(){
+    $('.active').removeClass('active');
+    $('#_ppl').addClass('active');
+    //console.log("Show people");
+    $('#data_Select, #data_Select_cmpny').hide();
+    $('#data_Select__ppl').show();
+    getValues('#data_Select__ppl');
+});
+//Show default All page 2
+$('#_all').click(function(){
+    $('.active').removeClass('active');
+    $('#_all').addClass('active');
+    //console.log("Show All");
+    $('#data_Select').show();
+    $('#data_Select_cmpny, #data_Select__ppl').hide();
+    getValues('#data_Select');
+});
 
 
 
@@ -287,9 +298,13 @@ $('#page3').on('click', function(e){
 
  // ================= CONNECTION FUNCTIONS ================= //
  
- // call get data
-
- function connectSql(data){
+function online(status){
+	status=status;
+	console.log('status'+status);
+} 
+ 
+// call get data
+function connectSql(data){
 
     var url = data;
 
@@ -299,31 +314,29 @@ $('#page3').on('click', function(e){
         oReq.send();
     }
     else {
-
         window.console.log("NO INTERNET");
     }
 }
 
-
 // Get the data  -- xml 
-
 function handler() {
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             var bval=oReq.responseText;
             console.log(oReq.status);
             convdata(bval);
+            online(true);
         } else {
-		//navigator.notification.alert("No Internet Connection");
-		console.log("error");
-		convdata(LocD);
-	}
+			//navigator.notification.alert("No Internet Connection");
+			console.log("error");
+			convdata(LocD);
+			online(false);
+		}	
 	}	
 }
 
- // Send Data
-
- function connectSqlSed(urldata){
+// Send Data
+function connectSqlSed(urldata){
 
     var url = urldata;
 
@@ -331,8 +344,7 @@ function handler() {
         oReq.open("GET", url , true);
         oReq.onreadystatechange = sendData;
         oReq.send();
-    }
-    else {
+    } else {
         window.console.log("NO INTERNET");
     }
 }
@@ -354,8 +366,8 @@ function sendData() {
 function recovData(){
 
   for (i in Ldata){
-
-    var url= "http://esidesigndev.com/data_Demo/visitorform.php?company="+Ldata[i][0]+"&lid="+Ldata[i][1]+"&visitorCompany="+Ldata[i][2]+"&purpose="+"RECOVER_ "+Ldata[i][3];
+  	
+    var url= "http://esidesigndev.com/160-federal/directory-handlers/visitorform.php?company="+Ldata[i][0]+"&lid="+Ldata[i][1]+"&visitorCompany="+Ldata[i][2]+"&purpose="+"RECOVER_ "+Ldata[i][3];
 
     if (oReq != null) {
         oReq.open("GET", url , true);
@@ -365,33 +377,27 @@ function recovData(){
     } else {
         window.console.log("NO INTERNET");
     }
-    Ldata.shift(); 
-    console.log(Ldata.length);
+	    Ldata.shift(); 
+	    console.log(Ldata.length);
 	}
 }
 
 // Call to check for connection
-
 function reData() {
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
-            //console.log(oReq.status); 
             console.log(Ldata)
             if (Ldata.length < 1){
                 console.log("SEND EMAIL HERE");
                 //Send the email notifying the recover of data -- Internet off
             }    
-
-        }
-        else {
+        } else {
             console.log("No Internet Connection");
         }
     }
 }
 
-
 // function to convert data into JSON -- Windows doesn't support jQueryAJAX, JSON.parse() or jQuery.parseJSON()
-
 function convdata(data){
 
     var dt_one = data;
@@ -459,8 +465,6 @@ function convdata(data){
 
         
 // Additional to get data. This is handy for reset the data load
-
-
 function getValues(data){
     var c_Data= data;
     var c_Name;
@@ -468,9 +472,9 @@ function getValues(data){
     for(i in next){
 
        var clase ='';
-       if (i <= 1){
+       if (i <= 1) {
         clase = 'ui-collapsible ui-first-child'
-    }
+    	}
     if (i == next.length-1){
         clase = 'ui-collapsible ui-last-child'
     }
@@ -583,7 +587,7 @@ function getValues(data){
 }
 
 function confirmation(company,location) {
-		var urlSnd= "http://esidesigndev.com/data_Demo/visitorform.php?company="+company;
+		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/visitorform.php?company="+company;
 		values = new Array();
 		values.push(company);
 		
@@ -706,8 +710,24 @@ $(document).on("mousemove keydown click touchstart", function() {
     }, 1000 * 60 * .5);
 }).click();
 
-/*
-    timeout = setTimeout(function() {
+
+// ================= HEARTBEAT ================= //
+if(status != false) {
+	$.ajax({
+	url: variableUrl,
+    dataType: "text",
+	success: function(data) {
+		console.log(variableUrl);
+		var json = $.parseJSON(data);
+		var refresh = json['variables'][0]['refresh'];
+			
+	setTimeout(function(){
+		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/heartbeats.php?status="+company;
+		connectSqlSed(urlSnd);	
 		location.reload(true);
-    }, 1000 * 60 * 5);
-*/
+	}, 1000 * 60 * refresh);		
+	
+	}
+	
+	});
+}

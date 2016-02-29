@@ -35,7 +35,7 @@ elseif(!empty($_POST['username']) && !empty($_POST['password']))
         $_SESSION['LoggedIn'] = 1;
  
 // 		echo '<h3>Logged in successfully.</h3>';
-		echo '<meta http-equiv="refresh" content="1; url=visitor.php">';
+		echo '<meta http-equiv="refresh" content="1; url=directory.php">';
     }
     else
     {

@@ -247,6 +247,7 @@ p {
   .login input[type=text], .login input[type=password] {
     clear: both;
     margin: 3% 0 8%;
+    padding: 2%;
     width: 100%; }
 
 .tenant-edit {
