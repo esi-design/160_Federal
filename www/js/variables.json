@@ -1,7 +1,7 @@
 {
 	"variables" : [
 		{
-			"gold": "#83691A",
+			"gold": "#ff9900",
 			"timeout": "60",
 			"refresh": "30"
 		}
