@@ -86,6 +86,7 @@ $red: #d62525;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    -ms-touch-action: none;
 }
 
 *, *:before, *:after {
@@ -96,6 +97,7 @@ body {
     -webkit-touch-callout: none;   /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none; /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;   /* prevent copy paste, to allow, change 'none' to 'text' */
+    -ms-touch-action: none;
     background-attachment:fixed;
     color: #FFF;
     font-family: 'Futura', 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
