@@ -174,16 +174,13 @@ a {
   width: 100%; }
 
 .container__line {
-  display: inline-block;
   margin: 0;
   vertical-align: middle; }
   .container__line .container__line--top, .container__line .container__line--bottom {
     background-color: #ff9900;
     display: block; }
-  .container__line .container__line--top {
-    height: 6px;
-    margin-bottom: 6px; }
   .container__line .container__line--bottom {
+    position: relative;
     height: 2px; }
 
 .header {
@@ -193,16 +190,18 @@ a {
   position: absolute;
   top: 0; }
   .header .container__line {
-    width: 465px; }
+    position: relative;
+    width: 100%; }
     .header .container__line .container__line--top {
       margin-bottom: 6px; }
+  .header .logo__top, .header .logo__bottom {
+    margin: 0 auto;
+    text-align: center; }
   .header .logo {
     display: inline-block;
-    margin: 0 30px;
+    margin: 0 0 6px 11px;
     text-align: center;
-    vertical-align: -28px;
-    height: 89px;
-    width: 450px; }
+    width: 485px; }
     .header .logo h2 {
       font-size: 24px;
       font-weight: 300;
@@ -211,6 +210,9 @@ a {
     .header .logo h1 {
       font-size: 60px;
       font-weight: 600; }
+  .header .logo-directory {
+    margin: 12px 0 0;
+    width: 415px; }
 
 .content {
   padding: 5% 0 56%;
@@ -239,7 +241,7 @@ a {
     padding-top: 44%;
     margin: 0 auto;
     text-align: center;
-    width: 90%; }
+    width: 60%; }
     #page1 .touch h2 {
       background: rgba(0, 0, 0, 0.9);
       border-top: 2px solid #ff9900;
