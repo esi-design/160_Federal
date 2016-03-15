@@ -222,7 +222,7 @@ a {
 
 #attract {
   position: absolute;
-  top: -50px;
+  top: 50px;
   left: 0;
   width: 100%; }
 
@@ -390,6 +390,7 @@ input:focus:-ms-input-placeholder {
   background: rgba(0, 0, 0, 0.6);
   height: 560px;
   margin: 10px 0 0;
+  -ms-touch-action: pan-y;
   overflow-x: hidden;
   overflow-y: scroll;
   padding: 2.5% 5%; }
@@ -426,10 +427,12 @@ input:focus:-ms-input-placeholder {
   height: 36px;
   width: 36px; }
 
+#page3 #direction {
+  margin-top: 100px; }
 #page3 .page {
-  width: 80%; }
+  width: 70%; }
 #page3 .new-session {
-  padding-top: 7%;
+  padding-top: 10%;
   margin: 0 auto;
   text-align: center;
   width: 50%; }
