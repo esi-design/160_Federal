@@ -43,8 +43,10 @@ $(document).ready(function(){
 		$('.logo').attr("src", 'img/logo.png');	
 		variableUrl = 'js/variables.json';
 	} else {
-		$('.logo').attr("src", remoteUrl+'img/logo.png');
-		variableUrl = remoteUrl+'js/variables.json';	
+// 		$('.logo').attr("src", remoteUrl+'img/logo.png');
+// 		variableUrl = remoteUrl+'js/variables.json';	
+		$('.logo').attr("src", 'img/logo.png');	
+		variableUrl = 'js/variables.json';
 	}
 	
 	$.ajax({
@@ -191,8 +193,9 @@ function canvas(){
 	if(status == false) {
 		video.setAttribute("src", 'img/attract.mp4');		
 	} else {
-		video.setAttribute('crossOrigin', '');
-		video.setAttribute("src", remoteUrl+'img/attract.mp4');	
+		video.setAttribute("src", 'img/attract.mp4');
+// 		video.setAttribute('crossOrigin', '');
+// 		video.setAttribute("src", remoteUrl+'img/attract.mp4');	
 	}
 }
 
