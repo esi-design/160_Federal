@@ -93,8 +93,7 @@ header, hgroup, footer, section, article, aside {
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none;
-  -ms-touch-action: none; }
+  user-select: none; }
 
 *, *:before, *:after {
   box-sizing: border-box; }

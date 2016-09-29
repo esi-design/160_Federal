@@ -4,6 +4,7 @@
     <title>160 Federal</title>
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
+    <meta charset="UTF-8">
 <meta
   name="viewport"
   content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
@@ -19,18 +20,12 @@
 	          <img class="logo" src="img/logo.png" />
 	     </div>
          <div class="container__line">
-<!--             <span class="container__line--top"></span> -->
             <span class="container__line--bottom"></span>
         </div>
 	    <div class="logo__bottom">
 	        <img class="logo-directory" src="img/logo-directory.png" />
 	    </div>
-<!--
-        <div class="container__line">
-            <span class="container__line--top"></span>
-            <span class="container__line--bottom"></span>
-        </div>
--->
+
     </header>
     <div class="container overlay">
       <div id="page1" class="page">
@@ -58,9 +53,9 @@
 		      <input data-type="search" id="searchForCollapsibleSetChildren" placeholder="SEARCH BY COMPANY OR PERSON">
 		      <a href="#" class="close"></a>
 			</form>
-			<div id="data_Select" div class="modern-skin scroll" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
-	        <div id="data_Select_cmpny" div class="scroll" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
-	        <div id="data_Select__ppl" div class="scroll" data-role="collapsible-set" data-collapsed:'false' data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
+			<div id="data_Select" class="modern-skin scroll" data-role="collapsible-set" data-collapsed="false" data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
+	        <div id="data_Select_cmpny" class="scroll" data-role="collapsible-set" data-collapsed="false" data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
+	        <div id="data_Select__ppl" class="scroll" data-role="collapsible-set" data-collapsed="false" data-filter="true" data-children="> div, > div div ul li" data-inset="false" id="collapsiblesetForFilterChildren" data-input="#searchForCollapsibleSetChildren" data-content-theme="false"></div>
 		</div>
         <div class="filters"> 
             <button class="button__style active" id="_cmpny">COMPANIES</button>
@@ -71,7 +66,6 @@
 </div>
 
 <div id="page3" class="page">
-<!--     <h2>Thank you!</h2> -->
     <h2 id="direction">PLEASE PROCEED TO THE ELEVATORS BEHIND YOU TO REACH YOUR DESTINATION.</h2>
     <h1 id="company"></h1>
     <h1 id="location"></h1>
@@ -80,8 +74,6 @@
         </div>
 </div>
 
-
-<!-- keyBoard -->
 
 <div class="keyboard">
 
@@ -122,13 +114,11 @@
         <div class="close-keyboard clear">X</div>
         <li class="space space-page2 lastitem">Space</li>
         <li class="space space-page3">Space</li>
-<!--         <div class="submit lastitem submit-page2">Submit</div> -->
         <div class="submit lastitem submit-page3">Submit</div>
     </ul>
     <textarea id="write" rows="6" cols="60"></textarea>
 </div>      
 </div>
-<!-- </div> -->
 
 </div>
 <footer>
@@ -137,8 +127,6 @@
     <span class="container__line--top"></span>
 </div>
 </footer>
-
-</div>
 
 <script type="text/javascript" src="js/winstore-jscompat.js"></script>
 <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>

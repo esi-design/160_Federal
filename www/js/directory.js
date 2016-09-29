@@ -36,7 +36,7 @@ $(document).ready(function(){
     var values =[];
     var Ldata = [];
     var status = true;
-    var remoteUrl = 'http://www.esidesign.com/160federal-cms/';
+    var remoteUrl = 'http://www.esidesigndev.com/160federal-cms/';
 	var variableUrl;
 	
     if(status == false) {
