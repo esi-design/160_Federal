@@ -1,5 +1,5 @@
 // Local data
-var LocD ='[{"id":"75","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":""},{"id":"76","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Herbert S. Alexander"},{"id":"77","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Joel Aronson"},{"id":"78","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"John T. Finning"},{"id":"79","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"John R. Buckley"},{"id":"80","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Joy C. Child"},{"id":"81","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Jeffrey V. Cicolini"},{"id":"82","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Matthew R. Hutt"},{"id":"83","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"James G. Jumes"},{"id":"84","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Sorie M. Kaba"},{"id":"85","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"David J. Kelleher"},{"id":"86","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Robin D. Kelley"},{"id":"87","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Dana J. Marks"},{"id":"88","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Carla M. McCall"},{"id":"89","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"David P. McManus"},{"id":"90","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Thomas A. Washburn"},{"id":"91","side":"Left Side","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Richard L. Weiner"},{"id":"92","side":"Left Side","company":"AM TRUST E&S INSURANCE SERVICES","floor":"Floor 3","person":""},{"id":"93","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":""},{"id":"94","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":"Robert M. Elmer"},{"id":"95","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":"Greg Vanden-Eykel"},{"id":"96","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":"Pamela Slater Gilman"},{"id":"97","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":"Brendan T. Malvey"},{"id":"98","side":"Left Side","company":"BARTON & GILMAN","floor":"Floor 10","person":"Edward D. Shoulkin"},{"id":"99","side":"Left Side","company":"BOSTON BUSINESS JOURNAL\/MASS HIGH TECH","floor":"Floor 12","person":""},{"id":"100","side":"Left Side","company":"BOSTON PROJECTS","floor":"Floor 6","person":""},{"id":"101","side":"Left Side","company":"CITIZENS RESOURCES","floor":"Floor 18","person":""},{"id":"103","side":"Left Side","company":"CLOVER FAST FOOD","floor":"HIGH STREET","person":""},{"id":"104","side":"Left Side","company":"STANLEY M. COHEN","floor":"Floor 24","person":""},{"id":"105","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":""},{"id":"106","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Robert R. Brace"},{"id":"107","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Dennis F. Callahan"},{"id":"108","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"David M. Douvadiian"},{"id":"109","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"James L. Elcock"},{"id":"110","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Joseph P. Flaherty"},{"id":"111","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Thomas J. Hynes, Jr."},{"id":"112","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Robert P. LaPorte, Jr. "},{"id":"113","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Ronald K. Perry"},{"id":"114","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Kevin C. Phelan"},{"id":"115","side":"Left Side","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Daniel R. Quinn"},{"id":"116","side":"Left Side","company":"CONGRESS DENTAL GROUP","floor":"FEDERAL STREET","person":"Robert Page, D.M.D"},{"id":"117","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":""},{"id":"118","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Michael P. Antonelli"},{"id":"119","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Marc D. Bello"},{"id":"120","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Barbara T. Damon"},{"id":"121","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Glenn A. Gates, JD"},{"id":"122","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Jonathan P. Gorski"},{"id":"123","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"William F. Healey"},{"id":"124","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Denis C. Higgins"},{"id":"125","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Kerry A. Johnson"},{"id":"126","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Scott B. Kaplowitch"},{"id":"127","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"William D. Mahoney"},{"id":"128","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Timothy J. O Connor"},{"id":"129","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Robert P. O Connor"},{"id":"130","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Alfonso A. Perillo"},{"id":"131","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Jason R. Pierce"},{"id":"132","side":"Left Side","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Christopher S. Swain"},{"id":"133","side":"Left Side","company":"EDELSTEIN WEALTH MANAGEMENT","floor":"Floor 9","person":""},{"id":"134","side":"Left Side","company":"FIRST REPUBLIC BANK","floor":"FEDERAL STREET","person":""},{"id":"135","side":"Left Side","company":"FIRST REPUBLIC BANK","floor":"Floor 7","person":""},{"id":"136","side":"Left Side","company":"FIRST REPUBLIC BANK","floor":"Floor 8","person":""},{"id":"137","side":"Left Side","company":"FORT HILL BARBER","floor":"LOBBY","person":"Lynn Provitola"},{"id":"138","side":"Left Side","company":"LEXIS NEXIS","floor":"Floor 22","person":""},{"id":"139","side":"Left Side","company":"MASS. EDUCATIONAL FINANCING AUTHORITY","floor":"Floor 4","person":""},{"id":"140","side":"Left Side","company":"MASSACHUSETTS HOUSING PARTNERSHIP","floor":"Floor 2","person":""},{"id":"141","side":"Left Side","company":"NEWS MART","floor":"ATRIUM","person":"Buddha Maharjan"},{"id":"142","side":"Left Side","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":""},{"id":"143","side":"Left Side","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Gerald L. Nissenbaum"},{"id":"144","side":"Left Side","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Madeline M. Celletti"},{"id":"145","side":"Left Side","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Wendy O. Hickey"},{"id":"146","side":"Left Side","company":"NOBLE FINANCIAL CAPITAL MARKETS","floor":"Floor 21","person":"Richard Giles"},{"id":"147","side":"Left Side","company":"QUABBIN CAPITAL","floor":"Floor 6","person":""},{"id":"148","side":"Left Side","company":"QUABBIN CAPITAL","floor":"Floor 6","person":"Steven A. Leese"},{"id":"149","side":"Left Side","company":"QUABBIN CAPITAL","floor":"Floor 6","person":"John I. Snow III"},{"id":"1","side":"Right Side","company":"TAURUS MANAGEMENT SERVICES","floor":"Lobby","person":""},{"id":"2","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":""},{"id":"3","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Jesse W. Abair"},{"id":"4","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Lauren D. Armstrong"},{"id":"5","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Daniel J. Bailey"},{"id":"6","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Francesco A. De Vito"},{"id":"7","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Albert M. Fortier, Jr."},{"id":"8","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Stuart T. Freeland"},{"id":"9","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Richard J. Gallogly"},{"id":"10","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Ellen M. Harrington"},{"id":"11","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Brian M. Hurley"},{"id":"12","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Kurt A. James"},{"id":"13","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Matthew J. Leonard"},{"id":"14","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"J. David Leslie"},{"id":"15","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Sanford M. Matathia"},{"id":"16","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Louis C. Miller"},{"id":"17","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Maura E. Murphy"},{"id":"18","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Michael F. O Connell"},{"id":"19","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Nancy G. O Donnell"},{"id":"20","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Gareth I. Orsmond"},{"id":"21","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Daniel J. Ossoff"},{"id":"22","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Donald R. Pinto, Jr."},{"id":"23","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Alan B. Rubenstein."},{"id":"24","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Johanna Schneider"},{"id":"25","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Eric A. Smith"},{"id":"26","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Janet M. Smith"},{"id":"27","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Jeffrey J. Upton"},{"id":"28","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"James A. Wachta"},{"id":"29","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Lucy W. West"},{"id":"30","side":"Right Side","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Laurence M. Yorra"},{"id":"31","side":"Right Side","company":"RACKEMANN STRATEGIC CONSULTING","floor":"Floor 15","person":"Steven C. Davis"},{"id":"32","side":"Right Side","company":"RAYMOND PERSONAL TAILOR ","floor":"FEDERAL STREET","person":"Raymond Buckley"},{"id":"33","side":"Right Side","company":"RISK STRATEGIES COMPANY BROKERAGE","floor":"Floor 2","person":""},{"id":"34","side":"Right Side","company":"RISK STRATEGIES COMPANY BROKERAGE","floor":"Floor 4","person":""},{"id":"35","side":"Right Side","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Deborah P. Robinson"},{"id":"36","side":"Right Side","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Morris N. Robinson, Esq."},{"id":"37","side":"Right Side","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Yale Yechiel N. Robinson, Esq."},{"id":"38","side":"Right Side","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Patricia Weisgerber, Esq."},{"id":"39","side":"Right Side","company":"ROCKPORT GROUP","floor":"Floor 18","person":""},{"id":"40","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Alexander Ellis III"},{"id":"41","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Janet James"},{"id":"42","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"William E. James"},{"id":"43","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Charles J. McDermott"},{"id":"44","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"David Prend"},{"id":"45","side":"Right Side","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Stoddard Wilson"},{"id":"46","side":"Right Side","company":"STONE PHOTO & COPY","floor":"FEDERAL STREET","person":""},{"id":"47","side":"Right Side","company":"TASHTEGO","floor":"Floor 17","person":""},{"id":"48","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Timothy D. Braughler"},{"id":"49","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Martha Carroll Casey"},{"id":"50","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Bradley R. Cook"},{"id":"51","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Paul F. Donovan"},{"id":"52","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"John P. Fulginiti"},{"id":"53","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Peter M. Golemme"},{"id":"54","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Marisa S. Gregg"},{"id":"55","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Maureen B. Hampe"},{"id":"56","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Joseph G. Imbriani"},{"id":"57","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Edward R. Martin"},{"id":"58","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"John P. Fulginiti"},{"id":"59","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Matthew E. Moore"},{"id":"60","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Gregory J. Murphy"},{"id":"61","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Charles F. O Connell"},{"id":"62","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Brian P. Shea"},{"id":"63","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Michael J. Starr"},{"id":"64","side":"Right Side","company":"GANSON & COMPANY","floor":"Floor 19","person":""},{"id":"65","side":"Right Side","company":"GANSON & COMPANY","floor":"Floor 19","person":"Charles M. Ganson, Jr."},{"id":"66","side":"Right Side","company":"GANSON & COMPANY","floor":"Floor 19","person":"Robert L. Wareham"},{"id":"67","side":"Right Side","company":"TETRA TEC","floor":"Floor 3","person":""},{"id":"68","side":"Right Side","company":"TIFFIN & TIFFIN","floor":"Floor 6","person":"James B. Tiffin"},{"id":"69","side":"Right Side","company":"TRIBE HAIR SALON","floor":"HIGH STREET","person":""},{"id":"70","side":"Right Side","company":"TURAN CORPORATION","floor":"Floor 21","person":""},{"id":"71","side":"Right Side","company":"SMITH, LEVENSON & SMITH","floor":"Floor 21","person":""},{"id":"72","side":"Right Side","company":"VISION CARE 2000","floor":"HIGH STREET","person":""},{"id":"73","side":"Right Side","company":"WILKINS INVESTMENT COUNSEL","floor":"Floor 17","person":""},{"id":"74","side":"Right Side","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":""}]';
+var LocD ='[{"id":"75","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":""},{"id":"76","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Herbert S. Alexander"},{"id":"77","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Joel Aronson"},{"id":"78","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"John T. Finning"},{"id":"79","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"John R. Buckley"},{"id":"80","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Joy C. Child"},{"id":"81","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Jeffrey V. Cicolini"},{"id":"82","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Matthew R. Hutt"},{"id":"83","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"James G. Jumes"},{"id":"84","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Sorie M. Kaba"},{"id":"85","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"David J. Kelleher"},{"id":"86","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Robin D. Kelley"},{"id":"87","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Dana J. Marks"},{"id":"88","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Carla M. McCall"},{"id":"89","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"David P. McManus"},{"id":"90","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Thomas A. Washburn"},{"id":"91","company":"ALEXANDER, ARONSON, FINNING & CO","floor":"Floor 16","person":"Richard L. Weiner"},{"id":"92","company":"AM TRUST E&S INSURANCE SERVICES","floor":"Floor 3","person":""},{"id":"93","company":"BARTON & GILMAN","floor":"Floor 10","person":""},{"id":"94","company":"BARTON & GILMAN","floor":"Floor 10","person":"Robert M. Elmer"},{"id":"95","company":"BARTON & GILMAN","floor":"Floor 10","person":"Greg Vanden-Eykel"},{"id":"96","company":"BARTON & GILMAN","floor":"Floor 10","person":"Pamela Slater Gilman"},{"id":"97","company":"BARTON & GILMAN","floor":"Floor 10","person":"Brendan T. Malvey"},{"id":"98","company":"BARTON & GILMAN","floor":"Floor 10","person":"Edward D. Shoulkin"},{"id":"99","company":"BOSTON BUSINESS JOURNAL\/MASS HIGH TECH","floor":"Floor 12","person":""},{"id":"100","company":"BOSTON PROJECTS","floor":"Floor 6","person":""},{"id":"101","company":"CITIZENS RESOURCES","floor":"Floor 18","person":""},{"id":"103","company":"CLOVER FAST FOOD","floor":"HIGH STREET","person":""},{"id":"104","company":"STANLEY M. COHEN","floor":"Floor 24","person":""},{"id":"105","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":""},{"id":"106","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Robert R. Brace"},{"id":"107","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Dennis F. Callahan"},{"id":"108","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"David M. Douvadiian"},{"id":"109","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"James L. Elcock"},{"id":"110","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Joseph P. Flaherty"},{"id":"111","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Thomas J. Hynes, Jr."},{"id":"112","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Robert P. LaPorte, Jr. "},{"id":"113","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Ronald K. Perry"},{"id":"114","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Kevin C. Phelan"},{"id":"115","company":"COLLIERS INTERNATIONAL","floor":"Floor 11","person":"Daniel R. Quinn"},{"id":"116","company":"CONGRESS DENTAL GROUP","floor":"FEDERAL STREET","person":"Robert Page, D.M.D"},{"id":"117","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":""},{"id":"118","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Michael P. Antonelli"},{"id":"119","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Marc D. Bello"},{"id":"120","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Barbara T. Damon"},{"id":"121","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Glenn A. Gates, JD"},{"id":"122","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Jonathan P. Gorski"},{"id":"123","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"William F. Healey"},{"id":"124","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Denis C. Higgins"},{"id":"125","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Kerry A. Johnson"},{"id":"126","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Scott B. Kaplowitch"},{"id":"127","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"William D. Mahoney"},{"id":"128","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Timothy J. O Connor"},{"id":"129","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Robert P. O Connor"},{"id":"130","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Alfonso A. Perillo"},{"id":"131","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Jason R. Pierce"},{"id":"132","company":"EDELSTEIN & COMPANY","floor":"Floor 9","person":"Christopher S. Swain"},{"id":"133","company":"EDELSTEIN WEALTH MANAGEMENT","floor":"Floor 9","person":""},{"id":"134","company":"FIRST REPUBLIC BANK","floor":"FEDERAL STREET","person":""},{"id":"135","company":"FIRST REPUBLIC BANK","floor":"Floor 7","person":""},{"id":"136","company":"FIRST REPUBLIC BANK","floor":"Floor 8","person":""},{"id":"137","company":"FORT HILL BARBER","floor":"LOBBY","person":"Lynn Provitola"},{"id":"138","company":"LEXIS NEXIS","floor":"Floor 22","person":""},{"id":"139","company":"MASS. EDUCATIONAL FINANCING AUTHORITY","floor":"Floor 4","person":""},{"id":"140","company":"MASSACHUSETTS HOUSING PARTNERSHIP","floor":"Floor 2","person":""},{"id":"141","company":"NEWS MART","floor":"ATRIUM","person":"Buddha Maharjan"},{"id":"142","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":""},{"id":"143","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Gerald L. Nissenbaum"},{"id":"144","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Madeline M. Celletti"},{"id":"145","company":"NISSENBAUM HICKEY","floor":"Floor 24","person":"Wendy O. Hickey"},{"id":"146","company":"NOBLE FINANCIAL CAPITAL MARKETS","floor":"Floor 21","person":"Richard Giles"},{"id":"147","company":"QUABBIN CAPITAL","floor":"Floor 6","person":""},{"id":"148","company":"QUABBIN CAPITAL","floor":"Floor 6","person":"Steven A. Leese"},{"id":"149","company":"QUABBIN CAPITAL","floor":"Floor 6","person":"John I. Snow III"},{"id":"1","company":"TAURUS MANAGEMENT SERVICES","floor":"Lobby","person":""},{"id":"2","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":""},{"id":"3","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Jesse W. Abair"},{"id":"4","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Lauren D. Armstrong"},{"id":"5","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Daniel J. Bailey"},{"id":"6","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Francesco A. De Vito"},{"id":"7","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Albert M. Fortier, Jr."},{"id":"8","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Stuart T. Freeland"},{"id":"9","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Richard J. Gallogly"},{"id":"10","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Ellen M. Harrington"},{"id":"11","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Brian M. Hurley"},{"id":"12","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Kurt A. James"},{"id":"13","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Matthew J. Leonard"},{"id":"14","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"J. David Leslie"},{"id":"15","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Sanford M. Matathia"},{"id":"16","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Louis C. Miller"},{"id":"17","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Maura E. Murphy"},{"id":"18","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Michael F. O Connell"},{"id":"19","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Nancy G. O Donnell"},{"id":"20","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Gareth I. Orsmond"},{"id":"21","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Daniel J. Ossoff"},{"id":"22","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Donald R. Pinto, Jr."},{"id":"23","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Alan B. Rubenstein."},{"id":"24","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Johanna Schneider"},{"id":"25","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Eric A. Smith"},{"id":"26","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Janet M. Smith"},{"id":"27","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Jeffrey J. Upton"},{"id":"28","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"James A. Wachta"},{"id":"29","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Lucy W. West"},{"id":"30","company":"RACKEMANN, SAWYER & BREWSTER","floor":"Floor 15","person":"Laurence M. Yorra"},{"id":"31","company":"RACKEMANN STRATEGIC CONSULTING","floor":"Floor 15","person":"Steven C. Davis"},{"id":"32","company":"RAYMOND PERSONAL TAILOR ","floor":"FEDERAL STREET","person":"Raymond Buckley"},{"id":"33","company":"RISK STRATEGIES COMPANY BROKERAGE","floor":"Floor 2","person":""},{"id":"34","company":"RISK STRATEGIES COMPANY BROKERAGE","floor":"Floor 4","person":""},{"id":"35","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Deborah P. Robinson"},{"id":"36","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Morris N. Robinson, Esq."},{"id":"37","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Yale Yechiel N. Robinson, Esq."},{"id":"38","company":"M. ROBINSON & COMPANY","floor":"Floor 6","person":"Patricia Weisgerber, Esq."},{"id":"39","company":"ROCKPORT GROUP","floor":"Floor 18","person":""},{"id":"40","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Alexander Ellis III"},{"id":"41","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Janet James"},{"id":"42","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"William E. James"},{"id":"43","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Charles J. McDermott"},{"id":"44","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"David Prend"},{"id":"45","company":"ROCKPORT PARTNERS","floor":"Floor 18","person":"Stoddard Wilson"},{"id":"46","company":"STONE PHOTO & COPY","floor":"FEDERAL STREET","person":""},{"id":"47","company":"TASHTEGO","floor":"Floor 17","person":""},{"id":"48","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Timothy D. Braughler"},{"id":"49","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Martha Carroll Casey"},{"id":"50","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Bradley R. Cook"},{"id":"51","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Paul F. Donovan"},{"id":"52","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"John P. Fulginiti"},{"id":"53","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Peter M. Golemme"},{"id":"54","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Marisa S. Gregg"},{"id":"55","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Maureen B. Hampe"},{"id":"56","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Joseph G. Imbriani"},{"id":"57","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Edward R. Martin"},{"id":"58","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"John P. Fulginiti"},{"id":"59","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Matthew E. Moore"},{"id":"60","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Gregory J. Murphy"},{"id":"61","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Charles F. O Connell"},{"id":"62","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Brian P. Shea"},{"id":"63","company":"TAYLOR, GANSON & PERRIN","floor":"Floor 29","person":"Michael J. Starr"},{"id":"64","company":"GANSON & COMPANY","floor":"Floor 19","person":""},{"id":"65","company":"GANSON & COMPANY","floor":"Floor 19","person":"Charles M. Ganson, Jr."},{"id":"66","company":"GANSON & COMPANY","floor":"Floor 19","person":"Robert L. Wareham"},{"id":"67","company":"TETRA TEC","floor":"Floor 3","person":""},{"id":"68","company":"TIFFIN & TIFFIN","floor":"Floor 6","person":"James B. Tiffin"},{"id":"69","company":"TRIBE HAIR SALON","floor":"HIGH STREET","person":""},{"id":"70","company":"TURAN CORPORATION","floor":"Floor 21","person":""},{"id":"71","company":"SMITH, LEVENSON & SMITH","floor":"Floor 21","person":""},{"id":"72","company":"VISION CARE 2000","floor":"HIGH STREET","person":""},{"id":"73","company":"WILKINS INVESTMENT COUNSEL","floor":"Floor 17","person":""}]';
 
 $(document).ready(function(){
 
@@ -35,19 +35,10 @@ $(document).ready(function(){
     var info_div;
     var values =[];
     var Ldata = [];
-    var status = true;
-    var remoteUrl = 'http://www.esidesigndev.com/160federal-cms/';
+    var status;
 	var variableUrl;
-	
-    if(status == false) {
-		$('.logo').attr("src", 'img/logo.png');	
-		variableUrl = 'js/variables.json';
-	} else {
-// 		$('.logo').attr("src", remoteUrl+'img/logo.png');
-// 		variableUrl = remoteUrl+'js/variables.json';	
-		$('.logo').attr("src", 'img/logo.png');	
-		variableUrl = 'js/variables.json';
-	}
+
+	variableUrl = 'js/variables.json';
 	
 	$.ajax({
 		url: variableUrl,
@@ -55,7 +46,7 @@ $(document).ready(function(){
 		success: function(data) {
 			var json = $.parseJSON(data);
 			var gold = json['variables'][0]['gold'];
-			console.log(gold);
+// 			console.log(gold);
 			$('.container__line--top, .container__line--bottom').css({'background-color': gold});
 			$('#page1 .touch h2, .ui-btn, #page3 .new-session h2').css({'border-top-color': gold, 'border-bottom-color': gold});
 		}
@@ -77,7 +68,6 @@ $(document).ready(function(){
 //================= Page 1 =================//
 
 // An event handler with calls the render function on every hashchange.
-// The render function will show the appropriate content of out page.
 $(window).on('hashchange', function(){
 	window.scrollTo(0, 0);
 	render(window.location.hash);
@@ -86,15 +76,15 @@ $(window).on('hashchange', function(){
 
 function render(url) {
 
-	// Get the keyword from the url.
+	// Get the keyword from the url
 	var temp = url.split('/')[0];
 
-	// Hide whatever page is currently shown.
+	// Hide whatever page is currently shown
 	$('.container .page').removeClass('visible');
 
 	var map = {
 
-		// The Homepage.
+		// Home
 		'': function() {
 			renderHome();
 		},
@@ -103,10 +93,9 @@ function render(url) {
 			renderHome();
 		},
 
-		// Single Products page.
 		'#page2': function() {
 
-			// Get the index of which product we want to show and call the appropriate function.
+			// Get the index of which page we want to show and call the appropriate function.
 			var index = url.split('/')[0];
 
 			renderPage2();
@@ -114,7 +103,6 @@ function render(url) {
 		
 		'#page3': function() {
 
-			// Get the index of which product we want to show and call the appropriate function.
 			var index = url.split('/')[0];
 
 			renderPage3();
@@ -190,13 +178,7 @@ function canvas(){
 	video.addEventListener('ended', function() {
 		video.play();
 	}, false);
-	if(status == false) {
-		video.setAttribute("src", 'img/attract.mp4');		
-	} else {
-		video.setAttribute("src", 'img/attract.mp4');
-// 		video.setAttribute('crossOrigin', '');
-// 		video.setAttribute("src", remoteUrl+'img/attract.mp4');	
-	}
+	video.setAttribute("src", 'img/attract.mp4');		
 }
 
 
@@ -208,6 +190,8 @@ function renderPage2() {
 	$('.black-bg').fadeOut();
 
 	page.addClass('visible');
+	$('#data_Select_cmpny').show();
+	$('#_cmpny').addClass('active');
 	
 	$('#page2 input').click(function(){
 	$('#write').empty();
@@ -246,21 +230,14 @@ function renderPage3() {
 
 
 //================= Page 2 =================//
-
 //Onload get directory data
 var urlReq ="http://esidesigndev.com/160-federal/directory-handlers/building.php"
 
 connectSql(urlReq);
 
- // To retrieve data --- Debug button 
- $("#_reqB").click(function () {
-    console.log("Ready to Get data");
-    var urlReq ="http://esidesigndev.com/160-federal/directory-handlers/building.php"
-    connectSql(urlReq);
-});
-
 //Show the company names and locations in the html element page 2     
 $('#data_Select_cmpny').show();
+$('#_cmpny').addClass('active');
 $('#data_Select, #data_Select__ppl').hide();
 
 //Show ByCompany page 2
@@ -269,7 +246,7 @@ $('#_cmpny').click(function(){
     $('#_cmpny').addClass('active');
     $('#data_Select, #data_Select__ppl').hide();
     $('#data_Select_cmpny').show();
-    getValues('#data_Select_cmpny');
+//     getValues('#data_Select_cmpny');
 });
 //Show ByPeople page 2
 $('#_ppl').click(function(){
@@ -277,7 +254,7 @@ $('#_ppl').click(function(){
     $('#_ppl').addClass('active');
     $('#data_Select, #data_Select_cmpny').hide();
     $('#data_Select__ppl').show();
-    getValues('#data_Select__ppl');
+//     getValues('#data_Select__ppl');
 });
 //Show default All page 2
 $('#_all').click(function(){
@@ -285,10 +262,8 @@ $('#_all').click(function(){
     $('#_all').addClass('active');
     $('#data_Select').show();
     $('#data_Select_cmpny, #data_Select__ppl').hide();
-    getValues('#data_Select');
+//     getValues('#data_Select');
 });
-
-
 
 //================= Page 3 =================//
 
@@ -297,8 +272,7 @@ $('#_all').click(function(){
  // ================= CONNECTION FUNCTIONS ================= //
  
 function online(status){
-	status=status;
-// 	console.log('status'+status);
+	console.log('status '+status);
 } 
  
 // call get data
@@ -310,8 +284,7 @@ function connectSql(data){
         oReq.open("GET", url , true);
         oReq.onreadystatechange = handler;
         oReq.send();
-    }
-    else {
+    } else {
         window.console.log("NO INTERNET");
     }
 }
@@ -320,7 +293,8 @@ function connectSql(data){
 function handler() {
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
-            var bval=oReq.responseText;
+            var bval = oReq.responseText;
+//             console.log(bval);
             console.log(oReq.status);
             convdata(bval);
             online(true);
@@ -333,20 +307,6 @@ function handler() {
 	}	
 }
 
-// Send Data
-function connectSqlSed(urldata){
-
-    var url = urldata;
-
-    if (oReq != null) {
-        oReq.open("GET", url , true);
-        oReq.onreadystatechange = sendData;
-        oReq.send();
-    } else {
-        window.console.log("NO INTERNET");
-    }
-}
-
 // Call to check for connection
 function sendData() {
    var localData = values;
@@ -357,26 +317,6 @@ function sendData() {
 		    console.log("error");
 		    Ldata.push(localData);
 		}
-	}
-}
-
-// Send Data
-function recovData(){
-
-  for (i in Ldata){
-  	
-    var url= "http://esidesigndev.com/160-federal/directory-handlers/visitorform.php?company="+Ldata[i][0]+"&lid="+Ldata[i][1]+"&visitorCompany="+Ldata[i][2]+"&purpose="+"RECOVER_ "+Ldata[i][3];
-
-    if (oReq != null) {
-        oReq.open("GET", url , true);
-        oReq.onreadystatechange = reData;
-        oReq.send();
-
-    } else {
-        window.console.log("NO INTERNET");
-    }
-	    Ldata.shift(); 
-	    console.log(Ldata.length);
 	}
 }
 
@@ -434,101 +374,102 @@ function convdata(data){
         toJson.push(values);
     }
 
-            for(i in toJson){
-                if(toJson[i]!= undefined){
-                    obj.push(toJson[i])
-                }
-            }
-            for (i in obj){
-              var _company = String(obj[i][2]);
-              var _location = String(obj[i][3]);
-              var _people = String(obj[i][4]);
-              tokens.push({'company': _company , 'location' : _location ,'people':_people});
-          }
+    for(i in toJson){
+        if(toJson[i]!= undefined){
+            obj.push(toJson[i])
+        }
+    }
+    for (i in obj){
+      var _company = String(obj[i][1]);
+      var _location = String(obj[i][2]);
+      var _people = String(obj[i][3]);
+      tokens.push({'company': _company , 'location' : _location ,'people':_people});
+  	}
 
-                                // To filter duplicates
-                                for(var i=1; i<obj.length; i++){
-                                 if(obj[i][2] != obj[i-1][2]){
-                                    next.push(obj[i]);
-                                }
-                            }
-                            $('#_cmpny').addClass('active');
-                            getValues('#data_Select_cmpny');      
-                        }
+    // To filter duplicates
+    for(var i=1; i<obj.length; i++){
+     	if(obj[i][1] != obj[i-1][1]){
+        	next.push(obj[i]);
+    	}
+	}
+        $('#_cmpny').addClass('active');
+        getValues('#data_Select_cmpny');  
+		getValues('#data_Select__ppl');
+		getValues('#data_Select');    
+    }
 
-                        else {
-                //This is to send data
-                console.log("Login Data");
-            }
-        };
+    else {
+        //This is to send data
+        console.log("Login Data");
+    }
+};
 
         
 // Additional to get data. This is handy for reset the data load
 function getValues(data){
-    var c_Data= data;
-    var c_Name;
-
+    var c_Data = data;
+    
     for(i in next){
 
-       var clase ='';
-       if (i <= 1) {
-        clase = 'ui-collapsible ui-first-child'
-    	}
-    if (i == next.length-1){
-        clase = 'ui-collapsible ui-last-child'
+    var class = '';
+    if (i <= 1) {
+        class = 'ui-collapsible ui-first-child';
     }
-    else{
-        clase = 'ui-collapsible'
+    if (i == next.length-1){
+        class = 'ui-collapsible ui-last-child';
+    } else {
+        class = 'ui-collapsible';
     }
 
-    var comp_title =$(document.createElement('h3')).attr({
-     'class': "ui-collapsible-heading ui-collapsible-heading-collapsed",
+    var comp_wrapper = $(document.createElement("div")).attr({ 
+        'data-role':"collapsible",
+        'data-collapsed':'false',
+        value:next[i][1],
+        'data-inset': 'false',
+        'data-content-theme':"false",
+        'class': class,
+    });
+    
+    var comp_h3 =$(document.createElement('h3')).attr({
+     'class': "ui-collapsible-heading",
 	});
 	
-    var spam_a =$(document.createElement('a')).attr({
+    var comp_link =$(document.createElement('a')).attr({
         'class': 'ui-collapsible-heading-toggle',
         'href': "#"
-    }).text(String(next[i][2]));
+    }).text(String(next[i][1]));
 
-    var spam_b =$(document.createElement('h4')).attr({
+    var comp_floor =$(document.createElement('h4')).attr({
         'id': 'floor',
         'class': 'ui-collapsible-heading-toggle',
-                 //href: "#"
-             }).text(String(next[i][3]));
+    }).text(String(next[i][2]));
 
     var ul_data = $(document.createElement("ul")).attr({
         'data-role':"listview", 'data-inset':"true",
         'class':"ui-listview",
         'id': "_list",
-        'value': next[i][2] + "_Floor_" + next[i][2],
+        'value': next[i][1] + "_Floor_" + next[i][1],
     });
-    var comp_name = $(document.createElement("div")).attr({ 
-        'data-role':"collapsible",
-        'data-collapsed':'false',
-        value:next[i][2],
-        'data-inset': 'false',
-        'data-content-theme':"false",
-        'class': clase,
-    });
+    
     var cont_ul = $(document.createElement('div')).attr({
-        'class' :"ui-collapsible-content",
+        'class' : "ui-collapsible-content",
         'aria-hidden' :"false"
     });
 
-    $(comp_name).removeClass("ui-screen-hidden")
-    $(comp_title).append(spam_a);
-    $(comp_title).append(spam_b);
+    $(comp_wrapper).removeClass("ui-screen-hidden");
+    $(comp_h3).append(comp_link);
+    $(comp_h3).append(comp_floor);
     $(cont_ul).append(ul_data);
-    $(comp_name).append(comp_title);
-    $(comp_name).append(cont_ul);
+    $(comp_wrapper).append(comp_h3);
+    $(comp_wrapper).append(cont_ul);
 
-    $(c_Data).append(comp_name);
+    $(c_Data).append(comp_wrapper);
 
     var rep = new Array();
-    var toSearch = String(next[i][2]);
+    var toSearch = String(next[i][1]);
     rep.push(toSearch);
 
-    if(c_Data!='#data_Select_cmpny'){
+    if(c_Data != '#data_Select_cmpny'){
 
         for(i in tokens){
             if(tokens[i].company == toSearch){
@@ -551,12 +492,12 @@ function getValues(data){
                         'href': '#',
                     }).text(String(tokens[i].people)).val(tokens[i].company + "|" + tokens[i].location);
 
-
                     $(list_link).click(function(){
 
                         inputText = $(this).text();
                         var NLoc = ($(this).val()).split("|");
-
+                        console.log(NLoc);
+                        
                         companyName = NLoc[0] + " | " + inputText;
                         companyLocation= NLoc[1];
 
@@ -572,13 +513,14 @@ function getValues(data){
     rep.toString();
     var fil_a = rep.toString();  
     var fil_b= fil_a.replace(/,/g," ");
-    $(comp_name).attr({'data-filtertext' : fil_b })
+    $(comp_wrapper).attr({'data-filtertext' : fil_b })
    
-    $(comp_title).click(function(){
-		c_Name = $(this).find('a').text();
-		c_Location = $(this).find('h4').text();
-		
-		confirmation(c_Name,c_Location);
+    $(comp_h3).click(function(){
+
+		var send_comp_link = $(this).find('a').text();
+		var send_comp_floor = $(this).find('h4').text();
+	
+		confirmation(send_comp_link,send_comp_floor);
 		
    });
 }
@@ -586,11 +528,11 @@ function getValues(data){
 }
 
 function confirmation(company,location) {
-		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/visitorform.php?company="+company;
+		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/visitorlog.php?company="+company;
 		values = new Array();
 		values.push(company);
 		
-		connectSqlSed(urlSnd);  
+		connectSql(urlSnd);  
 
 		var noElevator = location.toUpperCase().search('FLOOR');
 		
@@ -686,16 +628,23 @@ $('#keyboard li').click(function(){
         $('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
    });
 
-
-
-
+// ================= RECOVER DATA ================= //	
 setInterval(function(){
     var date = new Date();
     if(date.getHours() === 6 && date.getMinutes() === 00 && date.getSeconds() === 00){
        recovData();
+		location.reload(true);
    }
-},1000);
+}, 1000);
 
+// ================= HEARTBEAT ================= //		
+if(status != false) {
+	setInterval(function(){
+		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/heartbeat.php";
+		connectSql(urlSnd);	
+		console.log(timeout);
+	}, 1000 * 60 * 3600);		
+}
 
 });
 
@@ -707,25 +656,4 @@ $(document).on("mousemove keydown click touchstart", function() {
     timeout = setTimeout(function() {
          window.location = '#';
     }, 1000 * 60 * .5);
-}).click();
-
-
-// ================= HEARTBEAT ================= //
-if(status != false) {
-	$.ajax({
-	url: variableUrl,
-    dataType: "text",
-	success: function(data) {
-		var json = $.parseJSON(data);
-		var refresh = json['variables'][0]['refresh'];
-			
-	setTimeout(function(){
-		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/heartbeats.php?status="+company;
-		connectSqlSed(urlSnd);	
-		location.reload(true);
-	}, 1000 * 60 * refresh);		
-	
-	}
-	
-	});
-}
+}).click();	
