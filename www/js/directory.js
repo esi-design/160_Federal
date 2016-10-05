@@ -283,14 +283,27 @@ function connectSql(data){
     if (oReq != null) {
         oReq.open("GET", url , true);
         oReq.onreadystatechange = handler;
+// 		handler
         oReq.send();
     } else {
         window.console.log("NO INTERNET");
     }
 }
 
+function connectOnly(data) {
+    var url = data;
+
+    if (oReq != null) {
+        oReq.open("GET", url , true);
+        oReq.send();
+    } else {
+        window.console.log("NO INTERNET");
+    }	
+}
+
 // Get the data  -- xml 
 function handler() {
+	console.log('handler');
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             var bval = oReq.responseText;
@@ -411,14 +424,14 @@ function getValues(data){
     
     for(i in next){
 
-    var class = '';
+    var clase = '';
     if (i <= 1) {
-        class = 'ui-collapsible ui-first-child';
+        clase = 'ui-collapsible ui-first-child';
     }
     if (i == next.length-1){
-        class = 'ui-collapsible ui-last-child';
+        clase = 'ui-collapsible ui-last-child';
     } else {
-        class = 'ui-collapsible';
+        clase = 'ui-collapsible';
     }
 
     var comp_wrapper = $(document.createElement("div")).attr({ 
@@ -427,7 +440,7 @@ function getValues(data){
         value:next[i][1],
         'data-inset': 'false',
         'data-content-theme':"false",
-        'class': class,
+        'class': clase,
     });
     
     var comp_h3 =$(document.createElement('h3')).attr({
@@ -442,6 +455,7 @@ function getValues(data){
     var comp_floor =$(document.createElement('h4')).attr({
         'id': 'floor',
         'class': 'ui-collapsible-heading-toggle',
+                 //href: "#"
     }).text(String(next[i][2]));
 
     var ul_data = $(document.createElement("ul")).attr({
@@ -452,7 +466,7 @@ function getValues(data){
     });
     
     var cont_ul = $(document.createElement('div')).attr({
-        'class' : "ui-collapsible-content",
+        'class' :"ui-collapsible-content",
         'aria-hidden' :"false"
     });
 
@@ -529,10 +543,8 @@ function getValues(data){
 
 function confirmation(company,location) {
 		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/visitorlog.php?company="+company;
-		values = new Array();
-		values.push(company);
 		
-		connectSql(urlSnd);  
+// 		connectOnly(urlSnd);  
 
 		var noElevator = location.toUpperCase().search('FLOOR');
 		
@@ -555,10 +567,7 @@ capslock = false;
 
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
-		if($('#page3').hasClass('visible')) {
-			$('#submit').fadeIn();
-		}
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },400); 
 	});
 }); 
 
@@ -641,11 +650,11 @@ setInterval(function(){
 if(status != false) {
 	setInterval(function(){
 		var urlSnd= "http://esidesigndev.com/160-federal/directory-handlers/heartbeat.php";
-		connectSql(urlSnd);	
-		console.log(timeout);
+// 		connectOnly(urlSnd);	
+		location.reload(true);
+// 		console.log(timeout);
 	}, 1000 * 60 * 3600);		
 }
-
 });
 
 
