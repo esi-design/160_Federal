@@ -133,9 +133,9 @@ function renderHome() {
     $('input, #purpose, #purpose-option').removeClass('focus');
 	$('input').val('');
 	$('#searchForCollapsibleSetChildren').empty().val('');
-    $("#data_Select, #data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 }, "fast");
+    $("#data_Select, #data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 },400);
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },'fast'); 
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' },400); 
 	
 	var page = $('#page1');
 
@@ -198,7 +198,7 @@ function renderPage2() {
 	InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '250' }, 'fast', function(){
+    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '260' }, 'fast', function(){
 	         $('.keyboard').fadeIn();
          });   
      });
@@ -220,7 +220,7 @@ function renderPage3() {
 	
 	page.addClass('visible');
 	
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' }, 'fast'); 
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' }, 'fast'); 
 
 	$('#page3').on('click', function(e){
 		e.preventDefault();
@@ -567,7 +567,7 @@ capslock = false;
 
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '560' },400); 
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' },400); 
 	});
 }); 
 

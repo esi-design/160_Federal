@@ -490,7 +490,7 @@ footer {
 .keyboard {
   display: none;
   position: absolute;
-  top: 58%;
+  top: 60%;
   left: 17%;
   margin: auto;
   width: 80%; }
@@ -522,7 +522,7 @@ footer {
   color: #fff;
   background-color: rgba(0, 0, 0, 0.8);
   float: left;
-  margin: 0 29px 15px 0;
+  margin: 0 29px 14px 0;
   width: 74px;
   height: 74px;
   letter-spacing: 3px;
@@ -530,7 +530,7 @@ footer {
   font-size: 24px;
   text-align: center;
   /*background: #fff;*/
-  border-bottom: 2px solid #83691A; }
+  border-bottom: 2px solid #ff9900; }
 
 .clear {
   clear: left; }
