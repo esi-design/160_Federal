@@ -5,16 +5,8 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 {
 	 ?>
     
-<!--
-    <h2>Member Area</h2>
-  	 <p>Thanks for logging in! You are <b><?=$_SESSION['Username']?><b> and your email address is <b><?=$_SESSION['EmailAddress']?></b>.</p>
-    
-    <ul>
-        <li><a href="logout.php">Logout.</a></li>
-    </ul>
--->
 	
-	<?php include "visitor-table.php"; ?>
+	<?php include "direcctory.php"; ?>
     
     <?php
 }

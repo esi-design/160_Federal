@@ -49,7 +49,7 @@ $people_count = count($people);
 $people_array = [];
 if($people_count > 1) {
 	for ($i = 0; $i < $people_count; $i++) {
-		array_push($people_array, '<i class="material-icons remove">remove_circle</i><input type="text" name="fieldStaff" class="input" value="'.$people[$i].'" />');
+		array_push($people_array, '<div class="person"><i class="material-icons remove '.$ids[$i].'" data-id="'.$ids[$i].'" data-person="'.$people[$i].'">remove_circle</i><input type="text" name="fieldStaff" class="input" value="'.$people[$i].'" /></div>');
 	}
 }
 }
@@ -86,6 +86,8 @@ if($id != 'new') {
 	echo '<input type="submit" name="add" id="add" value="Add New Tenant" />';
 }
 echo '</form>';
+
+// echo '<div class="test-update" data-company="'.$company.'" data-id="'.$id.'" data-floor="'.$floor.'" data-new="update" >TEST UPDATE!</div>';
 
 if($id != 'new') {	
 echo '<h3>Tenant Staff</h3><div class="staff">';
@@ -136,4 +138,5 @@ if($id != 'new') {
         </tfoot>
     </table>
 <?php } ?>    
+
 <?php include "footer.php"; ?>

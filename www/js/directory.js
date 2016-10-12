@@ -135,7 +135,7 @@ function renderHome() {
 	$('#searchForCollapsibleSetChildren').empty().val('');
     $("#data_Select, #data_Select_cmpny, #data_Select__ppl").animate({ scrollTop: 0 },400);
 	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').filterable( "refresh" );
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' },400); 
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '580' },400); 
 	
 	var page = $('#page1');
 
@@ -198,7 +198,7 @@ function renderPage2() {
 	InputName = '#searchForCollapsibleSetChildren';
 
          // Set the Keyboard
-    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '260' }, 'fast', function(){
+    $('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '270' }, 400, function(){
 	         $('.keyboard').fadeIn();
          });   
      });
@@ -220,7 +220,7 @@ function renderPage3() {
 	
 	page.addClass('visible');
 	
-	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' }, 'fast'); 
+	$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '580' }, 400); 
 
 	$('#page3').on('click', function(e){
 		e.preventDefault();
@@ -303,7 +303,7 @@ function connectOnly(data) {
 
 // Get the data  -- xml 
 function handler() {
-	console.log('handler');
+// 	console.log('handler');
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             var bval = oReq.responseText;
@@ -567,7 +567,7 @@ capslock = false;
 
 $('.close-keyboard').click(function(){
 	$('.keyboard').fadeOut(function(){
-		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '570' },400); 
+		$('#data_Select, #data_Select_cmpny, #data_Select__ppl').animate({height : '580' },400); 
 	});
 }); 
 

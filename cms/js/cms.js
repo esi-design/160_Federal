@@ -1,11 +1,11 @@
 $(document).ready(function() {
   
     
-    $('#visitor').DataTable( {
+    $('#analytics').DataTable( {
         "processing": true,
         "serverSide": true,
-        "ajax": "./visitor-processing.php",
-        "order": [[ 4, "desc" ]],
+        "ajax": "./analytics-processing.php",
+        "order": [[ 1, "desc" ]],
         "lengthMenu": [[20, 50, -1], [20, 50, "All"]],
         "responsive": true
     });
@@ -45,6 +45,32 @@ $(document).ready(function() {
 $('#submit').click(function(){
    location.reload(true);
 });
+
+$('.remove').on('click', function(){
+	var id = $(this).attr('data-id');
+	var person = $(this).attr('data-person');
+	console.log(id);
+	if(confirm('Are you sure you want to delete '+person+'?')) {
+		$.ajax({ url: "tenant-delete-person.php", type: "POST", data: { fieldID: id }, success: function(data){
+			console.log(data);
+    	}});
+		$(this).parent().fadeOut();
+	} else {
+		return false;
+	}
+});
+
+$('.test-update').on('click', function(){
+	var id = $(this).attr('data-id');
+	var company = $(this).attr('data-company');
+	var floor = $(this).attr('data-floor');
+	var fieldNew = $(this).attr('data-new');
+	console.log(id);
+		$.ajax({ url: "tenant-update.php", type: "POST", data: { fieldID: id, fieldCompany: company, fieldFloor: floor, fieldNew: fieldNew }, success: function(data){
+			console.log(data);
+    	}});
+});
+
 });
 
 $(function() {
@@ -57,6 +83,7 @@ $(function() {
 
 	// Set up an event listener for the contact form.
 	$(form).submit(function(e) {
+		console.log(e);
 		console.log("SEND");
 		// Stop the browser from submitting the form.
 		e.preventDefault();

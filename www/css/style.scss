@@ -453,12 +453,12 @@ input:focus:-ms-input-placeholder { opacity: 0; } /* IE 10+ */
 	}
 	#data_Select, #data_Select_cmpny, #data_Select__ppl {
 		background: rgba(0,0,0,.6);
-		height: 560px;
+		height: 580px;
 		margin: 10px 0 0;
 		-ms-touch-action: pan-y;
 		overflow-x: hidden;
 		overflow-y: scroll;
-	    padding: 2.5% 5%;
+	    padding: 1.5% 5% 2.5%;
 		div {
 // 			margin-bottom: .5%;
 		}
@@ -589,7 +589,7 @@ footer {
 .keyboard {
 	display: none;
 	position: absolute;
-	top: 60%;
+	top: 61%;
 	left: 17%;
 	margin: auto;
 	width: 80%;
@@ -628,7 +628,7 @@ footer {
 	color: #fff;
 	background-color: rgba(0,0,0,.8);
 	float: left;
-	margin: 0 29px 14px 0;
+	margin: 0 29px 13px 0;
 	width: 74px;
 	height: 74px;
 	letter-spacing: 3px;

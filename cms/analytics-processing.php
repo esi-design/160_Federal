@@ -21,7 +21,7 @@ error_reporting(-1);
  */
  
 // DB table to use
-$table = 'tenants';
+$table = 'visitors';
  
 // Table's primary key
 $primaryKey = 'id';
@@ -32,7 +32,13 @@ $primaryKey = 'id';
 // indexes
 $columns = array(
     array( 'db' => 'company', 'dt' => 0 ),
-    array( 'db' => 'floor',  'dt' => 1 )
+    array(
+        'db'        => 'timestamp',
+        'dt'        => 1,
+        'formatter' => function( $d, $row ) {
+            return date( 'M d, Y g:i a', strtotime($d));
+        }
+    )
 );
  
 // SQL server connection information

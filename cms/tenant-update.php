@@ -3,7 +3,10 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1); 
 require 'config.php';
-$db->query('SELECT * FROM tenants');
+
+$table = 'tenants';
+
+$db->query("SELECT * FROM $table");
 $db_rows = $db->get();
 $count = count($db_rows);
 
@@ -15,12 +18,14 @@ if(!empty($_POST['fieldCompany'])) {
 	$fieldFloor = $_POST['fieldFloor'];
 	$fieldID = $_POST['fieldID'];
 	
-	if($fieldNew == 'update') {
-	// 	$db->query("UPDATE tenants SET `company` = '$fieldCompany', `floor` = '$fieldFloor' WHERE `id` IN (".implode(',',$ids).")");		
-		$db->query("UPDATE tenants SET `company` = '$fieldCompany', `floor` = '$fieldFloor' WHERE id = 'fieldID'");		
+	if($fieldNew == 'update') {		
+		$db->query("SELECT `company` FROM $table WHERE `id` = '$fieldID'");
+		$originalCompany = $db->get('company');
+		$db->query("UPDATE $table SET `company` = '$fieldCompany', `floor` = '$fieldFloor' WHERE `company` = '$originalCompany'");		
+		
 		echo $fieldCompany.' updated';		
 	} else {
-		$db->query("INSERT INTO tenants SET `company` = '$fieldCompany', `floor` = '$fieldFloor'");
+		$db->query("INSERT INTO $table SET `company` = '$fieldCompany', `floor` = '$fieldFloor'");
 		echo $fieldCompany.' added';
 	}
 

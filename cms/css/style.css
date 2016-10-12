@@ -13,6 +13,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   padding: 0;
   vertical-align: baseline; }
 
+* {
+	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+	box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
 :focus {
   outline: 0; }
 
@@ -283,6 +289,26 @@ p {
   color: #777;
   transition: all .2s ease-in; }
 
+.person {
+	border-bottom: 1px solid #eee;
+	margin-bottom: 2px;
+	width: 100%;
+}
+  
+i.remove {
+  color: red;
+  display: inline-block;
+  margin: 0px 15px 0 0; 
+  vertical-align: middle;
+}
+
+.person input {
+	border-bottom: none;
+	display: inline-block !important;
+    margin: 4px 0;
+	width: 90%;
+}
+
 .input:focus {
   outline: 0;
   border-color: #ccc; }
@@ -333,10 +359,6 @@ input[type=submit] {
 	display: none;
 }
 */
-i.remove {
-  color: red;
-  float: left;
-  margin-right: 5px; }
 
 @keyframes fade {
   from {
