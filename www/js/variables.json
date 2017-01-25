@@ -1,0 +1,9 @@
+{
+	"variables" : [
+		{
+			"gold": "#ff9900",
+			"timeout": "60",
+			"refresh": "30"
+		}
+	]
+}
