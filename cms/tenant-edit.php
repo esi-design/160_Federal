@@ -5,7 +5,8 @@ ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1); 
 require 'config.php';
-$db->query('SELECT * FROM tenants');
+$table = 'tenants';
+$db->query("SELECT * FROM $table");
 $db_rows = $db->get();
 $count = count($db_rows);
 
@@ -39,17 +40,17 @@ if($id == 'new') {
 	for ($i = 0; $i < $count; $i++) {
 		if($db_rows[$i]['company'] == $company) {
 			if($db_rows[$i]['person'] != '') {
-				array_push($people, $db_rows[$i]['person']);	
+				array_push($people, array('person' => $db_rows[$i]['person'], 'id' => $db_rows[$i]['id']));	
 			}
-			array_push($ids, $db_rows[$i]['id']);
+// 			array_push($ids, $db_rows[$i]['id']);
 		}
 	}	
-
+sort($people);
 $people_count = count($people);
 $people_array = [];
-if($people_count > 1) {
+if($people_count >= 1) {
 	for ($i = 0; $i < $people_count; $i++) {
-		array_push($people_array, '<div class="person"><i class="material-icons remove '.$ids[$i].'" data-id="'.$ids[$i].'" data-person="'.$people[$i].'">remove_circle</i><input type="text" name="fieldStaff" class="input" value="'.$people[$i].'" /></div>');
+		array_push($people_array, '<div class="person"><i class="material-icons remove '.$people[$i]['id'].'" data-id="'.$people[$i]['id'].'" data-person="'.$people[$i]['person'].'">remove_circle</i><input type="text" name="fieldStaff" class="input" value="'.$people[$i]['person'].'" readonly></div>');
 	}
 }
 }
@@ -81,7 +82,8 @@ else {
 	echo '<input type="text" name="fieldID" id="fieldID" class="input" value="'.$id.'" />';
 }
 if($id != 'new') {        
-	echo '<input type="submit" name="update" id="update" value="Update Tenant" />';
+	echo '<input type="submit" name="update" id="update" value="Update Tenant" />';	
+	echo '<a class="btn delete-tenant" data-id='.$id.'" data-company='.$company.'">Delete Tenant</a>';
 } else {
 	echo '<input type="submit" name="add" id="add" value="Add New Tenant" />';
 }
@@ -92,51 +94,22 @@ echo '</form>';
 if($id != 'new') {	
 echo '<h3>Tenant Staff</h3><div class="staff">';
 $people_array_count = count($people_array);
-if($people_count > 1) {
-	echo '<div class="field">';
+echo '<div class="field">';
+if($people_count >= 1) {
 	for ($i = 0; $i < $people_array_count; $i++) {
 		echo $people_array[$i];
 	}
-	echo '</div>';
 } else {
 	echo '<p>No Staff Entered</p>';
 }
+echo '</div>';
+	echo '<div class="field--staff" data-id="'.$id.'"><div class="person"><input class="fieldStaffNew input" type="text" name="fieldStaffNew" id="fieldStaff" value="" /><label for="fieldStaff" class="label">Staff Name</label><i class="material-icons add-staff">&#xE876;</i><i class="material-icons cancel-add-staff">&#xE5CD;</i></div></div>';
+    echo '<a class="btn add-staff-field">Add New Staff</a>';
 	echo '</div>';
-	echo '<form method="post" class="staff-add" action="staff-add.php">';
-	echo '<div class="field">
-          <input type="text" name="fieldStaff" id="fieldStaff" class="input" value="" />';           
-          echo '<label for="fieldCompany" class="label">Staff Name</label>
-        </div>';
-    echo '<input type="submit" name="add" id="staff-add" value="Add New Staff" />';    
-    echo '</form>';
 }
-if($id != 'new') {	
-	echo '<a class="btn delete" href="tenant-delete.php?id='.$id.'">Delete Tenant</a>';
-}
-	echo '</div>';
-
 ?>
 <?php if($id != 'new') {	?>
-<h2>Directory</h2>
-<p>Select another tenant to edit.</p>
-<a class="btn" href="./tenant-edit.php?id=new">Add Tenant</a>
-<div class="break"></div>
-<table id="tenant" class="display" cellspacing="0" width="100%">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Company</th>
-                <th>Location</th>
-            </tr>
-        </thead>
-        <tfoot>
-            <tr>
-                <th>ID</th>
-                <th>Company</th>
-                <th>Location</th>
-            </tr>
-        </tfoot>
-    </table>
+<a href="directory.php"><  Return to Directory</a>
 <?php } ?>    
 
 <?php include "footer.php"; ?>

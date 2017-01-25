@@ -13,7 +13,7 @@ $(document).ready(function() {
     $('#tenant').DataTable( {
         "ajax": "./tenant-json.php",
         "order": [[ 1, "asc" ]],
-        "lengthMenu": [[20, 50, -1], [20, 50, "All"]],
+        "lengthMenu": [[40, 50, -1], [30, 50, "All"]],
 /*
         "columnDefs": [
             {
@@ -51,10 +51,58 @@ $('.remove').on('click', function(){
 	var person = $(this).attr('data-person');
 	console.log(id);
 	if(confirm('Are you sure you want to delete '+person+'?')) {
-		$.ajax({ url: "tenant-delete-person.php", type: "POST", data: { fieldID: id }, success: function(data){
+		$.ajax({ url: "tenant-staff-update.php", type: "POST", data: { fieldID: id, updateType: 'delete' }, success: function(data){
 			console.log(data);
     	}});
 		$(this).parent().fadeOut();
+	} else {
+		return false;
+	}
+});
+
+$('.add-staff').on('click', function(){
+	var id = $('.field--staff').attr('data-id');
+	var person = $('.field--staff input').val();
+	console.log(id);
+	if(person != '') {
+		console.log('going');
+		$.ajax({ url: "tenant-staff-update.php", type: "POST", data: { fieldID: id, fieldPerson: person, updateType: 'add' }, success: function(data){
+			console.log(data);
+    	}});
+		setTimeout(function(){
+			location.reload(true);
+		}, 400);
+	} else {
+		console.log('not');
+		$('.field--staff label').text('Enter Staff Name Below').css('color', 'red');
+		$('.field--staff .person').css('border-color', 'red');
+	}
+});
+
+$('.cancel-add-staff').on('click', function(){
+	console.log('cancel');
+	$('.field--staff').find('input').val('');
+	$('.field--staff').fadeOut();
+});
+
+$('.add-staff-field').on('click', function(){
+	if($('.field--staff').is(':hidden')) {
+		$('.field--staff').fadeIn();
+	} else {
+		$('.field--staff label').css('color', 'red');
+		$('.field--staff .person').css('border-color', 'red');
+	}
+});
+
+$('.delete-tenant').on('click', function(){
+	var id = $(this).attr('data-id');
+	var company = $(this).attr('data-company');
+	console.log(id);
+	if(confirm('Are you sure you want to delete '+company+'?')) {
+		$.ajax({ url: "tenant-delete.php", type: "POST", data: { fieldID: id }, success: function(data){
+			console.log(data);
+			window.location = 'directory.php';
+    	}});
 	} else {
 		return false;
 	}
@@ -70,59 +118,5 @@ $('.test-update').on('click', function(){
 			console.log(data);
     	}});
 });
-
-});
-
-$(function() {
-
-	// Get the form.
-	var form = $('#ajax-form');
-
-	// Get the messages div.
-	var formMessages = $('#form-messages');
-
-	// Set up an event listener for the contact form.
-	$(form).submit(function(e) {
-		console.log(e);
-		console.log("SEND");
-		// Stop the browser from submitting the form.
-		e.preventDefault();
-
-		// Serialize the form data.
-		var formData = $(form).serialize();
-
-		// Submit the form using AJAX.
-		$.ajax({
-			type: 'POST',
-			url: $(form).attr('action'),
-			data: formData
-		})
-		.done(function(response) {
-			// Make sure that the formMessages div has the 'success' class.
-			$(formMessages).removeClass('error');
-			$(formMessages).addClass('success');
-
-			// Set the message text.
-			$(formMessages).text(response);
-
-			// Clear the form.
-// 			$('#name').val('');
-// 			$('#email').val('');
-// 			$('#message').val('');
-		})
-		.fail(function(data) {
-			// Make sure that the formMessages div has the 'error' class.
-			$(formMessages).removeClass('success');
-			$(formMessages).addClass('error');
-
-			// Set the message text.
-			if (data.responseText !== '') {
-				$(formMessages).text(data.responseText);
-			} else {
-				$(formMessages).text('Oops! An error occured and your message could not be sent.');
-			}
-		});
-
-	});
 
 });

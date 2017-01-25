@@ -1,7 +1,7 @@
 <?php include "header.php"; ?>
 
 <h2>Directory</h2>
-<p>Select a tenant to edit.</p>
+<p style="margin-bottom:2%;">Select a tenant to edit.</p>
 <a class="btn" href="./tenant-edit.php?id=new">Add Tenant</a>
 
 <table id="tenant" class="display" cellspacing="0" width="100%">

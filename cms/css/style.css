@@ -14,10 +14,12 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   vertical-align: baseline; }
 
 * {
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
-}
+  -webkit-box-sizing: border-box;
+  /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;
+  /* Firefox, other Gecko */
+  box-sizing: border-box;
+  /* Opera/IE 8+ */ }
 
 :focus {
   outline: 0; }
@@ -161,13 +163,19 @@ h6 {
 
 a {
   color: #000;
-  text-decoration: none; }
+  text-decoration: none;
+  cursor: pointer; }
+
+tr {
+  cursor: pointer; }
 
 p {
   margin-bottom: 1%; }
 
 .nav {
+  border-bottom: 2px solid #191919;
   margin: 3% 0 5%;
+  padding-bottom: 3%;
   list-style: none; }
 
 .nav > li > a:hover,
@@ -235,12 +243,13 @@ p {
   margin-bottom: 0;
   width: 40%;
   font-weight: 700; }
-  .logo h1 {
-    line-height: 100%;
-    margin-bottom: 0; }
+
+.logo h1 {
+  line-height: 100%;
+  margin-bottom: 0; }
 
 .dataTables_wrapper {
-  margin-top: 5%; }
+  margin-top: 4%; }
 
 .login {
   background: #F2F2F2;
@@ -248,13 +257,15 @@ p {
   margin: 5% auto 0;
   padding: 5% 7%;
   width: 400px; }
-  .login label {
-    width: 100%; }
-  .login input[type=text], .login input[type=password] {
-    clear: both;
-    margin: 3% 0 8%;
-    padding: 2%;
-    width: 100%; }
+
+.login label {
+  width: 100%; }
+
+.login input[type=text], .login input[type=password] {
+  clear: both;
+  margin: 3% 0 8%;
+  padding: 2%;
+  width: 100%; }
 
 .tenant-edit {
   border-bottom: 1px solid #999;
@@ -263,7 +274,7 @@ p {
   margin-bottom: 5%; }
 
 /* Form */
-.field {
+.field, .field--staff {
   position: relative;
   margin: 5% 0;
   width: 60%; }
@@ -290,24 +301,56 @@ p {
   transition: all .2s ease-in; }
 
 .person {
-	border-bottom: 1px solid #eee;
-	margin-bottom: 2px;
-	width: 100%;
-}
-  
+  border-bottom: 1px solid #eee;
+  margin-bottom: 2px;
+  width: 100%; }
+
 i.remove {
   color: red;
+  cursor: pointer;
   display: inline-block;
-  margin: 0px 15px 0 0; 
-  vertical-align: middle;
-}
+  margin: 0px 15px 0 0;
+  vertical-align: middle; }
 
 .person input {
-	border-bottom: none;
-	display: inline-block !important;
-    margin: 4px 0;
-	width: 90%;
-}
+  border-bottom: none;
+  display: inline-block !important;
+  margin: 4px 0;
+  width: 90%; }
+
+.staff {
+  margin-bottom: 5% !important; }
+  .staff p {
+    margin-bottom: 4%; }
+
+.field--staff {
+  display: none; }
+
+.field--staff .person {
+  position: relative; }
+  .field--staff .person input {
+    width: 200px; }
+  .field--staff .person .material-icons {
+    border-radius: 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 4px;
+    margin: 0 auto;
+    padding-top: 2px;
+    height: 30px;
+    width: 34px;
+    text-align: center; }
+  .field--staff .person .add-staff {
+    background: #2a6496;
+    color: #FFF;
+    left: 210px; }
+    .field--staff .person .add-staff:hover {
+      background: #21507b; }
+  .field--staff .person .cancel-add-staff {
+    background: #EFEFEF;
+    left: 250px; }
+    .field--staff .person .cancel-add-staff:hover {
+      background: #c7c7c7; }
 
 .input:focus {
   outline: 0;
@@ -323,14 +366,17 @@ input:valid + .label {
 #fieldID {
   display: none; }
 
-.delete {
+.delete-tenant {
   background-color: red !important;
   line-height: 30px !important;
+  margin-left: 30px !important;
   padding: 13px 1.5rem !important; }
 
 /* Button */
 .btn, input[type=submit] {
   border: 0;
+  cursor: pointer;
+  font-family: 'Akzidenz','HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
   height: 2.5rem;
   line-height: 2.5rem;
@@ -359,7 +405,6 @@ input[type=submit] {
 	display: none;
 }
 */
-
 @keyframes fade {
   from {
     opacity: 1.0; }

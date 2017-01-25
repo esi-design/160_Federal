@@ -1,9 +1,9 @@
 <?php 
-	 ini_set('display_errors',1);
+ini_set('display_errors',1);
 ini_set('display_startup_errors',1);
 error_reporting(-1); 
 require 'config.php';
-$db->query('SELECT * FROM tenants');
+$db->query("SELECT * FROM tenants");
 $db_rows = $db->get();
 $count = count($db_rows);
 $comp_array = [];
