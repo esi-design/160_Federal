@@ -7,8 +7,6 @@
 <link rel="stylesheet" href="css/style.css" type="text/css" />
 <link rel="stylesheet" href="css/datatables.css" type="text/css" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<!--     <link href="css/bootstrap.css" rel="stylesheet"> -->
-<!--     <link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
 
 </head>  
 <body>  

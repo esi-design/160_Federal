@@ -233,7 +233,9 @@ function renderPage3() {
 //Onload get directory data
 var urlReq ="http://esidesigndev.com/160-federal/directory-handlers/building.php"
 
-connectSql(urlReq);
+setInterval(function(){
+	connectSql(urlReq);	
+}, 1000 * 60 * 30);
 
 //Show the company names and locations in the html element page 2     
 $('#data_Select_cmpny').show();
@@ -276,12 +278,10 @@ function online(status){
 } 
  
 // call get data
-function connectSql(data){
-
-    var url = data;
+function connectSql(url){
 
     if (oReq != null) {
-        oReq.open("GET", url , true);
+        oReq.open("GET",url + ((/\?/).test(url) ? "&" : "?") + (new Date()).getTime(), true);
         oReq.onreadystatechange = handler;
 // 		handler
         oReq.send();
@@ -290,6 +290,7 @@ function connectSql(data){
     }
 }
 
+/*
 function connectOnly(data) {
     var url = data;
 
@@ -300,10 +301,10 @@ function connectOnly(data) {
         window.console.log("NO INTERNET");
     }	
 }
+*/
 
 // Get the data  -- xml 
 function handler() {
-// 	console.log('handler');
     if (oReq.readyState == 4 /* complete */) {
         if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
             var bval = oReq.responseText;
@@ -321,9 +322,10 @@ function handler() {
 }
 
 // Call to check for connection
+/*
 function sendData() {
    var localData = values;
-   if (oReq.readyState == 4 /* complete */) {
+   if (oReq.readyState == 4) {
 		if (oReq.status >= 200 && (oReq.status < 300 || oReq.status === 304)) {
 		    console.log(oReq.status);
 		} else {
@@ -332,6 +334,7 @@ function sendData() {
 		}
 	}
 }
+*/
 
 // Call to check for connection
 function reData() {
@@ -340,7 +343,6 @@ function reData() {
             console.log(Ldata)
             if (Ldata.length < 1){
                 console.log("SEND EMAIL HERE");
-                //Send the email notifying the recover of data -- Internet off
             }    
         } else {
             console.log("No Internet Connection");
