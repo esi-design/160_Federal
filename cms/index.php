@@ -6,7 +6,7 @@ if(!empty($_SESSION['LoggedIn']) && !empty($_SESSION['Username']))
 	 ?>
     
 	
-	<?php include "direcctory.php"; ?>
+	<?php include "directory.php"; ?>
     
     <?php
 }
